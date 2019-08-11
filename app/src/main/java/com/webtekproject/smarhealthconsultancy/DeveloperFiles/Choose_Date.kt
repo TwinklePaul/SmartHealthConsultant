@@ -22,5 +22,6 @@ class Choose_Date: DialogFragment() {
             signinPatient.toastDate(date)
         }
         return view
+
     }
 }
