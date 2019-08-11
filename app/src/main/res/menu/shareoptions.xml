@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:id="@+id/action_wa"
+            android:title="WhatsApp"/>
+
+    <item
+            android:id="@+id/action_msg"
+            android:title="More Options"/>
+
+</menu>

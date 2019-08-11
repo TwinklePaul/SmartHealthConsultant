@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:theme="@android:style/Theme.Material.Light.NoActionBar">
+
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:textAlignment="center"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark">
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.cardview.widget.CardView
+            android:id="@+id/profile_photo"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_margin="10dp"
+            android:layout_below="@+id/my_toolbar">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+            <ImageView
+                    android:id="@+id/img_profile"
+                    android:layout_width="113dp"
+                    android:layout_height="105dp"
+                    android:layout_centerHorizontal="true"
+                    app:srcCompat="@drawable/doctor_profile"
+                    android:background="@drawable/imagebg"
+                    android:padding="6dp"
+            />
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/lightgray"
+                    android:layout_margin="10dp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+            android:id="@+id/hospital_container"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="false"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_below="@+id/profile_photo"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp">
+
+
+        <!--class Dr_App_Model
+            (
+            var App_Id: String,
+            val Patient_ID: String,
+            val Dr_ID: String,
+            val Start_at: String,
+            val Clinic_ID: String,
+            val Hosp_ID: String
+            )-->
+
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/medium_marginHorizontal"
+        >
+
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginHorizontal="@dimen/slim_padding"
+                    android:layout_marginTop="10dp"
+                    android:text="Choose Your Appointment::"/>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/lightgray"
+                    android:layout_margin="5dp"/>
+
+            <Spinner
+                    android:id="@+id/ChooseSpecialty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/mySpinnerItemStyle"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginVertical="@dimen/slim_padding"
+            />
+
+            <Spinner
+                    android:id="@+id/ChooseLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/mySpinnerItemStyle"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginVertical="@dimen/slim_padding"
+            />
+
+            <Spinner
+                    android:id="@+id/Organisation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/mySpinnerItemStyle"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginVertical="@dimen/slim_padding"
+            />
+
+            <Spinner
+                    android:id="@+id/ChooseQualification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/mySpinnerItemStyle"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginVertical="@dimen/slim_padding"
+            />
+
+            <Spinner
+                    android:id="@+id/ChooseName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/mySpinnerItemStyle"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginVertical="@dimen/slim_padding"
+            />
+            <Spinner
+                    android:id="@+id/ChooseOrg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/mySpinnerItemStyle"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginVertical="@dimen/slim_padding"
+            />
+            <!--<Spinner
+                    android:id="@+id/Choose4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/mySpinnerItemStyle"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginVertical="@dimen/slim_padding"
+            />-->
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <Button
+            android:id="@+id/button_saveHosp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hospital_container"
+            android:background="@drawable/buttonbg"
+            android:textColor="@android:color/white"
+            android:text="Book Appointment"
+            android:textStyle="bold"
+            android:layout_alignParentBottom="false"
+            android:layout_marginBottom="@dimen/button_gap"
+            android:onClick="bookApp"
+            android:layout_marginTop="20dp"
+    />
+    ,
+</RelativeLayout>

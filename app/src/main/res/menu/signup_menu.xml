@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:id="@+id/action_patient"
+            android:title="As Patient:"/>
+
+    <item
+            android:id="@+id/action_doctor"
+            android:title="As Doctor:"/>
+    <item
+            android:id="@+id/action_hospital"
+            android:title="As Hospital"/>
+
+    <item
+            android:id="@+id/action_clinic"
+            android:title="As Clinic"/>
+
+    <item
+            android:id="@+id/action_pharmacy"
+            android:title="As Pharmacy:"/>
+
+</menu>

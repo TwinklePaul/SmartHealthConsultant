@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:theme="@android:style/Widget.Material.Light"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+            android:textAlignment="textStart"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+    </androidx.appcompat.widget.Toolbar>
+
+    <Spinner
+            android:id="@+id/spinn_pharmacyName"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/my_toolbar"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="21dp"
+            android:drawSelectorOnTop="true"
+            android:theme="@style/mySpinnerItemStyle"
+            android:padding="10dp"
+    />
+
+    <Spinner
+            android:id="@+id/spinn_chooseMeds"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spinn_pharmacyName"
+            android:layout_marginTop="14dp"
+            android:layout_marginStart="9dp"
+            android:drawSelectorOnTop="true"
+            android:theme="@style/mySpinnerItemStyle"
+            android:padding="10dp"
+    />
+
+    <TextView
+            android:id="@+id/view_amt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spinn_chooseMeds"
+            android:layout_marginTop="73dp"
+            android:padding="@dimen/slim_padding"
+            android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
+            android:textStyle="bold"
+            android:text="View Total Amount: "
+    />
+
+    <Button
+            android:id="@+id/button_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view_amt"
+            android:layout_marginTop="76dp"
+            android:padding="@dimen/slim_padding"
+            android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
+            android:theme="@android:style/Widget.Material.Light.Button.Borderless.Colored"
+            android:background="@drawable/transparentbuttonbg"
+            android:elevation="15dp"
+            android:textStyle="bold"
+            android:text="Confirm Delivery"
+    />
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button_confirm"
+            android:layout_marginTop="73dp"
+            android:padding="@dimen/slim_padding"
+            android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
+            android:textStyle="bold"
+            android:text="@string/string_disclaimer_pharmacy"
+    />
+
+
+</RelativeLayout>

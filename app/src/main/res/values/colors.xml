@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFC107</color>
+    <color name="colorPrimaryDark">#FFA000</color>
+    <color name="lightgray">#ededed</color>
+    <color name="deeppurple">#7c4dff</color>
+    <color name="yellow">#ffb300</color>
+    <color name="green">#00bfa5</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="colorComplimentary">#7D7C1F</color>
+    <color name="colorAnalogous1">#0D47A1</color>
+    <color name="colorTriadic">#ee0290</color>
+    <color name="cardbg">#FFDE03</color>
+    <color name="my_spinner_text_color">#808080</color>
+</resources>

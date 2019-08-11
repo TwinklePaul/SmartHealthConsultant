@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:theme="@android:style/Theme.Material.NoActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/cardbg">
+
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:textAlignment="center"
+            app:popupTheme="@style/ThemeOverlay.AppCompat">
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/my_toolbar"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="12dp"
+            app:cardBackgroundColor="#030940"
+            android:background="#00D17171">
+
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/icon_large"
+        />
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+            android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="12dp"
+            android:orientation="vertical"
+            android:layout_marginVertical="@dimen/gapComponents"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/cardbg">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+
+                android:layout_marginStart="16dp"
+
+                android:text="About Us:  "
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorAnalogous1"
+        />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+            android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="12dp"
+            android:orientation="vertical"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardBackgroundColor="@color/cardbg"
+    >
+
+        <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
+                android:layout_marginTop="@dimen/gapComponents">
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:text="Developed By:"
+                        android:textSize="14dp"
+                        android:textStyle="bold"
+                        android:layout_marginEnd="16dp"
+                        android:layout_width="136dp"
+                        android:padding="@dimen/slim_padding"
+                        android:textColor="@color/colorTriadic"
+                />
+
+                <TextView
+                        android:text="Twinkle Paul"
+                        android:textSize="14dp"
+                        android:textColor="@color/colorComplimentary"
+                        android:textStyle="bold"
+                        android:padding="@dimen/slim_padding"
+                        android:layout_width="wrap_content"/>
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/button_gap">
+
+                <TextView
+                        android:text="Designed By:"
+                        android:textSize="14dp"
+                        android:textStyle="bold"
+                        android:layout_marginEnd="16dp"
+                        android:layout_width="136dp"
+                        android:padding="@dimen/slim_padding"
+                        android:textColor="@color/colorTriadic"/>
+
+                <TextView
+                        android:text="Twinkle Paul"
+                        android:textSize="14dp"
+                        android:padding="@dimen/slim_padding"
+                        android:textColor="@color/colorComplimentary"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"/>
+            </TableRow>
+
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/button_gap">
+
+                <TextView
+                        android:text="Info:"
+                        android:textSize="14dp"
+                        android:textStyle="bold"
+                        android:layout_marginEnd="16dp"
+                        android:layout_width="120dp"
+                        android:padding="@dimen/slim_padding"
+                        android:textColor="@color/colorTriadic"/>
+
+                <TextView
+                        android:text="@string/string_about_info"
+                        android:textSize="14dp"
+                        android:padding="@dimen/slim_padding"
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/colorComplimentary"
+                        android:textStyle="bold"
+                />
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/button_gap"
+            >
+                <TextView
+                        android:text="Institute:"
+                        android:textSize="14dp"
+                        android:textStyle="bold"
+                        android:layout_marginEnd="16dp"
+                        android:layout_width="wrap_content"
+                        android:padding="@dimen/slim_padding"
+                        android:textColor="@color/colorTriadic"
+                />
+
+                <TextView
+                        android:text="@string/string_about_institt"
+                        android:textSize="14dp"
+                        android:padding="7dp"
+                        android:textColor="@color/colorComplimentary"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"/>
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/button_gap"
+            >
+                <TextView
+                        android:text="Mentor:"
+                        android:textSize="14dp"
+                        android:textStyle="bold"
+                        android:layout_marginEnd="16dp"
+                        android:layout_width="120dp"
+                        android:padding="@dimen/slim_padding"
+                        android:textColor="@color/colorTriadic"
+                />
+
+                <TextView
+                        android:text="@string/string_about_mentor"
+                        android:textSize="14dp"
+                        android:padding="@dimen/slim_padding"
+                        android:textColor="@color/colorComplimentary"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"/>
+            </TableRow>
+        </TableLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

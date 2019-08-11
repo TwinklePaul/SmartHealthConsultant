@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:theme="@android:style/Theme.Material.Light.NoActionBar">
+
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+            android:textAlignment="textStart"
+            android:title="SignIn"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark">
+    </androidx.appcompat.widget.Toolbar>
+
+    <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/my_toolbar"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:padding="7dp"
+            android:layout_marginHorizontal="16dp">
+
+        <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="7dp"
+                app:cardElevation="2dp">
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="7dp">
+
+                <TextView
+                        android:layout_width="131dp"
+                        android:layout_height="wrap_content"
+                        android:text="Hospital Name: "
+                        android:padding="5dp"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                />
+
+                <EditText
+                        android:id="@+id/edit_Name"
+                        android:layout_width="212dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Full Name: "
+                        android:padding="5dp"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                />
+
+            </TableRow>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="7dp"
+                app:cardElevation="2dp">
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="7dp">
+
+                <TextView
+                        android:layout_width="131dp"
+                        android:layout_height="wrap_content"
+                        android:text="Registration No.: "
+                        android:padding="5dp"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                />
+
+                <EditText
+                        android:id="@+id/edit_ID"
+                        android:layout_width="209dp"
+                        android:layout_height="wrap_content"
+                        android:hint="This will be your User_ID: "
+                        android:padding="5dp"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                />
+
+            </TableRow>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="7dp"
+                app:cardElevation="2dp">
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="7dp">
+
+                <TextView
+                        android:layout_width="131dp"
+                        android:layout_height="wrap_content"
+                        android:text="Location.: "
+                        android:padding="5dp"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                />
+
+                <EditText
+                        android:id="@+id/edit_Loc"
+                        android:layout_width="212dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter the City Name"
+                        android:padding="5dp"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                />
+
+            </TableRow>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="7dp"
+                app:cardElevation="2dp">
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="7dp">
+
+                <TextView
+                        android:layout_width="131dp"
+                        android:layout_height="wrap_content"
+                        android:text="Available Beds: "
+                        android:padding="5dp"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                />
+
+                <EditText
+                        android:id="@+id/edit_Bed"
+                        android:layout_width="212dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter Total No. of Beds: "
+                        android:padding="5dp"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                />
+
+            </TableRow>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="7dp"
+                app:cardElevation="2dp">
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="7dp">
+
+                <TextView
+                        android:layout_width="131dp"
+                        android:layout_height="wrap_content"
+                        android:text="Available OTs: "
+                        android:padding="5dp"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                />
+
+                <EditText
+                        android:id="@+id/edit_OT"
+                        android:layout_width="212dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter Total No. of OTs available: "
+                        android:padding="5dp"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                />
+
+            </TableRow>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="7dp"
+                app:cardElevation="2dp">
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="7dp">
+
+                <TextView
+                        android:layout_width="131dp"
+                        android:layout_height="wrap_content"
+                        android:text="Contact No. "
+                        android:padding="5dp"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                />
+
+                <EditText
+                        android:id="@+id/edit_Cont"
+                        android:layout_width="212dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter No. for Emergency Purposes: "
+                        android:padding="5dp"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                />
+
+            </TableRow>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="7dp"
+                app:cardElevation="2dp">
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:padding="7dp">
+
+                <TextView
+                        android:layout_width="131dp"
+                        android:layout_height="wrap_content"
+                        android:text="Password.: "
+                        android:padding="5dp"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                />
+
+                <EditText
+                        android:id="@+id/edit_pass"
+                        android:layout_width="212dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:padding="5dp"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                />
+
+            </TableRow>
+        </androidx.cardview.widget.CardView>
+
+    </TableLayout>
+
+
+    <Button
+            android:id="@+id/button_signIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/slim_padding"
+            android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
+            android:layout_marginBottom="@dimen/medium_marginHorizontal"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/transparentbuttonbg"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:text="Register"
+            android:onClick="Save_record"
+    />
+
+</RelativeLayout>

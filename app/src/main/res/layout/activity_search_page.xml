@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:theme="@android:style/Theme.Material.NoActionBar.Fullscreen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+            android:textAlignment="textStart"
+            android:title="SignIn"
+            app:popupTheme="@style/ThemeOverlay.AppCompat">
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="3dp"
+            android:padding="16dp"
+            android:layout_margin="6dp">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <EditText
+                    android:id="@+id/title_search_disease"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Search Info On Diseases:"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@+id/my_toolbar"
+                    android:padding="@dimen/slim_padding"
+                    android:background="@drawable/text_astitle"
+                    android:elevation="2dp"
+            />
+
+            <RadioGroup
+                    android:id="@+id/radio_search_disease"
+                    android:layout_below="@id/title_search_disease"
+                    android:layout_marginTop="@dimen/gapComponents"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                <RadioButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Disease 1"
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        android:textColor="@color/colorAccent"
+                />
+
+                <RadioButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Disease 2"
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        android:textColor="@color/colorAccent"
+                />
+
+                <RadioButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Disease 3"
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        android:textColor="@color/colorAccent"
+                />
+
+            </RadioGroup>
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
+                    app:cardElevation="1dp"
+                    app:cardCornerRadius="6dp"
+            >
+
+                <Button
+                        android:id="@+id/button_search_disease"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/radio_search_disease"
+                        android:background="@drawable/transparentbuttonbg"
+                        android:text="Search Disease"
+                        android:textColor="@color/colorAccent"
+                />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="3dp"
+            android:padding="16dp"
+            android:layout_margin="6dp">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <EditText
+                    android:id="@+id/title_search_fitness"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Search Fitness Option:"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@+id/button_search_disease"
+                    android:padding="@dimen/slim_padding"
+                    android:background="@drawable/text_astitle"
+                    android:elevation="2dp"
+            />
+
+            <RadioGroup
+                    android:id="@+id/radio_search_fitness"
+                    android:layout_below="@id/title_search_fitness"
+                    android:layout_marginTop="@dimen/gapComponents"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+            >
+
+                <RadioButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Solution 1"
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        android:textColor="@color/green"
+                />
+
+                <RadioButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Solution 2"
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        android:textColor="@color/green"
+                />
+
+                <RadioButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:text="Solution 3"
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        android:textColor="@color/green"
+                />
+
+            </RadioGroup>
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
+                    app:cardElevation="1dp"
+                    app:cardCornerRadius="6dp">
+
+                <Button
+                        android:id="@+id/button_search_fitness"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/radio_search_fitness"
+                        android:background="@drawable/transparentbuttonbg"
+                        android:text="Search Fitness"
+                        android:textColor="@color/green"
+                />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="20dp"
+            app:cardElevation="1dp"
+            app:cardCornerRadius="6dp">
+
+        <Button
+                android:id="@+id/button_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/radio_search_fitness"
+
+                android:padding="@dimen/slim_padding"
+                android:background="@drawable/transparentbuttonbg"
+                android:textStyle="bold"
+                android:text="Search Nearby Clinics"
+                android:textColor="@color/deeppurple"
+        />
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
