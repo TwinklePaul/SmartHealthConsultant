@@ -2,7 +2,7 @@
 <resources>
     <dimen name="slim_padding">7dp</dimen>
     <dimen name="my_spinner_text_size">14dp</dimen>
-    <dimen name="my_spinner_padding">3dp</dimen>
+    <dimen name="my_spinner_padding">2dp</dimen>
     <dimen name="medium_marginHorizontal">20dp</dimen>
     <dimen name="button_gap">8dp</dimen>
     <dimen name="gapComponents">20dp</dimen>

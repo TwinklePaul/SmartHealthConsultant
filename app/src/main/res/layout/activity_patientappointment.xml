@@ -62,17 +62,6 @@
             android:layout_marginEnd="10dp">
 
 
-        <!--class Dr_App_Model
-            (
-            var App_Id: String,
-            val Patient_ID: String,
-            val Dr_ID: String,
-            val Start_at: String,
-            val Clinic_ID: String,
-            val Hosp_ID: String
-            )-->
-
-
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -99,6 +88,7 @@
                     android:id="@+id/ChooseSpecialty"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:padding="2dp"
                     android:theme="@style/mySpinnerItemStyle"
                     android:textSize="14sp"
                     android:textStyle="bold"
@@ -109,6 +99,7 @@
                     android:id="@+id/ChooseLocation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:padding="2dp"
                     android:theme="@style/mySpinnerItemStyle"
                     android:textSize="14sp"
                     android:textStyle="bold"
@@ -119,6 +110,7 @@
                     android:id="@+id/Organisation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:padding="2dp"
                     android:theme="@style/mySpinnerItemStyle"
                     android:textSize="14sp"
                     android:textStyle="bold"
@@ -129,6 +121,7 @@
                     android:id="@+id/ChooseQualification"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:padding="2dp"
                     android:theme="@style/mySpinnerItemStyle"
                     android:textSize="14sp"
                     android:textStyle="bold"
@@ -139,6 +132,7 @@
                     android:id="@+id/ChooseName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:padding="2dp"
                     android:theme="@style/mySpinnerItemStyle"
                     android:textSize="14sp"
                     android:textStyle="bold"
@@ -148,6 +142,7 @@
                     android:id="@+id/ChooseOrg"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:padding="2dp"
                     android:theme="@style/mySpinnerItemStyle"
                     android:textSize="14sp"
                     android:textStyle="bold"

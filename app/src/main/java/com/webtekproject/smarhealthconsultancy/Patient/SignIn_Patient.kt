@@ -6,11 +6,10 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import com.webtekproject.smarhealthconsultancy.Authorities.control.Doctor.Doc_Settings
-import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Choose_Date
 import com.webtekproject.smarhealthconsultancy.Common.Feedback
-import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Base_Activity
 import com.webtekproject.smarhealthconsultancy.Common.SignIn_Activity
+import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Base_Activity
+import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Choose_Date
 import com.webtekproject.smarhealthconsultancy.R
 import org.jetbrains.anko.toast
 
@@ -35,7 +34,7 @@ class SignIn_Patient : Base_Activity() {
 
         return when (item.itemId) {
             R.id.settings -> {
-                intent = Intent(this, Doc_Settings::class.java)
+                intent = Intent(this, Patient_Settings::class.java)
                 startActivity(intent)
                 return true
             }

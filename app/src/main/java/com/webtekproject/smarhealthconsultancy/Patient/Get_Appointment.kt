@@ -1,6 +1,5 @@
 package com.webtekproject.smarhealthconsultancy.Patient
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
@@ -127,13 +126,13 @@ class Get_Appointment : Base_Activity(), AdapterView.OnItemSelectedListener {
                 doc_qualif.add("Choose Qualification: ")
                 doc_name.clear()
                 doc_name.add("Choose Doctor: ")
+                org_name.clear()
+                org_name.add("Choose Organisation:")
 
                 option_spl = doc_spl[position]
 
                 for (i in doc_list) {
                     if (i.Dr_Speciality.equals(option_spl)) {
-
-                        drflag = 1
 
                         for (j in doc_clinic) {
                             if (i.Dr_ID.equals(j.Dr_ID)) {
@@ -141,7 +140,7 @@ class Get_Appointment : Base_Activity(), AdapterView.OnItemSelectedListener {
 
                                 for (k in clinic_list) {
                                     if (k.Clinic_ID.equals(orgid)) {
-                                        org_loc.add(k.Clinic_Name)
+                                        org_loc.add(k.Clinic_Location)
                                     }
                                 }
                             }
@@ -153,7 +152,7 @@ class Get_Appointment : Base_Activity(), AdapterView.OnItemSelectedListener {
 
                                 for (k in hosp_list) {
                                     if (k.Hosp_ID.equals(orgid)) {
-                                        org_loc.add(k.Hosp_Name)
+                                        org_loc.add(k.Hosp_Location)
                                     }
                                 }
                             }
@@ -183,30 +182,32 @@ class Get_Appointment : Base_Activity(), AdapterView.OnItemSelectedListener {
 
                 option_loc = org_loc[position]
                 toast("Showing By:${option_loc}")
-
-                spinner2 = this.Organisation
-                spinner2!!.onItemSelectedListener = this
-
-                val org = ArrayAdapter(this, android.R.layout.simple_spinner_item, org_option)
-                org.setDropDownViewResource(android.R.layout.simple_spinner_item)
-                spinner2!!.adapter = org
             }
 
             R.id.Organisation -> {
+                doc_qualif.clear()
+                doc_qualif.add("Choose Qualification: ")
+
                 option_cat = org_option[position]
                 toast("Showing By:${option_cat}")
 
-                if (option_cat.equals("Clinic"))
-                    for (i in clinic_list)
-                        if (i.Clinic_Location.equals(option_loc))
+                if (option_cat.equals("Clinic")) {
+                    for (i in clinic_list) {
+                        if (i.Clinic_Location.equals(option_loc)) {
 
-                            for (j in doc_clinic)
-                                if (i.Clinic_ID.equals(j.Clinic_ID))
+                            for (j in doc_clinic) {
+                                if (i.Clinic_ID.equals(j.Clinic_ID)) {
 
-                                    for (k in doc_list)
-                                        if (k.Dr_ID.equals(j.Dr_ID))
+                                    for (k in doc_list) {
+                                        if (k.Dr_ID.equals(j.Dr_ID)) {
                                             doc_qualif.add(k.Dr_Qualification)
-
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
 
 
                 if (option_cat.equals("Hospital")) {
@@ -293,14 +294,6 @@ class Get_Appointment : Base_Activity(), AdapterView.OnItemSelectedListener {
     }
 
     fun bookApp(view: View?) {
-        intent = Intent(this, Post_AppointmentBooking::class.java)
-
-        intent.putExtra("Doctor: ", doc)
-        intent.putExtra("Organisation: ", option_cat)
-        intent.putExtra("Location: ", option_loc)
-        intent.putExtra("Organisation Name: ", option_org)
-
-        startActivity(intent)
 
     }
 

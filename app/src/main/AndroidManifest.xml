@@ -9,8 +9,8 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".Patient.Post_AppointmentBooking">
-        </activity>
+
+
         <activity android:name=".Patient.Patient_Settings">
         </activity>
         <activity
@@ -25,7 +25,7 @@
         </activity>
         <activity
                 android:name=".Authorities.control.Clinic.SignUp_Clinic"
-                android:label="SignUp as Doctor:"
+                android:label="SignUp as Clinic:"
                 android:parentActivityName=".Common.SignIn_Activity">
         </activity>
         <activity
@@ -136,22 +136,6 @@
                 android:label="Profile Page:"
                 android:parentActivityName=".Patient.SignIn_Patient">
         </activity>
-        <activity
-                android:name=".Patient.Get_Doctor_Appointment"
-                android:label="Doctor Appointment:"
-                android:parentActivityName=".Patient.Get_Appointment">
-        </activity>
-        <activity
-                android:name=".Patient.Get_Hospital_Appointment"
-                android:label="Hospital Appointment:"
-                android:parentActivityName=".Patient.Get_Appointment">
-        </activity>
-        <activity
-                android:name=".Patient.Get_Pharmacy_Appointment"
-                android:label="Pharmacy Appointment:"
-                android:parentActivityName=".Patient.Get_Appointment">
-        </activity>
-
 
         <activity android:name=".DeveloperFiles.Base_Activity"/>
     </application>

@@ -18,7 +18,6 @@ import com.webtekproject.smarhealthconsultancy.Authorities.control.Pharmacy.Sign
 import com.webtekproject.smarhealthconsultancy.Authorities.control.Pharmacy.SignUp_Pharmacy
 import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Base_Activity
 import com.webtekproject.smarhealthconsultancy.DeveloperFiles.DatabaseHandler
-import com.webtekproject.smarhealthconsultancy.Patient.SignIn_Patient
 import com.webtekproject.smarhealthconsultancy.Patient.SignUp_Patient
 import com.webtekproject.smarhealthconsultancy.R
 import org.jetbrains.anko.longToast
@@ -60,8 +59,29 @@ class SignIn_Activity : Base_Activity() {
             popupMenu.setOnMenuItemClickListener(PopupMenu.OnMenuItemClickListener { item ->
                 when (item.itemId) {
                     R.id.action_patient -> {
-                        intent = Intent(this, SignIn_Patient::class.java)
-                        startActivity(intent)
+                        val patient_list = db.viewPatient()
+
+                        for (i in patient_list) {
+                            if ((i.Patient_ID).equals(userID) && (i.Patient_Pass).equals(
+                                    password
+                                )
+                            ) {
+
+                                //found it!
+                                val editor = mySharedPreferences.edit()
+                                editor.putString("userid", i.Patient_ID)
+                                editor.putString("category", "Patient")
+                                editor.putInt("logged", 1)
+                                val stat = editor.commit()
+                                if (stat) {
+                                    Toast.makeText(applicationContext, "Login Successful", Toast.LENGTH_SHORT)
+                                        .show()
+                                    intent = Intent(this, SignIn_Doctor::class.java)
+                                    startActivity(intent)
+                                    this@SignIn_Activity.finish()
+                                }
+                            }
+                        }
                     }
 
                     R.id.action_doctor -> {
@@ -86,7 +106,6 @@ class SignIn_Activity : Base_Activity() {
                                     startActivity(intent)
                                     this@SignIn_Activity.finish()
                                 }
-
                             } else {
                                 longToast("Login UnSuccessful. Retry!")
                             }

@@ -41,7 +41,7 @@ class Profile_Page_Authority : Base_Activity() {
         val doc_clinic_list = db.viewDoc_Clinic()
         val hosp_list = db.viewHospital()
         val room_list = db.viewHosp_Room()
-        val bed_list = db.viewHosp_Bed()
+        //val bed_list = db.viewHosp_Bed()
         val clinic_list = db.viewClinic()
 
         if (pref.getString("category", null) == "Doctor") {
