@@ -92,13 +92,18 @@ open class Base_Activity : AppCompatActivity() {
 
                 dialogBuilder.setTitle("Help")
                 dialogBuilder.setMessage("How to Use the App: ")
-                dialogBuilder.setPositiveButton("OK", DialogInterface.OnClickListener { dialog, which ->
-                    finish()
-                })
+                dialogBuilder.setPositiveButton(
+                    "OK",
+                    DialogInterface.OnClickListener { dialog, which ->
+                        finish()
+                    })
 
-                dialogBuilder.setNegativeButton("", DialogInterface.OnClickListener({ dialog, which ->
-                    finish()
-                }))
+                dialogBuilder.setNegativeButton(
+                    "",
+                    DialogInterface.OnClickListener({ dialog, which ->
+                        finish()
+                    })
+                )
 
                 val b = dialogBuilder.create()
                 b.show()

@@ -14,10 +14,11 @@ import com.webtekproject.smarhealthconsultancy.Authorities.control.Doctor.SignIn
 import com.webtekproject.smarhealthconsultancy.Authorities.control.Doctor.SignUp_Doctor
 import com.webtekproject.smarhealthconsultancy.Authorities.control.Hospital.SignIn_Hospital
 import com.webtekproject.smarhealthconsultancy.Authorities.control.Hospital.SignUp_Hospital
-import com.webtekproject.smarhealthconsultancy.Authorities.control.Pharmacy.SignIn_Pharmacy
-import com.webtekproject.smarhealthconsultancy.Authorities.control.Pharmacy.SignUp_Pharmacy
+/*import com.webtekproject.smarhealthconsultancy.Authorities.control.Pharmacy.SignIn_Pharmacy
+import com.webtekproject.smarhealthconsultancy.Authorities.control.Pharmacy.SignUp_Pharmacy*/
 import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Base_Activity
 import com.webtekproject.smarhealthconsultancy.DeveloperFiles.DatabaseHandler
+import com.webtekproject.smarhealthconsultancy.Patient.SignIn_Patient
 import com.webtekproject.smarhealthconsultancy.Patient.SignUp_Patient
 import com.webtekproject.smarhealthconsultancy.R
 import org.jetbrains.anko.longToast
@@ -74,9 +75,13 @@ class SignIn_Activity : Base_Activity() {
                                 editor.putInt("logged", 1)
                                 val stat = editor.commit()
                                 if (stat) {
-                                    Toast.makeText(applicationContext, "Login Successful", Toast.LENGTH_SHORT)
+                                    Toast.makeText(
+                                        applicationContext,
+                                        "Login Successful",
+                                        Toast.LENGTH_SHORT
+                                    )
                                         .show()
-                                    intent = Intent(this, SignIn_Doctor::class.java)
+                                    intent = Intent(this, SignIn_Patient::class.java)
                                     startActivity(intent)
                                     this@SignIn_Activity.finish()
                                 }
@@ -100,7 +105,11 @@ class SignIn_Activity : Base_Activity() {
                                 editor.putInt("logged", 1)
                                 val stat = editor.commit()
                                 if (stat) {
-                                    Toast.makeText(applicationContext, "Login Successful", Toast.LENGTH_SHORT)
+                                    Toast.makeText(
+                                        applicationContext,
+                                        "Login Successful",
+                                        Toast.LENGTH_SHORT
+                                    )
                                         .show()
                                     intent = Intent(this, SignIn_Doctor::class.java)
                                     startActivity(intent)
@@ -151,7 +160,11 @@ class SignIn_Activity : Base_Activity() {
                                 editor.putInt("logged", 1)
                                 val stat = editor.commit()
                                 if (stat) {
-                                    Toast.makeText(applicationContext, "Login Successful", Toast.LENGTH_SHORT)
+                                    Toast.makeText(
+                                        applicationContext,
+                                        "Login Successful",
+                                        Toast.LENGTH_SHORT
+                                    )
                                         .show()
                                     intent = Intent(this, SignIn_Clinic::class.java)
                                     startActivity(intent)
@@ -166,7 +179,7 @@ class SignIn_Activity : Base_Activity() {
                     }
 
 
-                    R.id.action_pharmacy -> {
+                    /*R.id.action_pharmacy -> {
                         val pharma_list = db.viewPharmacy()
 
                         for (i in pharma_list) {
@@ -191,7 +204,7 @@ class SignIn_Activity : Base_Activity() {
                             }
 
                         }
-                    }
+                    }*/
                 }
                 true
             })
@@ -228,11 +241,11 @@ class SignIn_Activity : Base_Activity() {
                         intent = Intent(this, SignUp_Clinic::class.java)
                         startActivity(intent)
                     }
-
+/*
                     R.id.action_pharmacy -> {
                         intent = Intent(this, SignUp_Pharmacy::class.java)
                         startActivity(intent)
-                    }
+                    }*/
                 }
                 true
             })

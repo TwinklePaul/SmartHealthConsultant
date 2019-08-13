@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.view.View
 import com.webtekproject.smarhealthconsultancy.Authorities.control.Create_Feed
 import com.webtekproject.smarhealthconsultancy.Authorities.control.Profile_Page_Authority
+import com.webtekproject.smarhealthconsultancy.Common.Feedback
 import com.webtekproject.smarhealthconsultancy.Common.SignIn_Activity
 import com.webtekproject.smarhealthconsultancy.Common.View_Feed
 import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Base_Activity
@@ -15,13 +16,6 @@ import com.webtekproject.smarhealthconsultancy.Patient.Check_Appointment
 import com.webtekproject.smarhealthconsultancy.R
 
 class SignIn_Doctor : Base_Activity() {
-
-    /*var categories =
-        arrayOf ("Category: ", "Advertisement", "Fitness Soln.", "Latest Developments", "Disease", "Health Alert")
-    var listdates = arrayOf("List By: ", "Hour", "Day", "Weeks", "Months", "Year")
-
-    var spinner: Spinner? = null
-    var chosenOption: String = ""*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,23 +27,6 @@ class SignIn_Doctor : Base_Activity() {
         val actionBar = supportActionBar
 
         actionBar!!.elevation = 4.0F
-
-        /*//Category Spinner SetUp
-        spinner = this.spinn_cat
-        spinner!!.onItemSelectedListener = this
-
-        val cat = ArrayAdapter(this, android.R.layout.simple_spinner_item, categories)
-        cat.setDropDownViewResource(android.R.layout.simple_spinner_item)
-        spinner!!.adapter = cat
-
-
-        //Category Spinner List Appointments By
-        spinner = this.spinn_listdates
-        spinner!!.onItemSelectedListener = this
-
-        val datelist = ArrayAdapter(this, android.R.layout.simple_spinner_item, listdates)
-        datelist.setDropDownViewResource(android.R.layout.simple_spinner_item)
-        spinner!!.adapter = datelist*/
     }
 
 
@@ -105,5 +82,11 @@ class SignIn_Doctor : Base_Activity() {
         intent = Intent(this, Check_Appointment::class.java)
         startActivity(intent)
     }
+
+    fun giveFeedback(view: View) {
+        intent = Intent(this, Feedback::class.java)
+        startActivity(intent)
+    }
+
 
 }

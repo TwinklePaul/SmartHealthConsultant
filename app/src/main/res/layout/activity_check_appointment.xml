@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:theme="@android:style/Theme.Material.Light.NoActionBar">
 
     <androidx.appcompat.widget.Toolbar
             android:id="@+id/my_toolbar"
@@ -13,23 +13,19 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
             android:textAlignment="center"
-            app:popupTheme="@style/ThemeOverlay.AppCompat">
-    </androidx.appcompat.widget.Toolbar>
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"></androidx.appcompat.widget.Toolbar>
 
-    <TextView
+    <ImageView
+            android:id="@+id/doc_confirm_app"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Confirmed Appointments: "
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:padding="7dp"
-            android:textAlignment="textStart"
-    />
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:src="@drawable/doctor_logo" />
 
     <ListView
             android:id="@+id/listconfirmed"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
 
 
 </LinearLayout>

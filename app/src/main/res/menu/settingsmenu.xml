@@ -1,52 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<menu
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        tools:context=".Common.SignIn_Activity"
->
+        tools:context=".Common.SignIn_Activity">
     <item
-            android:title=""
-            app:showAsAction="always"
             android:id="@+id/more"
-            android:icon="@drawable/ic_action_more">
+            android:icon="@drawable/ic_action_more"
+            android:title=""
+            app:showAsAction="always">
 
         <menu>
 
             <item
-                    android:title="Settings"
-                    app:showAsAction="never"
                     android:id="@+id/settings"
                     android:icon="@drawable/ic_action_settings"
-            />
+                    android:title="Settings"
+                    app:showAsAction="never" />
 
             <item
-                    android:title="Share"
-                    app:showAsAction="never"
                     android:id="@+id/share"
                     android:icon="@drawable/ic_action_share"
-            />
+                    android:title="Share"
+                    app:showAsAction="never" />
             <item
-                    android:title="About Us"
-                    app:showAsAction="never"
                     android:id="@+id/aboutus"
                     android:icon="@drawable/ic_action_about"
-            />
+                    android:title="About Us"
+                    app:showAsAction="never" />
 
             <item
-                    android:title="Help"
                     android:id="@+id/help"
                     android:icon="@drawable/ic_action_help"
-                    app:showAsAction="never|withText"
-            />
+                    android:title="Help"
+                    app:showAsAction="never|withText" />
 
             <item
-                    android:title="LogOut"
-                    app:showAsAction="never"
                     android:id="@+id/logout"
                     android:icon="@drawable/ic_action_profile"
-            />
+                    android:title="LogOut"
+                    app:showAsAction="never" />
         </menu>
     </item>
 </menu>

@@ -46,7 +46,6 @@ class Get_Appointment : Base_Activity(), AdapterView.OnItemSelectedListener {
 
         setSupportActionBar(findViewById(R.id.my_toolbar))
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        val actionBar = supportActionBar
 
         val db = DatabaseHandler(this)
         val doc_list = db.viewDoctors()
@@ -315,12 +314,14 @@ class Get_Appointment : Base_Activity(), AdapterView.OnItemSelectedListener {
         val db = Appointment_Handler(this)
         val pref = getSharedPreferences("user_details", Activity.MODE_PRIVATE)
         val user = pref.getString("userid", null)
-        val app_id = user!! + doc
+        val visitnum = visit.text.toString()
+        val app_id = "${user}_${doc}_${org}_${visitnum}"
+        toast(app_id)
 
-        val status = db.addRequest(App_Request_Model(app_id, user, doc, org, option_cat))
+        val status = db.addRequest(App_Request_Model(app_id, user!!, doc, org, option_cat))
 
         if (status > -1)
-            toast("Request For Your Appointment Has Been Sent To: $option_org")
+        //toast("Request For Your Appointment Has Been Sent To: $option_org")
         else
             toast("Sorry!! Some Error Occured. Please Retry!")
     }

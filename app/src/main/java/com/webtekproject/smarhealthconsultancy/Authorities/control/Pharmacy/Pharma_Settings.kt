@@ -1,3 +1,4 @@
+/*
 package com.webtekproject.smarhealthconsultancy.Authorities.control.Pharmacy
 
 import android.app.Activity
@@ -52,4 +53,4 @@ class Pharma_Settings : Base_Activity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
-}
+}*/

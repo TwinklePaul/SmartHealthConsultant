@@ -40,7 +40,19 @@ class SignUp_Hospital : Base_Activity() {
         if (id.trim() != " " && name.trim() != " " && location.trim() != " " && pass.trim() != " ") {
 
             val status =
-                databaseHandler.addHospital(Hospital_Model(id, name, location, avail_beds, 0, avail_OTs, 0, cont, pass))
+                databaseHandler.addHospital(
+                    Hospital_Model(
+                        id,
+                        name,
+                        location,
+                        avail_beds,
+                        0,
+                        avail_OTs,
+                        0,
+                        cont,
+                        pass
+                    )
+                )
 
 
             if (status > -1) {
@@ -62,7 +74,8 @@ class SignUp_Hospital : Base_Activity() {
 
                 }
             } else {
-                Toast.makeText(applicationContext, " Fields can't be blank ", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, " Fields can't be blank ", Toast.LENGTH_LONG)
+                    .show()
 
                 edit_ID.text.clear()
                 edit_Name.text.clear()

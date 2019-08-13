@@ -60,7 +60,8 @@ class SignUp_Clinic : Base_Activity() {
 
                 }
             } else {
-                Toast.makeText(applicationContext, " Fields can't be blank ", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, " Fields can't be blank ", Toast.LENGTH_LONG)
+                    .show()
 
                 edit_ID.text.clear()
                 edit_Name.text.clear()

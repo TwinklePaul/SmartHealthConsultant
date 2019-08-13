@@ -7,10 +7,17 @@
     <item
             android:id="@+id/more"
             android:icon="@drawable/ic_action_more"
-            android:title=" "
+            android:title=""
             app:showAsAction="always">
 
         <menu>
+
+            <!--<item
+                    android:title="Settings"
+                    app:showAsAction="never"
+                    android:id="@+id/settings"
+                    android:icon="@drawable/ic_action_settings"
+            />-->
 
             <item
                     android:id="@+id/share"
@@ -28,6 +35,12 @@
                     android:icon="@drawable/ic_action_help"
                     android:title="Help"
                     app:showAsAction="never|withText" />
+
+            <item
+                    android:id="@+id/logout"
+                    android:icon="@drawable/ic_action_profile"
+                    android:title="LogOut"
+                    app:showAsAction="never" />
         </menu>
     </item>
 </menu>

@@ -787,7 +787,13 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(
                 Clinic_Contact = cursor.getInt(cursor.getColumnIndex("Clinic_Contact"))
                 Clinic_Pass = cursor.getString(cursor.getColumnIndex("Clinic_Pass"))
 
-                val clinic = Clinic_Model(Clinic_ID, Clinic_Name, Clinic_Location, Clinic_Contact, Clinic_Pass)
+                val clinic = Clinic_Model(
+                    Clinic_ID,
+                    Clinic_Name,
+                    Clinic_Location,
+                    Clinic_Contact,
+                    Clinic_Pass
+                )
                 Clinic_List.add(clinic)
             } while (cursor.moveToNext())
         }
@@ -826,7 +832,13 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(
                 Pharma_Contact = cursor.getInt(cursor.getColumnIndex("Pharma_Contact"))
                 Pharma_Pass = cursor.getString(cursor.getColumnIndex("Pharma_Pass"))
 
-                val pharma = Pharmacy_Model(Pharma_ID, Pharma_Name, Pharma_Location, Pharma_Contact, Pharma_Pass)
+                val pharma = Pharmacy_Model(
+                    Pharma_ID,
+                    Pharma_Name,
+                    Pharma_Location,
+                    Pharma_Contact,
+                    Pharma_Pass
+                )
                 Pharma_List.add(pharma)
             } while (cursor.moveToNext())
         }
@@ -932,7 +944,8 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(
                 Beds_Available = cursor.getInt(cursor.getColumnIndex("Beds_Available"))
 
 
-                val Hosp_Room = Hosp_Room_Model(Room_ID, Hosp_ID, Room_Type, Beds_Booked, Beds_Available)
+                val Hosp_Room =
+                    Hosp_Room_Model(Room_ID, Hosp_ID, Room_Type, Beds_Booked, Beds_Available)
                 Hosp_Room_List.add(Hosp_Room)
             } while (cursor.moveToNext())
         }
@@ -1082,7 +1095,13 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(
                 Patient_Contact = cursor.getInt(cursor.getColumnIndex("Patient_Contact"))
                 Patient_Pass = cursor.getString(cursor.getColumnIndex("Patient_Pass"))
 
-                val patients = Patient_Model(Patient_ID, Patient_Name, Patient_Address, Patient_Contact, Patient_Pass)
+                val patients = Patient_Model(
+                    Patient_ID,
+                    Patient_Name,
+                    Patient_Address,
+                    Patient_Contact,
+                    Patient_Pass
+                )
                 Patient_List.add(patients)
             } while (cursor.moveToNext())
         }

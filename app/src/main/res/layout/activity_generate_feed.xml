@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
             android:id="@+id/my_toolbar"
@@ -12,70 +11,66 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
             android:textAlignment="center"
-            app:popupTheme="@style/ThemeOverlay.AppCompat">
-    </androidx.appcompat.widget.Toolbar>
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"></androidx.appcompat.widget.Toolbar>
 
     <androidx.cardview.widget.CardView
             android:id="@+id/content"
-            android:layout_below="@+id/my_toolbar"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:clickable="false"
-            android:background="@color/green"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/my_toolbar"
             android:layout_margin="10dp"
-    >
+            android:background="@color/green"
+            android:clickable="false"
+            android:foreground="?android:attr/selectableItemBackground">
+
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
                 android:layout_marginTop="5dp"
-                android:padding="10dp"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="10dp">
 
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
-                    android:orientation="vertical"
-            >
+                    android:orientation="vertical">
 
                 <EditText
-                        android:id="@+id/title"
+                        android:id="@+id/titleid"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/gapComponents"
                         android:hint="Title: "
-                        android:textSize="18sp"
-                        android:textStyle="bold"
                         android:padding="7dp"
                         android:textAlignment="textStart"
-                />
+                        android:textSize="18sp" />
 
                 <Spinner
                         android:id="@+id/spinner_cat"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="7dp"
+                        android:layout_height="35dp"
+                        android:layout_marginBottom="@dimen/gapComponents"
                         android:text="Category: "
-                        android:theme="@style/mySpinnerItemStyle"
+                        android:textAlignment="textStart"
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        android:padding="7dp"
-                        android:textAlignment="textStart"
+                        android:theme="@style/mySpinnerItemStyle"
 
-                />
+                        />
 
                 <EditText
-                        android:id="@+id/description"
+                        android:id="@+id/description_generate"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Description: "
-                        android:textSize="16sp"
-                        android:textStyle="bold"
                         android:padding="7dp"
                         android:textAlignment="textStart"
+                        android:textSize="16sp"
+                        android:textStyle="italic"
 
-                />
+                        />
 
             </LinearLayout>
         </LinearLayout>
@@ -83,18 +78,17 @@
     </androidx.cardview.widget.CardView>
 
     <Button
-            android:layout_below="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/content"
             android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
             android:layout_marginTop="@dimen/gapComponents"
-            android:text="SUBMIT"
-            android:onClick="submit"
-            android:textSize="14sp"
-            android:padding="5dp"
-            android:textStyle="bold"
-            android:textColor="@android:color/white"
             android:background="@drawable/buttonbg"
-    />
+            android:onClick="submit"
+            android:padding="5dp"
+            android:text="SUBMIT"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
 </RelativeLayout>

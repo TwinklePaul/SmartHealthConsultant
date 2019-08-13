@@ -3,21 +3,21 @@
 
     <item
             android:id="@+id/action_patient"
-            android:title="As Patient:"/>
+            android:title="As Patient:" />
 
     <item
             android:id="@+id/action_doctor"
-            android:title="As Doctor:"/>
+            android:title="As Doctor:" />
     <item
             android:id="@+id/action_hospital"
-            android:title="As Hospital"/>
+            android:title="As Hospital" />
 
     <item
             android:id="@+id/action_clinic"
-            android:title="As Clinic"/>
+            android:title="As Clinic" />
 
-    <item
+    <!--<item
             android:id="@+id/action_pharmacy"
-            android:title="As Pharmacy:"/>
+            android:title="As Pharmacy:"/>-->
 
 </menu>

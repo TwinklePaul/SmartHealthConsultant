@@ -42,7 +42,7 @@ class ActOn_Appointment : Base_Activity() {
         val pat_list = dh.viewPatient()
 
         for (i in app_list)
-            if (i.App_ID.equals(appid)) {
+            if (i.App_Id.equals(appid)) {
                 appId.text = appid.toString()
 
                 for (j in doc_list) {
@@ -90,7 +90,7 @@ class ActOn_Appointment : Base_Activity() {
 
 
             for (i in app_list) {
-                if (i.App_ID.equals(appid)) {
+                if (i.App_Id.equals(appid)) {
                     patient = i.Patient_ID
                     org = i.Org_ID
                     option_cat = i.Org_Type
@@ -100,7 +100,15 @@ class ActOn_Appointment : Base_Activity() {
 
             if (updateId.trim() != " " && updateDoc.trim() != " ") {
                 val status =
-                    databaseHandler.updaterequest(App_Request_Model(updateId, patient, updateDoc, org, option_cat))
+                    databaseHandler.updaterequest(
+                        App_Request_Model(
+                            updateId,
+                            patient,
+                            updateDoc,
+                            org,
+                            option_cat
+                        )
+                    )
 
                 if (status > -1) {
                     Toast.makeText(applicationContext, " Record Updated", Toast.LENGTH_LONG).show()
@@ -144,7 +152,11 @@ class ActOn_Appointment : Base_Activity() {
             if (status > -1) {
                 Toast.makeText(applicationContext, " Record Deleted", Toast.LENGTH_LONG).show()
             } else {
-                Toast.makeText(applicationContext, " Id or Email can't be blank ", Toast.LENGTH_LONG).show()
+                Toast.makeText(
+                    applicationContext,
+                    " Id or Email can't be blank ",
+                    Toast.LENGTH_LONG
+                ).show()
             }
         })
 
@@ -195,7 +207,7 @@ class ActOn_Appointment : Base_Activity() {
         val user = pref.getString("userid", null)
 
         for (i in app_list)
-            if (i.App_ID.equals(appid)) {
+            if (i.App_Id.equals(appid)) {
                 doc_id = i.Dr_ID
                 pat_id = i.Patient_ID
                 org_cat = i.Org_Type

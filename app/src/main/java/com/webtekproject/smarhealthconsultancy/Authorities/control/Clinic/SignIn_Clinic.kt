@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.view.View
 import com.webtekproject.smarhealthconsultancy.Authorities.control.Create_Feed
 import com.webtekproject.smarhealthconsultancy.Authorities.control.Profile_Page_Authority
+import com.webtekproject.smarhealthconsultancy.Common.Feedback
 import com.webtekproject.smarhealthconsultancy.Common.SignIn_Activity
 import com.webtekproject.smarhealthconsultancy.Common.View_Feed
 import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Base_Activity
@@ -80,6 +81,11 @@ class SignIn_Clinic : Base_Activity() {
 
     fun bookappointment(view: View) {
         intent = Intent(this, CheckAppointment_Clinic::class.java)
+        startActivity(intent)
+    }
+
+    fun giveFeedback(view: View) {
+        intent = Intent(this, Feedback::class.java)
         startActivity(intent)
     }
 

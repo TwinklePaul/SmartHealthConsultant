@@ -1,17 +1,13 @@
 package com.webtekproject.smarhealthconsultancy.Authorities.control.Doctor
 
 import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
-import com.webtekproject.smarhealthconsultancy.Authorities.control.Profile_Page_Authority
-import com.webtekproject.smarhealthconsultancy.Common.SignIn_Activity
 import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Base_Activity
 import com.webtekproject.smarhealthconsultancy.DeveloperFiles.DatabaseHandler
 import com.webtekproject.smarhealthconsultancy.Model_Classes.Doc_Clinic_Model
@@ -123,7 +119,11 @@ class Doc_Settings : Base_Activity(), AdapterView.OnItemSelectedListener {
 
         for (i in doc_hosp_list) {
             if (i.Dr_ID.equals(user) && i.Hosp_ID.equals(hid)) {
-                Toast.makeText(applicationContext, " Hospital Record Exists. Retry", Toast.LENGTH_LONG).show()
+                Toast.makeText(
+                    applicationContext,
+                    " Hospital Record Exists. Retry",
+                    Toast.LENGTH_LONG
+                ).show()
                 flag = 1
                 break
             }
@@ -148,7 +148,8 @@ class Doc_Settings : Base_Activity(), AdapterView.OnItemSelectedListener {
 
         for (i in doc_clinic_list) {
             if (i.Dr_ID.equals(user) && i.Clinic_ID.equals(cid)) {
-                Toast.makeText(applicationContext, "Clinic Record Exists. Retry", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "Clinic Record Exists. Retry", Toast.LENGTH_LONG)
+                    .show()
                 cflag = 1
                 break
             }
@@ -387,7 +388,8 @@ class Doc_Settings : Base_Activity(), AdapterView.OnItemSelectedListener {
                         spinneroption2 = this.Option2
                         spinneroption2!!.onItemSelectedListener = this
 
-                        val ab = ArrayAdapter(this, android.R.layout.simple_spinner_item, clinicName)
+                        val ab =
+                            ArrayAdapter(this, android.R.layout.simple_spinner_item, clinicName)
                         ab.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
                         spinneroption2!!.adapter = ab
@@ -427,11 +429,11 @@ class Doc_Settings : Base_Activity(), AdapterView.OnItemSelectedListener {
 
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.settingsmenu, menu)
+        menuInflater.inflate(R.menu.defaultmenu, menu)
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    /*override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val pref = getSharedPreferences("user_details", Activity.MODE_PRIVATE)
         return when (item.itemId) {
             R.id.settings -> {
@@ -454,5 +456,5 @@ class Doc_Settings : Base_Activity(), AdapterView.OnItemSelectedListener {
             }
             else -> super.onOptionsItemSelected(item)
         }
-    }
+    }*/
 }

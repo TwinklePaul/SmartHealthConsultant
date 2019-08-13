@@ -47,19 +47,13 @@ class Profile_Page_Patient : Base_Activity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.settingsmenu, menu)
+        menuInflater.inflate(R.menu.patient_settings_menu, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         var pref = getSharedPreferences("user_details", MODE_PRIVATE)
         return when (item.itemId) {
-
-            R.id.settings -> {
-                intent = Intent(this, Patient_Settings::class.java)
-                startActivity(intent)
-                return true
-            }
 
             R.id.logout -> {
                 val editor = pref.edit()

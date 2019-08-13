@@ -1,3 +1,4 @@
+/*
 package com.webtekproject.smarhealthconsultancy.Authorities.control.Pharmacy
 
 import android.app.Activity
@@ -71,4 +72,4 @@ class SignUp_Pharmacy : Base_Activity() {
             }
         }
     }
-}
+}*/

@@ -3,10 +3,10 @@
 
     <item
             android:id="@+id/action_wa"
-            android:title="WhatsApp"/>
+            android:title="WhatsApp" />
 
     <item
             android:id="@+id/action_msg"
-            android:title="More Options"/>
+            android:title="More Options" />
 
 </menu>

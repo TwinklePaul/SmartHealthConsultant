@@ -23,7 +23,6 @@ class FeedDatabase(context: Context) : SQLiteOpenHelper(
         private val KEY_FEED_TITLE = "Feed_Title"
         private val KEY_FEED_CATEGORY = "Feed_Cat"
         private val KEY_FEED_DESC = "Feed_Desc"
-        private val KEY_FEED_IMG = "Feed_Img"
     }
 
     override fun onCreate(db: SQLiteDatabase?) {
@@ -31,7 +30,7 @@ class FeedDatabase(context: Context) : SQLiteOpenHelper(
 
         //creating Table Doctor
         val CREATE_TABLE_FEED = ("CREATE TABLE " + TABLE_FEED + " (" +
-                KEY_FEED_ID + " TEXT PRIMARY KEY, " + KEY_FEED_TITLE + " TEXT," + KEY_FEED_CATEGORY + " TEXT, " + KEY_FEED_DESC + " TEXT," + KEY_FEED_IMG + "INTEGER " + ")")
+                KEY_FEED_ID + " TEXT PRIMARY KEY, " + KEY_FEED_TITLE + " TEXT," + KEY_FEED_CATEGORY + " TEXT, " + KEY_FEED_DESC + " TEXT" + ")")
 
         db?.execSQL(CREATE_TABLE_FEED)
     }
@@ -54,7 +53,6 @@ class FeedDatabase(context: Context) : SQLiteOpenHelper(
         contentValues.put(KEY_FEED_TITLE, feed.Feed_Title)
         contentValues.put(KEY_FEED_CATEGORY, feed.Feed_Cat)
         contentValues.put(KEY_FEED_DESC, feed.Feed_Desc)
-        contentValues.put(KEY_FEED_IMG, feed.Feed_Img)
 
 
         val success = db.insert(TABLE_FEED, null, contentValues)
@@ -88,9 +86,8 @@ class FeedDatabase(context: Context) : SQLiteOpenHelper(
                 Feed_Title = cursor.getString(cursor.getColumnIndex("Feed_Title"))
                 Feed_Cat = cursor.getString(cursor.getColumnIndex("Feed_Cat"))
                 Feed_Desc = cursor.getString(cursor.getColumnIndex("Feed_Desc"))
-                Feed_Img = cursor.getInt(cursor.getColumnIndex("Feed_Img"))
 
-                val feed = FeedModel(Feed_ID, Feed_Title, Feed_Cat, Feed_Desc, Feed_Img)
+                val feed = FeedModel(Feed_ID, Feed_Title, Feed_Cat, Feed_Desc)
                 Feed_List.add(feed)
             } while (cursor.moveToNext())
         }

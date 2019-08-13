@@ -3,6 +3,7 @@ package com.webtekproject.smarhealthconsultancy.Authorities.control.Hospital
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import com.webtekproject.smarhealthconsultancy.Common.ActOn_Appointment
 import com.webtekproject.smarhealthconsultancy.DeveloperFiles.AppointmentAdapter
 import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Appointment_Handler
@@ -10,6 +11,7 @@ import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Base_Activity
 import com.webtekproject.smarhealthconsultancy.DeveloperFiles.DatabaseHandler
 import com.webtekproject.smarhealthconsultancy.R
 import kotlinx.android.synthetic.main.activity_checkappointment_clinic.*
+import org.jetbrains.anko.longToast
 import org.jetbrains.anko.toast
 
 class CheckAppointment_Hospital : Base_Activity() {
@@ -42,12 +44,19 @@ class CheckAppointment_Hospital : Base_Activity() {
         val pref = getSharedPreferences("user_details", Activity.MODE_PRIVATE)
         val user = pref.getString("userid", null)
 
+        if (app_list.isEmpty()) {
+            listapp.visibility = View.GONE
+            longToast("No Appointments Yet!!")
+        } else {
+            org_confirm_app!!.visibility = View.GONE
+        }
+
         for (i in app_list) {
             if (i.Org_Type.equals("Hospital") && i.Org_ID.equals(user)) {
 
                 doc_id = i.Dr_ID
                 pat_id = i.Patient_ID
-                app_id.add(i.App_ID)
+                app_id.add(i.App_Id)
 
                 for (j in doc_list)
                     if (j.Dr_ID.equals(doc_id)) {

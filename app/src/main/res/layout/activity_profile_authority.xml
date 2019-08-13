@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#fcfcfc"
-        android:theme="@android:style/Theme.Material.Light.NoActionBar.Fullscreen"
->
+        android:orientation="vertical"
+        android:theme="@android:style/Theme.Material.Light.NoActionBar.Fullscreen">
 
     <androidx.appcompat.widget.Toolbar
             android:id="@+id/my_toolbar"
@@ -15,167 +13,163 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
             android:textAlignment="center"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark">
-    </androidx.appcompat.widget.Toolbar>
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"></androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/gapComponents"
+            android:layout_marginBottom="@dimen/button_gap"
             android:clipToPadding="false"
             android:gravity="center"
-            android:layout_marginBottom="@dimen/button_gap"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
-                android:foreground="?android:attr/selectableItemBackground"
-                android:clickable="false"
                 android:layout_width="160dp"
                 android:layout_height="190dp"
                 android:layout_margin="10dp"
+                android:clickable="false"
+                android:foreground="?android:attr/selectableItemBackground"
                 android:onClick="viewFeed">
 
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="vertical">
 
                 <ImageView
-                        android:id="@+id/img_profile"
                         android:layout_width="113dp"
                         android:layout_height="105dp"
                         android:layout_below="@+id/my_toolbar"
                         android:layout_centerHorizontal="true"
-                        app:srcCompat="@drawable/doctor_profile"
                         android:background="@drawable/imagebg"
                         android:padding="6dp"
-                />
+                        app:srcCompat="@drawable/doctor_profile" />
 
                 <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:background="@color/lightgray"
-                        android:layout_margin="10dp"/>
+                        android:layout_margin="10dp"
+                        android:background="@color/lightgray" />
 
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textStyle="bold"
                         android:layout_marginTop="10dp"
-                        android:text="Profile Pic"/>
+                        android:text="Profile Pic"
+                        android:textStyle="bold" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
-            android:foreground="?android:attr/selectableItemBackground"
-            android:clickable="true"
             android:layout_width="match_parent"
             android:layout_height="380dp"
             android:layout_margin="10dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
             android:onClick="viewFeed">
 
-        <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content">
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
             <TableLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/button_editImg"
-            >
+                    android:layout_below="@+id/button_editImg">
+
                 <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="@dimen/slim_padding"
-                >
+                        android:layout_marginHorizontal="@dimen/slim_padding">
+
                     <TextView
+                            android:layout_width="120dp"
+                            android:layout_marginEnd="16dp"
+                            android:background="@drawable/text_astitle"
+                            android:padding="@dimen/slim_padding"
                             android:text="Name:"
                             android:textSize="14sp"
-                            android:textStyle="bold"
-                            android:layout_marginEnd="16dp"
-                            android:layout_width="120dp"
-                            android:padding="@dimen/slim_padding"
-                            android:background="@drawable/text_astitle"
-                    />
+                            android:textStyle="bold" />
 
                     <TextView
                             android:id="@+id/showName"
-                            android:text="Name"
-                            android:textSize="14sp"
+                            android:layout_width="222dp"
                             android:padding="@dimen/slim_padding"
-                            android:layout_width="222dp"/>
+                            android:text="Name"
+                            android:textSize="14sp" />
                 </TableRow>
 
                 <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="@dimen/slim_padding"
-                        android:layout_marginTop="@dimen/button_gap"
-                >
+                        android:layout_marginTop="@dimen/button_gap">
+
                     <TextView
+                            android:layout_width="120dp"
+                            android:layout_marginEnd="16dp"
+                            android:background="@drawable/text_astitle"
+                            android:padding="@dimen/slim_padding"
                             android:text="ID:"
                             android:textSize="14sp"
-                            android:textStyle="bold"
-                            android:layout_marginEnd="16dp"
-                            android:layout_width="120dp"
-                            android:padding="@dimen/slim_padding"
-                            android:background="@drawable/text_astitle"
-                    />
+                            android:textStyle="bold" />
 
                     <TextView
                             android:id="@+id/showID"
-                            android:text="ID:"
-                            android:textSize="14sp"
+                            android:layout_width="match_parent"
                             android:padding="@dimen/slim_padding"
-                            android:layout_width="match_parent"/>
+                            android:text="ID:"
+                            android:textSize="14sp" />
                 </TableRow>
 
                 <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="@dimen/slim_padding"
-                        android:layout_marginTop="@dimen/button_gap"
-                >
+                        android:layout_marginTop="@dimen/button_gap">
+
                     <TextView
+                            android:layout_width="120dp"
+                            android:layout_marginEnd="16dp"
+                            android:background="@drawable/text_astitle"
+                            android:padding="@dimen/slim_padding"
                             android:text="Contact:"
                             android:textSize="14sp"
-                            android:textStyle="bold"
-                            android:layout_marginEnd="16dp"
-                            android:layout_width="120dp"
-                            android:padding="@dimen/slim_padding"
-                            android:background="@drawable/text_astitle"
-                    />
+                            android:textStyle="bold" />
 
                     <TextView
                             android:id="@+id/showcont"
-                            android:text="Contact:"
-                            android:textSize="14sp"
+                            android:layout_width="match_parent"
                             android:padding="@dimen/slim_padding"
-                            android:layout_width="match_parent"/>
+                            android:text="Contact:"
+                            android:textSize="14sp" />
                 </TableRow>
 
                 <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="@dimen/slim_padding"
-                        android:layout_marginTop="@dimen/button_gap"
-                >
+                        android:layout_marginTop="@dimen/button_gap">
+
                     <TextView
+                            android:layout_width="120dp"
+                            android:layout_marginEnd="16dp"
+                            android:background="@drawable/text_astitle"
+                            android:padding="@dimen/slim_padding"
                             android:text="Other Info:"
                             android:textSize="14sp"
-                            android:textStyle="bold"
-                            android:layout_marginEnd="16dp"
-                            android:layout_width="120dp"
-                            android:padding="@dimen/slim_padding"
-                            android:background="@drawable/text_astitle"
-                    />
+                            android:textStyle="bold" />
 
                     <TextView
                             android:id="@+id/showinfo"
-                            android:text="info:"
-                            android:textSize="14sp"
+                            android:layout_width="match_parent"
                             android:padding="@dimen/slim_padding"
-                            android:layout_width="match_parent"/>
+                            android:text="info:"
+                            android:textSize="14sp" />
                 </TableRow>
 
             </TableLayout>
@@ -183,25 +177,24 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-            android:foreground="?android:attr/selectableItemBackground"
-            android:clickable="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/gapComponents"
             android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
-            app:cardElevation="@dimen/slim_padding"
+            android:layout_marginBottom="@dimen/gapComponents"
+            android:clickable="false"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:onClick="viewFeed"
             app:cardCornerRadius="15dp"
-            android:onClick="viewFeed">
+            app:cardElevation="@dimen/slim_padding">
 
 
         <Button
                 android:id="@+id/button_editTexts"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/buttonbg"
-                android:text="Edit Profile Info"
                 android:layout_alignParentBottom="true"
-        />
+                android:background="@drawable/buttonbg"
+                android:text="Edit Profile Info" />
     </androidx.cardview.widget.CardView>
 
 </LinearLayout>

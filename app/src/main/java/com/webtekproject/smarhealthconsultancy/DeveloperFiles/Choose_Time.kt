@@ -11,7 +11,11 @@ import com.webtekproject.smarhealthconsultancy.Common.ActOn_Appointment
 import com.webtekproject.smarhealthconsultancy.R
 
 class Choose_Time : DialogFragment() {
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         val view = inflater.inflate(R.layout.activity_choose__time, container, false)
         val buTime = view.findViewById<Button>(R.id.button_time)
         val chooseTime: TimePicker = view.findViewById(R.id.ChooseTime)

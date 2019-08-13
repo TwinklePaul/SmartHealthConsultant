@@ -1,4 +1,10 @@
 package com.webtekproject.smarhealthconsultancy.Model_Classes
 
 class App_Request_Model
-    (val App_ID: String, val Patient_ID: String, val Dr_ID: String, val Org_ID: String, val Org_Type: String)
+    (
+    var App_Id: String,
+    var Patient_ID: String,
+    var Dr_ID: String,
+    var Org_ID: String,
+    var Org_Type: String
+)

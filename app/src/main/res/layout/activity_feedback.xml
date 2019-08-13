@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:orientation="vertical"
-        android:theme="@android:style/Theme.Material.Light.NoActionBar.Fullscreen"
-        android:background="@android:color/white"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:theme="@android:style/Theme.Material.Light.NoActionBar.Fullscreen">
 
     <androidx.appcompat.widget.Toolbar
             android:id="@+id/my_toolbar"
@@ -14,45 +13,41 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@android:color/transparent"
             android:textAlignment="textStart"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark">
-    </androidx.appcompat.widget.Toolbar>
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"></androidx.appcompat.widget.Toolbar>
 
     <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
             android:layout_marginTop="44dp"
             android:layout_marginBottom="@dimen/gapComponents"
-            android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
-            app:cardElevation="3dp"
             android:padding="16dp"
-            app:cardCornerRadius="15dp"
             app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="3dp"
 
-    >
+            >
 
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-        >
+                android:orientation="vertical">
 
             <TextView
-                    android:id="@+id/title_rateus"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="@dimen/slim_padding"
                     android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
                     android:elevation="5dp"
-                    android:textColor="@color/colorAccent"
-
+                    android:padding="@dimen/slim_padding"
                     android:text="Rate Us:  "
+
+                    android:textColor="@color/colorAccent"
                     android:textSize="14dp"
-                    android:textStyle="bold"
-            />
+                    android:textStyle="bold" />
 
             <View
                     android:layout_width="match_parent"
-                    android:layout_height="2dp"/>
+                    android:layout_height="2dp" />
 
             <RatingBar
                     android:id="@+id/rate"
@@ -60,10 +55,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="60dp"
                     android:layout_marginTop="@dimen/button_gap"
-                    android:stepSize="1"
+                    android:isIndicator="false"
                     android:numStars="5"
 
-                    android:isIndicator="false"/>
+                    android:stepSize="1" />
 
 
         </LinearLayout>
@@ -73,47 +68,45 @@
     <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
             android:layout_marginTop="44dp"
             android:layout_marginBottom="@dimen/gapComponents"
-            android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
             android:padding="16dp"
-            app:cardElevation="3dp"
-            app:cardCornerRadius="15dp"
             app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="3dp"
 
-    >
+            >
 
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-        >
+                android:orientation="vertical">
 
 
             <TextView
                     android:id="@+id/title_addinfo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="@dimen/slim_padding"
                     android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
                     android:layout_marginTop="@dimen/button_gap"
                     android:elevation="5dp"
-                    android:textColor="@color/colorAccent"
+                    android:padding="@dimen/slim_padding"
                     android:text="Comments:  "
+                    android:textColor="@color/colorAccent"
                     android:textSize="14dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
             <View
                     android:layout_width="match_parent"
-                    android:layout_height="2dp"/>
+                    android:layout_height="2dp" />
 
             <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/title_addinfo"
                     android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
-                    android:hint="Provide Your Valuable Feedback Over Here:"
-            />
+                    android:hint="Provide Your Valuable Feedback Over Here:" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -124,8 +117,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
             android:background="@drawable/buttonoutline"
-            android:text="Submit"
             android:onClick="submit"
-    />
+            android:text="Submit" />
 
 </LinearLayout>

@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        android:theme="@android:style/Theme.Material.Light.NoActionBar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:background="#D4E157"
+        android:orientation="vertical"
+        android:theme="@android:style/Theme.Material.Light.NoActionBar"
         tools:context=".Common.SignIn_Activity">
 
     <androidx.appcompat.widget.Toolbar
@@ -17,44 +16,41 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@android:color/transparent"
             android:textAlignment="center"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark">
-    </androidx.appcompat.widget.Toolbar>
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"></androidx.appcompat.widget.Toolbar>
 
 
     <ImageView
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            app:srcCompat="@drawable/icon_large"
-    />
+            app:srcCompat="@drawable/icon_large" />
 
     <androidx.cardview.widget.CardView
-            app:cardElevation="3dp"
-            app:cardBackgroundColor="#D4E157"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="@dimen/gapComponents">
+            android:layout_marginBottom="@dimen/gapComponents"
+            app:cardBackgroundColor="#D4E157"
+            app:cardElevation="3dp">
 
         <LinearLayout
-                android:gravity="center"
-                android:orientation="vertical"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_height="wrap_content">
+                android:gravity="center"
+                android:orientation="vertical">
 
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="@dimen/slim_padding"
                     android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
                     android:layout_marginTop="@dimen/gapComponents"
                     android:elevation="5dp"
+                    android:padding="@dimen/slim_padding"
 
                     android:text="Choose Your Suitable Option: "
                     android:textColor="@color/colorAnalogous1"
                     android:textSize="16dp"
-                    android:textStyle="bold"
-            />
+                    android:textStyle="bold" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -63,32 +59,29 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
-            android:hint="Enter Your User_ID"
-    />
+            android:hint="Enter Your User_ID" />
 
     <EditText
             android:id="@+id/edittxt_pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
-            android:inputType="textPassword"
             android:layout_marginVertical="@dimen/button_gap"
             android:hint="Enter Your Password"
-    />
+            android:inputType="textPassword" />
 
     <Button
             android:id="@+id/button_signIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/button_gap"
             android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
-            android:padding="@dimen/slim_padding"
-
+            android:layout_marginTop="@dimen/button_gap"
             android:background="@drawable/buttonoutline"
-            android:textColor="#000"
-            android:textStyle="bold"
+
+            android:padding="@dimen/slim_padding"
             android:text="Sign In"
-    />
+            android:textColor="#000"
+            android:textStyle="bold" />
 
     <Button
             android:id="@+id/button_signUp"
@@ -96,13 +89,12 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
             android:layout_marginTop="@dimen/gapComponents"
-            android:padding="10dp"
-
             android:background="@drawable/buttonbg"
-            android:textColor="#fff"
-            android:textStyle="bold"
+
+            android:padding="10dp"
             android:text="Sign Up:"
-    />
+            android:textColor="#fff"
+            android:textStyle="bold" />
 
 
 </LinearLayout>

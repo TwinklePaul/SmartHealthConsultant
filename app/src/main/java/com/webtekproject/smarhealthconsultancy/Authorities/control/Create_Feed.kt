@@ -3,7 +3,9 @@ package com.webtekproject.smarhealthconsultancy.Authorities.control
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.*
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import com.webtekproject.smarhealthconsultancy.Common.View_Feed
 import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Base_Activity
 import com.webtekproject.smarhealthconsultancy.DeveloperFiles.FeedDatabase
@@ -11,6 +13,7 @@ import com.webtekproject.smarhealthconsultancy.Model_Classes.FeedModel
 import com.webtekproject.smarhealthconsultancy.R
 import kotlinx.android.synthetic.main.activity_generate_feed.*
 import org.jetbrains.anko.toast
+
 
 class Create_Feed : Base_Activity(), AdapterView.OnItemSelectedListener {
 
@@ -24,18 +27,10 @@ class Create_Feed : Base_Activity(), AdapterView.OnItemSelectedListener {
         "Health Alerts",
         "Miscellaneous"
     )
-    val img_Array = arrayOf<Int>(
-        R.drawable.advt,
-        R.drawable.fitness_solns,
-        R.drawable.devs,
-        R.drawable.health_alert,
-        R.drawable.health
-    )
 
     var categoryText = ""
     var titleText = ""
     var subtitleText = ""
-    var img: Int = -1
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,29 +50,32 @@ class Create_Feed : Base_Activity(), AdapterView.OnItemSelectedListener {
         spl.setDropDownViewResource(android.R.layout.simple_spinner_item)
         spinner!!.adapter = spl
 
-        titleText = findViewById<EditText>(R.id.title).text.toString()
-        val imageView = findViewById<ImageView>(R.id.icon)
-        subtitleText = findViewById<EditText>(R.id.description).text.toString()
+
     }
 
     override fun onNothingSelected(p0: AdapterView<*>?) {}
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         categoryText = cat[position]
-        img = img_Array[position]
     }
 
     fun submit(view: View) {
 
         val db = FeedDatabase(this)
 
-        val ID = "${titleText}_${categoryText}"
+        titleText = titleid.text.toString()
+        titleText.toUpperCase()
+        subtitleText = description_generate.text.toString()
+
+        val id_feed = "$titleText _ $categoryText"
 
         if (titleText.trim() != " " && subtitleText.trim() != " " && categoryText.trim() != "Choose Category: ") {
-            val status = db.addFeed(FeedModel(ID, titleText, categoryText, subtitleText, img))
+            val status = db.addFeed(FeedModel(id_feed, titleText, categoryText, subtitleText))
 
             if (status > -1) {
-                toast(" Record Saved")
+                toast(" Record Saved:  $id_feed, $titleText, $subtitleText")
+                titleid.text.clear()
+                description_generate.text.clear()
 
                 intent = Intent(this, View_Feed::class.java)
                 startActivity(intent)

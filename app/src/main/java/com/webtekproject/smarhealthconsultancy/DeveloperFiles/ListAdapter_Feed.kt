@@ -22,9 +22,9 @@ class ListAdapter_Feed(
         val inflater = context.layoutInflater
         val rowView = inflater.inflate(R.layout.layout_feedpost, null, true)
 
-        val titleText = rowView.findViewById<TextView>(R.id.title)
+        val titleText = rowView.findViewById<TextView>(R.id.title_feed)
         val imageView = rowView.findViewById<ImageView>(R.id.icon)
-        val subtitleText = rowView.findViewById<TextView>(R.id.description)
+        val subtitleText = rowView.findViewById<TextView>(R.id.description_feed)
         val categoryText = rowView.findViewById<TextView>(R.id.cat)
 
         titleText.text = title[position]

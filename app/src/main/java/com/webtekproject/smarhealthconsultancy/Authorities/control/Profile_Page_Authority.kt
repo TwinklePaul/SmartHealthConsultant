@@ -10,8 +10,8 @@ import com.webtekproject.smarhealthconsultancy.Authorities.control.Doctor.Doc_Se
 import com.webtekproject.smarhealthconsultancy.Authorities.control.Doctor.SignUp_Doctor
 import com.webtekproject.smarhealthconsultancy.Authorities.control.Hospital.Hospital_Settings
 import com.webtekproject.smarhealthconsultancy.Authorities.control.Hospital.SignUp_Hospital
-import com.webtekproject.smarhealthconsultancy.Authorities.control.Pharmacy.Pharma_Settings
-import com.webtekproject.smarhealthconsultancy.Authorities.control.Pharmacy.SignUp_Pharmacy
+/*import com.webtekproject.smarhealthconsultancy.Authorities.control.Pharmacy.Pharma_Settings
+import com.webtekproject.smarhealthconsultancy.Authorities.control.Pharmacy.SignUp_Pharmacy*/
 import com.webtekproject.smarhealthconsultancy.Common.SignIn_Activity
 import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Base_Activity
 import com.webtekproject.smarhealthconsultancy.DeveloperFiles.DatabaseHandler
@@ -64,7 +64,8 @@ class Profile_Page_Authority : Base_Activity() {
 
                             for (k in hosp_list) {
                                 if ((k.Hosp_ID).equals(hospid)) {
-                                    str = str + "Name: \t" + k.Hosp_Name + " \t\tLocation: \t" + k.Hosp_Location + "\n"
+                                    str =
+                                        str + "Name: \t" + k.Hosp_Name + " \t\tLocation: \t" + k.Hosp_Location + "\n"
 
                                     break
                                 }
@@ -152,7 +153,7 @@ class Profile_Page_Authority : Base_Activity() {
             intent = Intent(this, SignUp_Clinic::class.java)
         }
 
-        if (pref.getString("category", null) == "Pharmacy") {
+        /*if (pref.getString("category", null) == "Pharmacy") {
 
             val db = DatabaseHandler(this)
             val pharma_list = db.viewPharmacy()
@@ -171,7 +172,7 @@ class Profile_Page_Authority : Base_Activity() {
                 }
             }
             intent = Intent(this, SignUp_Pharmacy::class.java)
-        }
+        }*/
 
         button_editTexts.setOnClickListener {
             startActivity(intent)
@@ -200,11 +201,11 @@ class Profile_Page_Authority : Base_Activity() {
                         if (pref.getString("category", null) == "Clinic") {
                             intent = Intent(this, Clinic_Settings::class.java)
                             startActivity(intent)
-                        } else
+                        }/* else
                             if (pref.getString("category", null) == "Pharmacy") {
                                 intent = Intent(this, Pharma_Settings::class.java)
                                 startActivity(intent)
-                            }
+                            }*/
                 return true
             }
 

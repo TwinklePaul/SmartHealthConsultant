@@ -50,11 +50,11 @@ class Check_Appointment : Base_Activity() {
             if (i.Patient_ID.equals(user)) {
 
                 doc_id = i.Dr_ID
-                app_id.add(i.App_ID)
+                app_id.add(i.App_Id)
                 pat_name.add(user)
 
                 for (j in doc_app)
-                    if (j.Patient_ID.equals(user) && j.App_Id.equals(i.App_ID))
+                    if (j.Patient_ID.equals(user) && j.App_Id.equals(i.App_Id))
                         start_at.add(j.Start_at)
 
 
@@ -84,7 +84,17 @@ class Check_Appointment : Base_Activity() {
 
 
         val myListAdapter =
-            Schedule_Adapter(this, app_id, doc_name, doc_cont, pat_name, org_name, org_loc, org_type, start_at)
+            Schedule_Adapter(
+                this,
+                app_id,
+                doc_name,
+                doc_cont,
+                pat_name,
+                org_name,
+                org_loc,
+                org_type,
+                start_at
+            )
 
         listconfirmed.adapter = myListAdapter
 

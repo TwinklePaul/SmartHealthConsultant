@@ -8,7 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.webtekproject.smarhealthconsultancy.Authorities.control.Clinic.SignIn_Clinic
 import com.webtekproject.smarhealthconsultancy.Authorities.control.Doctor.SignIn_Doctor
 import com.webtekproject.smarhealthconsultancy.Authorities.control.Hospital.SignIn_Hospital
-import com.webtekproject.smarhealthconsultancy.Authorities.control.Pharmacy.SignIn_Pharmacy
+/*
+import com.webtekproject.smarhealthconsultancy.Authorities.control.Pharmacy.SignIn_Pharmacy*/
 import com.webtekproject.smarhealthconsultancy.Common.SignIn_Activity
 import com.webtekproject.smarhealthconsultancy.Patient.SignIn_Patient
 
@@ -40,15 +41,16 @@ class MainActivity : AppCompatActivity() {
                         if (cat == "Clinic") {
                             val mainIntent = Intent(this@MainActivity, SignIn_Clinic::class.java)
                             this@MainActivity.startActivity(mainIntent)
-                        } else
+                        } /*else
                             if (cat == "Pharmacy") {
                                 val mainIntent = Intent(this@MainActivity, SignIn_Pharmacy::class.java)
                                 this@MainActivity.startActivity(mainIntent)
-                            } else
-                                if (cat == "Patient") {
-                                    val mainIntent = Intent(this@MainActivity, SignIn_Patient::class.java)
-                                    this@MainActivity.startActivity(mainIntent)
-                                }
+                            } */ else
+                            if (cat == "Patient") {
+                                val mainIntent =
+                                    Intent(this@MainActivity, SignIn_Patient::class.java)
+                                this@MainActivity.startActivity(mainIntent)
+                            }
                 this@MainActivity.finish()
             }, screen_timeout)
         } else {

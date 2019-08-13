@@ -163,7 +163,10 @@ class Hospital_Settings : Base_Activity(), AdapterView.OnItemSelectedListener {
         val doc_list = db.viewDoctors()
 
         for (i in doc_list) {
-            if (i.Dr_Speciality.equals(option_sp) && i.Dr_Qualification.equals(option_qu) && i.Dr_Name.equals(option_nm)) {
+            if (i.Dr_Speciality.equals(option_sp) && i.Dr_Qualification.equals(option_qu) && i.Dr_Name.equals(
+                    option_nm
+                )
+            ) {
                 val status = db.addDoc_Hosp(Doc_Hosp_Model(i.Dr_ID, user!!))
                 if (status > -1) {
                     toast(" Record Saved")

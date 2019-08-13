@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.webtekproject.smarhealthconsultancy">
+        package="com.webtekproject.smarhealthconsultancy">
 
     <application
             android:allowBackup="true"
@@ -9,34 +9,53 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".Patient.Check_Appointment">
-        </activity>
-        <activity android:name=".DeveloperFiles.Choose_Time">
-        </activity>
-        <activity android:name=".Common.ActOn_Appointment">
-        </activity>
+
+
+        <activity android:name=".Common.ActOn_Appointment"></activity>
+
+
+        <activity android:name=".Patient.Patient_Settings"></activity>
         <activity
-                android:name=".Authorities.control.Hospital.CheckAppointment_Hospital"
-                android:label="View Appointment: ">
-        </activity>
-        <activity android:name=".Patient.Patient_Settings">
-        </activity>
+                android:name=".Patient.Check_Appointment"
+                android:label="Confirmed Appointments"
+                android:parentActivityName=".Common.SignIn_Activity"></activity>
+        <activity
+                android:name=".Patient.SignUp_Patient"
+                android:label="SignUp as Patient:"
+                android:parentActivityName=".Common.SignIn_Activity"></activity>
+        <activity
+                android:name=".Patient.SignIn_Patient"
+                android:label="My DashBoard:"
+                android:parentActivityName=".Common.SignIn_Activity"></activity>
+        <activity
+                android:name=".Patient.Get_Appointment"
+                android:label="Choose Your Appointment:"
+                android:parentActivityName=".Patient.SignIn_Patient"></activity>
+
+        <activity
+                android:name=".Patient.Profile_Page_Patient"
+                android:label="Profile Page:"
+                android:parentActivityName=".Patient.SignIn_Patient"></activity>
+
+
         <activity
                 android:name=".Authorities.control.Clinic.Clinic_Settings"
                 android:label="Settings"
-                android:parentActivityName=".Authorities.control.Profile_Page_Authority">
-        </activity>
+                android:parentActivityName=".Authorities.control.Profile_Page_Authority"></activity>
         <activity
                 android:name=".Authorities.control.Clinic.SignIn_Clinic"
                 android:label="Clinic"
-                android:parentActivityName=".Common.SignIn_Activity">
-        </activity>
+                android:parentActivityName=".Common.SignIn_Activity"></activity>
         <activity
                 android:name=".Authorities.control.Clinic.SignUp_Clinic"
                 android:label="SignUp as Clinic:"
-                android:parentActivityName=".Common.SignIn_Activity">
-        </activity>
+                android:parentActivityName=".Common.SignIn_Activity"></activity>
         <activity
+                android:name=".Authorities.control.Clinic.CheckAppointment_Clinic"
+                android:label="Search Page:"
+                android:parentActivityName=".Patient.SignIn_Patient"></activity>
+
+        <!--<activity
                 android:name=".Authorities.control.Pharmacy.Pharma_Settings"
                 android:label="Settings"
                 android:parentActivityName=".Authorities.control.Profile_Page_Authority">
@@ -50,104 +69,84 @@
                 android:name=".Authorities.control.Pharmacy.SignUp_Pharmacy"
                 android:label="SignUp as Pharmacy:"
                 android:parentActivityName=".Common.SignIn_Activity">
-        </activity>
+        </activity>-->
+
         <activity
                 android:name=".Authorities.control.Doctor.SignIn_Doctor"
                 android:label="Doctor"
-                android:parentActivityName=".Common.SignIn_Activity">
-        </activity>
+                android:parentActivityName=".Common.SignIn_Activity"></activity>
         <activity
                 android:name=".Authorities.control.Doctor.Doc_Settings"
                 android:label="Settings"
-                android:parentActivityName=".Authorities.control.Profile_Page_Authority">
-        </activity>
+                android:parentActivityName=".Authorities.control.Profile_Page_Authority"></activity>
+        <activity
+                android:name=".Authorities.control.Doctor.CheckAppointment_Doctor"
+                android:label="Confirmed Appointments"
+                android:parentActivityName=".Common.SignIn_Activity"></activity>
         <activity
                 android:name=".Authorities.control.Doctor.SignUp_Doctor"
                 android:label="SignUp as Doctor:"
-                android:parentActivityName=".Common.SignIn_Activity">
-        </activity>
+                android:parentActivityName=".Common.SignIn_Activity"></activity>
+
+
         <activity
                 android:name=".Authorities.control.Hospital.SignUp_Hospital"
                 android:label="SignUp as Hospital Management:"
-                android:parentActivityName=".Common.SignIn_Activity">
-        </activity>
+                android:parentActivityName=".Common.SignIn_Activity"></activity>
         <activity
                 android:name=".Authorities.control.Hospital.Hospital_Settings"
                 android:label="Settings"
-                android:parentActivityName=".Authorities.control.Profile_Page_Authority">
-        </activity>
+                android:parentActivityName=".Authorities.control.Profile_Page_Authority"></activity>
+        <activity
+                android:name=".Authorities.control.Hospital.CheckAppointment_Hospital"
+                android:label="View Appointment: "
+                android:parentActivityName=".Common.SignIn_Activity"></activity>
         <activity
                 android:name=".Authorities.control.Hospital.SignIn_Hospital"
                 android:label="Hospital"
-                android:parentActivityName=".Common.SignIn_Activity">
-        </activity>
+                android:parentActivityName=".Common.SignIn_Activity"></activity>
+
         <activity
                 android:name=".Authorities.control.Create_Feed"
-                android:label="Create Feed.">
-        </activity>
+                android:label="Create Feed."
+                android:parentActivityName=".Common.SignIn_Activity"></activity>
         <activity
                 android:name=".Authorities.control.Profile_Page_Authority"
                 android:label="Profile Page:"
-                android:parentActivityName=".Common.SignIn_Activity">
-        </activity>
+                android:parentActivityName=".Common.SignIn_Activity"></activity>
+
         <activity
                 android:name=".DeveloperFiles.MainActivity"
                 android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
                 android:name=".Common.SignIn_Activity"
                 android:label="LogIn Page:"
-                android:parentActivityName=".Common.SignIn_Activity">
-        </activity>
-        <activity
-                android:name=".Patient.SignUp_Patient"
-                android:label="SignUp as Patient:"
-                android:parentActivityName=".Common.SignIn_Activity">
-        </activity>
-        <activity
-                android:name=".Patient.SignIn_Patient"
-                android:label="My DashBoard:"
-                android:parentActivityName=".Common.SignIn_Activity">
-        </activity>
+                android:parentActivityName=".Common.SignIn_Activity"></activity>
+
+
         <activity
                 android:name=".DeveloperFiles.About_Us"
                 android:label="Credits:"
-                android:parentActivityName=".Common.SignIn_Activity">
-        </activity>
+                android:parentActivityName=".Common.SignIn_Activity"></activity>
+
         <activity
                 android:name=".Common.Feedback"
                 android:label="Feedback:"
-                android:parentActivityName=".Common.SignIn_Activity">
-        </activity>
+                android:parentActivityName=".Common.SignIn_Activity"></activity>
         <activity
                 android:name=".Common.View_Feed"
                 android:label="News Feed:"
-                android:parentActivityName=".Patient.SignIn_Patient">
-        </activity>
-        <activity
-                android:name=".Authorities.control.Clinic.CheckAppointment_Clinic"
-                android:label="Search Page:"
-                android:parentActivityName=".Patient.SignIn_Patient">
-        </activity>
-        <activity
-                android:name=".Patient.Get_Appointment"
-                android:label="Choose Your Appointment:"
-                android:parentActivityName=".Patient.SignIn_Patient">
-        </activity>
-        <activity android:name="Ch"
-                  android:label="Confirmed Appointments">
-        </activity>
-        <activity
-                android:name=".Patient.Profile_Page_Patient"
-                android:label="Profile Page:"
-                android:parentActivityName=".Patient.SignIn_Patient">
-        </activity>
-        <activity android:name=".DeveloperFiles.Base_Activity"/>
+                android:parentActivityName=".Common.SignIn_Activity"></activity>
+
+
+        <activity android:name=".DeveloperFiles.Base_Activity" />
     </application>
 
 </manifest>

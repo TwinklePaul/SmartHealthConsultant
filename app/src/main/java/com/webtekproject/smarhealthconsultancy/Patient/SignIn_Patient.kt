@@ -24,7 +24,7 @@ class SignIn_Patient : Base_Activity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.settingsmenu, menu)
+        menuInflater.inflate(R.menu.patient_settings_menu, menu)
         return true
     }
 
@@ -32,11 +32,6 @@ class SignIn_Patient : Base_Activity() {
         val pref = getSharedPreferences("user_details", Activity.MODE_PRIVATE)
 
         return when (item.itemId) {
-            R.id.settings -> {
-                intent = Intent(this, Patient_Settings::class.java)
-                startActivity(intent)
-                return true
-            }
 
             R.id.logout -> {
 

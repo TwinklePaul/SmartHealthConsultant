@@ -38,7 +38,17 @@ class SignUp_Doctor : Base_Activity() {
             DatabaseHandler(this)
 
         if (id.trim() != " " && name.trim() != " " && speciality.trim() != " " && qualify.trim() != " " && pass.trim() != " ") {
-            val status = databaseHandler.addDoctor(Doctor_Model(id, name, 1, speciality, qualify, cont, pass))
+            val status = databaseHandler.addDoctor(
+                Doctor_Model(
+                    id,
+                    name,
+                    1,
+                    speciality,
+                    qualify,
+                    cont,
+                    pass
+                )
+            )
 
             if (status > -1) {
                 toast(" Record Saved").show()

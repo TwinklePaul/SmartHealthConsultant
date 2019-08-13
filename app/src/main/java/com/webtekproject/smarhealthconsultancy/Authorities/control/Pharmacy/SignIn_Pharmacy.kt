@@ -1,3 +1,4 @@
+/*
 package com.webtekproject.smarhealthconsultancy.Authorities.control.Pharmacy
 
 import android.app.Activity
@@ -73,4 +74,4 @@ class SignIn_Pharmacy : Base_Activity() {
         startActivity(intent)
     }
 
-}
+}*/

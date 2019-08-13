@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:theme="@android:style/Theme.Material.NoActionBar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/cardbg"
         android:orientation="vertical"
-        android:background="@color/cardbg">
+        android:theme="@android:style/Theme.Material.NoActionBar">
 
     <androidx.appcompat.widget.Toolbar
             android:id="@+id/my_toolbar"
@@ -15,63 +14,59 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
             android:textAlignment="center"
-            app:popupTheme="@style/ThemeOverlay.AppCompat">
-    </androidx.appcompat.widget.Toolbar>
+            app:popupTheme="@style/ThemeOverlay.AppCompat"></androidx.appcompat.widget.Toolbar>
 
     <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/my_toolbar"
-            app:cardCornerRadius="7dp"
-            app:cardElevation="12dp"
+            android:background="#00D17171"
             app:cardBackgroundColor="#030940"
-            android:background="#00D17171">
+            app:cardCornerRadius="7dp"
+            app:cardElevation="12dp">
 
         <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:src="@drawable/icon_large"
-        />
+                android:src="@drawable/icon_large" />
     </androidx.cardview.widget.CardView>
 
 
     <androidx.cardview.widget.CardView
-            android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="12dp"
-            android:orientation="vertical"
-            android:layout_marginVertical="@dimen/gapComponents"
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/cardbg">
+            android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
+            android:layout_marginVertical="@dimen/gapComponents"
+            android:orientation="vertical"
+
+            app:cardBackgroundColor="@color/cardbg"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="12dp">
 
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-
                 android:layout_marginStart="16dp"
 
+                android:padding="16dp"
+
                 android:text="About Us:  "
-                android:textSize="14dp"
-                android:textStyle="bold"
                 android:textColor="@color/colorAnalogous1"
-        />
+                android:textSize="14dp"
+                android:textStyle="bold" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-            android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="12dp"
-            android:orientation="vertical"
-
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
+            android:orientation="vertical"
+
             app:cardBackgroundColor="@color/cardbg"
-    >
+            app:cardCornerRadius="10dp"
+            app:cardElevation="12dp">
 
         <TableLayout
                 android:layout_width="match_parent"
@@ -84,22 +79,21 @@
                     android:layout_height="wrap_content">
 
                 <TextView
+                        android:layout_width="136dp"
+                        android:layout_marginEnd="16dp"
+                        android:padding="@dimen/slim_padding"
                         android:text="Developed By:"
-                        android:textSize="14dp"
-                        android:textStyle="bold"
-                        android:layout_marginEnd="16dp"
-                        android:layout_width="136dp"
-                        android:padding="@dimen/slim_padding"
                         android:textColor="@color/colorTriadic"
-                />
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
 
                 <TextView
-                        android:text="Twinkle Paul"
-                        android:textSize="14dp"
-                        android:textColor="@color/colorComplimentary"
-                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
                         android:padding="@dimen/slim_padding"
-                        android:layout_width="wrap_content"/>
+                        android:text="Twinkle Paul"
+                        android:textColor="@color/colorComplimentary"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
             </TableRow>
 
             <TableRow
@@ -108,21 +102,21 @@
                     android:layout_marginTop="@dimen/button_gap">
 
                 <TextView
+                        android:layout_width="136dp"
+                        android:layout_marginEnd="16dp"
+                        android:padding="@dimen/slim_padding"
                         android:text="Designed By:"
+                        android:textColor="@color/colorTriadic"
                         android:textSize="14dp"
-                        android:textStyle="bold"
-                        android:layout_marginEnd="16dp"
-                        android:layout_width="136dp"
-                        android:padding="@dimen/slim_padding"
-                        android:textColor="@color/colorTriadic"/>
+                        android:textStyle="bold" />
 
                 <TextView
-                        android:text="Twinkle Paul"
-                        android:textSize="14dp"
+                        android:layout_width="wrap_content"
                         android:padding="@dimen/slim_padding"
+                        android:text="Twinkle Paul"
                         android:textColor="@color/colorComplimentary"
-                        android:textStyle="bold"
-                        android:layout_width="wrap_content"/>
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
             </TableRow>
 
 
@@ -132,70 +126,67 @@
                     android:layout_marginTop="@dimen/button_gap">
 
                 <TextView
+                        android:layout_width="120dp"
+                        android:layout_marginEnd="16dp"
+                        android:padding="@dimen/slim_padding"
                         android:text="Info:"
+                        android:textColor="@color/colorTriadic"
                         android:textSize="14dp"
-                        android:textStyle="bold"
-                        android:layout_marginEnd="16dp"
-                        android:layout_width="120dp"
-                        android:padding="@dimen/slim_padding"
-                        android:textColor="@color/colorTriadic"/>
+                        android:textStyle="bold" />
 
                 <TextView
+                        android:layout_width="wrap_content"
+                        android:padding="@dimen/slim_padding"
                         android:text="@string/string_about_info"
-                        android:textSize="14dp"
-                        android:padding="@dimen/slim_padding"
-                        android:layout_width="wrap_content"
                         android:textColor="@color/colorComplimentary"
-                        android:textStyle="bold"
-                />
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
             </TableRow>
 
             <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/button_gap"
-            >
+                    android:layout_marginTop="@dimen/button_gap">
+
                 <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:padding="@dimen/slim_padding"
                         android:text="Institute:"
-                        android:textSize="14dp"
-                        android:textStyle="bold"
-                        android:layout_marginEnd="16dp"
-                        android:layout_width="wrap_content"
-                        android:padding="@dimen/slim_padding"
                         android:textColor="@color/colorTriadic"
-                />
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
 
                 <TextView
-                        android:text="@string/string_about_institt"
-                        android:textSize="14dp"
+                        android:layout_width="wrap_content"
                         android:padding="7dp"
+                        android:text="@string/string_about_institt"
                         android:textColor="@color/colorComplimentary"
-                        android:textStyle="bold"
-                        android:layout_width="wrap_content"/>
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
             </TableRow>
 
             <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/button_gap"
-            >
-                <TextView
-                        android:text="Mentor:"
-                        android:textSize="14dp"
-                        android:textStyle="bold"
-                        android:layout_marginEnd="16dp"
-                        android:layout_width="120dp"
-                        android:padding="@dimen/slim_padding"
-                        android:textColor="@color/colorTriadic"
-                />
+                    android:layout_marginTop="@dimen/button_gap">
 
                 <TextView
-                        android:text="@string/string_about_mentor"
-                        android:textSize="14dp"
+                        android:layout_width="120dp"
+                        android:layout_marginEnd="16dp"
                         android:padding="@dimen/slim_padding"
+                        android:text="Mentor:"
+                        android:textColor="@color/colorTriadic"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:padding="@dimen/slim_padding"
+                        android:text="@string/string_about_mentor"
                         android:textColor="@color/colorComplimentary"
-                        android:textStyle="bold"
-                        android:layout_width="wrap_content"/>
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
             </TableRow>
         </TableLayout>
     </androidx.cardview.widget.CardView>
