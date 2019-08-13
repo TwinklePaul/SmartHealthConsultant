@@ -9,8 +9,16 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-
-
+        <activity android:name=".Patient.Check_Appointment">
+        </activity>
+        <activity android:name=".DeveloperFiles.Choose_Time">
+        </activity>
+        <activity android:name=".Common.ActOn_Appointment">
+        </activity>
+        <activity
+                android:name=".Authorities.control.Hospital.CheckAppointment_Hospital"
+                android:label="View Appointment: ">
+        </activity>
         <activity android:name=".Patient.Patient_Settings">
         </activity>
         <activity
@@ -122,7 +130,7 @@
                 android:parentActivityName=".Patient.SignIn_Patient">
         </activity>
         <activity
-                android:name=".Patient.Search_Page"
+                android:name=".Authorities.control.Clinic.CheckAppointment_Clinic"
                 android:label="Search Page:"
                 android:parentActivityName=".Patient.SignIn_Patient">
         </activity>
@@ -136,7 +144,6 @@
                 android:label="Profile Page:"
                 android:parentActivityName=".Patient.SignIn_Patient">
         </activity>
-
         <activity android:name=".DeveloperFiles.Base_Activity"/>
     </application>
 

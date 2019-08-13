@@ -2,12 +2,10 @@
 
 <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="@dimen/slim_padding"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:orientation="vertical"
->
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <androidx.appcompat.widget.Toolbar
             android:id="@+id/my_toolbar"
@@ -18,17 +16,20 @@
             app:popupTheme="@style/ThemeOverlay.AppCompat">
     </androidx.appcompat.widget.Toolbar>
 
-
-    <ListView
-            android:id="@+id/listView"
+    <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scrollbars="vertical"
-            android:layout_margin="16dp"
+            android:text="Confirmed Appointments: "
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:padding="7dp"
+            android:textAlignment="textStart"
     />
+
+    <ListView
+            android:id="@+id/listconfirmed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
 
 </LinearLayout>
-
-
-

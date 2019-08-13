@@ -156,7 +156,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="Book Your Appointment"
+                        android:text="Confirm / Reject Appointments"
                         android:padding="5dp"
                         android:textColor="@android:color/darker_gray"/>
 

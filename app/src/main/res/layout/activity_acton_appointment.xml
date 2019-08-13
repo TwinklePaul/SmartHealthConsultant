@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:textAlignment="center"
+            app:popupTheme="@style/ThemeOverlay.AppCompat">
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.cardview.widget.CardView
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="false"
+            android:background="@color/cardbg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+    >
+
+        <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+        >
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        android:text="App ID: "
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:padding="7dp"
+                        android:textAlignment="textStart"
+                />
+
+                <TextView
+                        android:id="@+id/appId"
+                        android:layout_width="238dp"
+                        android:layout_height="match_parent"
+                        android:text="Description: "
+                        android:textSize="16sp"
+                        android:padding="7dp"
+                        android:textAlignment="textStart"
+
+                />
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        android:text="Dr Name: "
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:padding="7dp"
+                        android:textAlignment="textStart"
+                />
+
+                <TextView
+                        android:id="@+id/dr_name"
+                        android:layout_width="238dp"
+                        android:layout_height="match_parent"
+                        android:text="Description: "
+                        android:textSize="16sp"
+                        android:padding="7dp"
+                        android:textAlignment="textStart"
+
+                />
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        android:text="Dr Cont: "
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:padding="7dp"
+                        android:textAlignment="textStart"
+                />
+
+                <TextView
+                        android:id="@+id/dr_cont"
+                        android:layout_width="208dp"
+                        android:layout_height="match_parent"
+                        android:text="Description: "
+                        android:textSize="16sp"
+                        android:padding="7dp"
+                        android:textAlignment="textStart"
+
+                />
+            </TableRow>
+            <!--<TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <ImageView
+                        android:id="@+id/callDoc"
+                        android:src="@drawable/ic_action_call"
+                        android:layout_width="104dp"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:clickable="true"
+                />
+
+                <ImageView
+                        android:src="@drawable/ic_action_msg"
+                        android:layout_width="104dp"
+                        android:layout_height="wrap_content"
+                        android:onClick="msgDoc"
+                />
+            </TableRow>-->
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        android:text="Patient Name: "
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:padding="7dp"
+                        android:textAlignment="textStart"
+                />
+
+                <TextView
+                        android:id="@+id/pat_name"
+                        android:layout_width="227dp"
+                        android:layout_height="match_parent"
+                        android:text="Description: "
+                        android:textSize="16sp"
+                        android:padding="7dp"
+                        android:textAlignment="textStart"
+
+                />
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        android:text="Patient Cont: "
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:padding="7dp"
+                        android:textAlignment="textStart"
+                />
+
+                <TextView
+                        android:id="@+id/pat_cont"
+                        android:layout_width="227dp"
+                        android:layout_height="match_parent"
+                        android:text="Description: "
+                        android:textSize="16sp"
+                        android:padding="7dp"
+                        android:textAlignment="textStart"
+
+                />
+            </TableRow>
+            <!--<TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <ImageView
+                        android:src="@drawable/ic_action_call"
+                        android:layout_width="104dp"
+                        android:layout_height="wrap_content"
+                        android:onClick="callPat"
+                />
+
+                <ImageView
+                        android:src="@drawable/ic_action_msg"
+                        android:layout_width="104dp"
+                        android:layout_height="wrap_content"
+                        android:onClick="msgPat"
+                />
+            </TableRow>-->
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        android:text="Choose Date: "
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:padding="7dp"
+                        android:textAlignment="textStart"
+                />
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:padding="7dp"
+                        android:ems="10"
+                        android:id="@+id/editText_date"
+                        android:hint="Click to Choose Date"
+                        android:clickable="true"
+                        android:onClick="date"
+                />
+            </TableRow>
+
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        android:text="Choose Time: "
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:padding="7dp"
+                        android:textAlignment="textStart"
+                />
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:padding="7dp"
+                        android:inputType="time"
+                        android:ems="10"
+                        android:id="@+id/editText_time"
+                        android:hint="Click to Choose Time"
+                        android:clickable="true"
+                        android:onClick="time"
+                />
+            </TableRow>
+
+        </TableLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <Button
+                android:id="@+id/button_save"
+                android:text="Confirm"
+                android:textSize="12sp"
+                android:textColor="#01063C"
+                android:background="@drawable/confirmbuttonbg"
+                android:layout_alignParentStart="true"
+                android:padding="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="false"
+                android:layout_marginTop="0dp"
+                android:onClick="Confrm"
+        />
+
+        <Button
+                android:id="@+id/button_commitChange"
+                android:text="Change"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:textColor="#F0EEF4"
+                android:background="@drawable/buttonbg"
+                android:layout_toLeftOf="@+id/button_reject"
+                android:layout_toRightOf="@+id/button_confirm"
+                android:padding="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="51dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="false"
+                android:layout_marginEnd="35dp"
+                android:layout_toEndOf="@+id/button_save"
+                android:layout_marginRight="48dp"
+                android:onClick="updateRecord"
+        />
+
+        <Button
+                android:id="@+id/button_reject"
+                android:text="Reject"
+                android:textColor="#01063C"
+                android:textSize="12sp"
+                android:background="@drawable/rejectbuttonbg"
+                android:layout_marginEnd="15dp"
+                android:layout_alignParentEnd="true"
+                android:padding="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="false"
+                android:layout_marginTop="1dp"
+                android:onClick="deleteRecord"
+        />
+    </RelativeLayout>
+
+</LinearLayout>

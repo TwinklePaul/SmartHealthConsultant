@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
 
     <androidx.cardview.widget.CardView
+            android:id="@+id/content"
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="false"
             android:background="@color/green"
@@ -20,15 +20,8 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:layout_marginTop="5dp"
+                android:padding="10dp"
                 android:gravity="center">
-
-            <ImageView
-                    android:id="@+id/icon"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_margin="5dp"
-                    app:srcCompat="@drawable/ic_action_feed"
-            />
 
             <LinearLayout
                     android:layout_width="match_parent"
@@ -37,22 +30,24 @@
                     android:orientation="vertical"
             >
 
-                <TextView
+                <EditText
                         android:id="@+id/title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Title: "
+                        android:hint="Title: "
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:padding="7dp"
                         android:textAlignment="textStart"
                 />
 
-                <TextView
-                        android:id="@+id/cat"
+                <Spinner
+                        android:id="@+id/spinner_cat"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="7dp"
                         android:text="Category: "
+                        android:theme="@style/mySpinnerItemStyle"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:padding="7dp"
@@ -60,11 +55,11 @@
 
                 />
 
-                <TextView
+                <EditText
                         android:id="@+id/description"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Description: "
+                        android:hint="Description: "
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:padding="7dp"
@@ -73,15 +68,23 @@
                 />
 
             </LinearLayout>
-
-            <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_action_share"
-            />
-
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
-</LinearLayout>
+    <Button
+            android:layout_below="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
+            android:layout_marginTop="@dimen/gapComponents"
+            android:text="SUBMIT"
+            android:onClick="submit"
+            android:textSize="14sp"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:background="@drawable/buttonbg"
+    />
+
+</RelativeLayout>

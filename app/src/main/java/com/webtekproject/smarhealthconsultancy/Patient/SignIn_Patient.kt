@@ -6,12 +6,12 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import com.webtekproject.smarhealthconsultancy.Authorities.control.Clinic.Check_Appointment
 import com.webtekproject.smarhealthconsultancy.Common.Feedback
 import com.webtekproject.smarhealthconsultancy.Common.SignIn_Activity
+import com.webtekproject.smarhealthconsultancy.Common.View_Feed
 import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Base_Activity
-import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Choose_Date
 import com.webtekproject.smarhealthconsultancy.R
-import org.jetbrains.anko.toast
 
 class SignIn_Patient : Base_Activity() {
 
@@ -57,23 +57,18 @@ class SignIn_Patient : Base_Activity() {
         }
     }
 
-    fun toastDate(day:Int){
-        toast(day.toString())
-    }
-
     fun viewFeed(view: View) {
-        val fragmentManager = supportFragmentManager
-        val popUpClock = Choose_Date()
-        popUpClock.show(fragmentManager,"data")
-    }
-
-    fun search(view: View) {
-        intent = Intent(this, Search_Page::class.java)
+        intent = Intent(this, View_Feed::class.java)
         startActivity(intent)
     }
 
     fun bookappointment(view: View) {
         intent = Intent(this, Get_Appointment::class.java)
+        startActivity(intent)
+    }
+
+    fun schedule(view: View) {
+        intent = Intent(this, Check_Appointment::class.java)
         startActivity(intent)
     }
 

@@ -1,12 +1,15 @@
 package com.webtekproject.smarhealthconsultancy.Patient
 
+import android.app.Activity
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Appointment_Handler
 import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Base_Activity
 import com.webtekproject.smarhealthconsultancy.DeveloperFiles.DatabaseHandler
+import com.webtekproject.smarhealthconsultancy.Model_Classes.App_Request_Model
 import com.webtekproject.smarhealthconsultancy.R
 import kotlinx.android.synthetic.main.activity_patientappointment.*
 import org.jetbrains.anko.toast
@@ -27,6 +30,7 @@ class Get_Appointment : Base_Activity(), AdapterView.OnItemSelectedListener {
     var option_name: String = ""
     var option_org: String = ""
     var doc: String = ""
+    var org: String = ""
 
     var spinner: Spinner? = null
     var spinner1: Spinner? = null
@@ -46,6 +50,7 @@ class Get_Appointment : Base_Activity(), AdapterView.OnItemSelectedListener {
 
         val db = DatabaseHandler(this)
         val doc_list = db.viewDoctors()
+
         doc_spl.add("Choose Specialty: ")
         org_loc.add("Choose Location: ")
         doc_qualif.add("Choose Qualification: ")
@@ -108,6 +113,7 @@ class Get_Appointment : Base_Activity(), AdapterView.OnItemSelectedListener {
     }
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+
         val db = DatabaseHandler(this)
         val hosp_list = db.viewHospital()
         val clinic_list = db.viewClinic()
@@ -285,6 +291,17 @@ class Get_Appointment : Base_Activity(), AdapterView.OnItemSelectedListener {
             R.id.ChooseOrg -> {
                 option_org = org_name[position]
                 toast("Chosen: .${option_org}")
+
+                if (option_cat.equals("Clinic")) {
+                    for (i in clinic_list)
+                        if (i.Clinic_Name.equals(option_org))
+                            org = i.Clinic_ID
+
+                } else
+                    for (i in hosp_list)
+                        if (i.Hosp_Name.equals(option_org))
+                            org = i.Hosp_ID
+
             }
             else -> {
                 toast("Choose Properly")
@@ -295,6 +312,17 @@ class Get_Appointment : Base_Activity(), AdapterView.OnItemSelectedListener {
 
     fun bookApp(view: View?) {
 
+        val db = Appointment_Handler(this)
+        val pref = getSharedPreferences("user_details", Activity.MODE_PRIVATE)
+        val user = pref.getString("userid", null)
+        val app_id = user!! + doc
+
+        val status = db.addRequest(App_Request_Model(app_id, user, doc, org, option_cat))
+
+        if (status > -1)
+            toast("Request For Your Appointment Has Been Sent To: $option_org")
+        else
+            toast("Sorry!! Some Error Occured. Please Retry!")
     }
 
     override fun onNothingSelected(p0: AdapterView<*>?) {}
