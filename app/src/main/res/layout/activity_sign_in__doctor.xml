@@ -78,7 +78,7 @@
                 android:layout_width="160dp"
                 android:layout_height="190dp"
                 android:layout_margin="10dp"
-                android:onClick="search"
+                android:onClick="generateFeed"
         >
             <LinearLayout
                     android:layout_width="match_parent"
@@ -156,7 +156,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="Book Your Appointment"
+                        android:text="Check Your Appointments"
                         android:padding="5dp"
                         android:textColor="@android:color/darker_gray"/>
 

@@ -31,7 +31,7 @@ class FeedDatabase(context: Context) : SQLiteOpenHelper(
 
         //creating Table Doctor
         val CREATE_TABLE_FEED = ("CREATE TABLE " + TABLE_FEED + " (" +
-                KEY_FEED_ID + " TEXT PRIMARY KEY, " + KEY_FEED_TITLE + " TEXT," + KEY_FEED_CATEGORY + " TEXT, " + KEY_FEED_DESC + " TEXT," + KEY_FEED_IMG + "INTEGER, " + ")")
+                KEY_FEED_ID + " TEXT PRIMARY KEY, " + KEY_FEED_TITLE + " TEXT," + KEY_FEED_CATEGORY + " TEXT, " + KEY_FEED_DESC + " TEXT," + KEY_FEED_IMG + "INTEGER " + ")")
 
         db?.execSQL(CREATE_TABLE_FEED)
     }

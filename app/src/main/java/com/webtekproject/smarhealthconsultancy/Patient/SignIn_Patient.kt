@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import com.webtekproject.smarhealthconsultancy.Authorities.control.Clinic.Check_Appointment
 import com.webtekproject.smarhealthconsultancy.Common.Feedback
 import com.webtekproject.smarhealthconsultancy.Common.SignIn_Activity
 import com.webtekproject.smarhealthconsultancy.Common.View_Feed

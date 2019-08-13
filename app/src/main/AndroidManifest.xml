@@ -139,6 +139,9 @@
                 android:label="Choose Your Appointment:"
                 android:parentActivityName=".Patient.SignIn_Patient">
         </activity>
+        <activity android:name="Ch"
+                  android:label="Confirmed Appointments">
+        </activity>
         <activity
                 android:name=".Patient.Profile_Page_Patient"
                 android:label="Profile Page:"

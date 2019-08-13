@@ -1,4 +1,4 @@
-package com.webtekproject.smarhealthconsultancy.Authorities.control.Clinic
+package com.webtekproject.smarhealthconsultancy.Patient
 
 import android.app.Activity
 import android.os.Bundle
@@ -7,7 +7,7 @@ import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Base_Activity
 import com.webtekproject.smarhealthconsultancy.DeveloperFiles.DatabaseHandler
 import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Schedule_Adapter
 import com.webtekproject.smarhealthconsultancy.R
-import kotlinx.android.synthetic.main.activity_checkappointment_clinic.*
+import kotlinx.android.synthetic.main.activity_check_appointment.*
 import org.jetbrains.anko.toast
 
 class Check_Appointment : Base_Activity() {
@@ -83,11 +83,12 @@ class Check_Appointment : Base_Activity() {
         }
 
 
-        val myListAdapter = Schedule_Adapter(this, app_id, doc_name, doc_cont, pat_name, org_name, org_loc, org_type)
+        val myListAdapter =
+            Schedule_Adapter(this, app_id, doc_name, doc_cont, pat_name, org_name, org_loc, org_type, start_at)
 
-        listapp.adapter = myListAdapter
+        listconfirmed.adapter = myListAdapter
 
-        listapp.setOnItemClickListener { adapterView, view, position, id ->
+        listconfirmed.setOnItemClickListener { adapterView, view, position, id ->
 
             val itemAtPos = adapterView.getItemAtPosition(position)
             val itemIdAtPos = adapterView.getItemIdAtPosition(position)

@@ -45,6 +45,7 @@ class Create_Feed : Base_Activity(), AdapterView.OnItemSelectedListener {
         setSupportActionBar(findViewById(R.id.my_toolbar))
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         val actionBar = supportActionBar
+
         actionBar!!.elevation = 4.0F
 
         spinner = this.spinner_cat

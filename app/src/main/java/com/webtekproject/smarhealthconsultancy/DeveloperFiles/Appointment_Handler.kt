@@ -30,9 +30,9 @@ class Appointment_Handler(context: Context) : SQLiteOpenHelper(
     override fun onCreate(db: SQLiteDatabase?) {
         //To change body of created functions use File | Settings | File Templates.
 
-        //creating Table Doctor
-        val CREATE_TABLE_REQUESTS = ("CREATE TABLE " + TABLE_REQUESTS + " (" + KEY_App_ID + "TEXT PRIMARY KEY," +
-                KEY_PID + " TEXT, " + KEY_DID + " TEXT," + KEY_OID + " TEXT, " + KEY_OType + " TEXT " + ")")
+        //creating Table Requests
+        val CREATE_TABLE_REQUESTS = ("CREATE TABLE " + TABLE_REQUESTS + " ("
+                + KEY_App_ID + "TEXT PRIMARY KEY," + KEY_PID + " TEXT, " + KEY_DID + " TEXT," + KEY_OID + " TEXT, " + KEY_OType + " TEXT " + ")")
 
         db?.execSQL(CREATE_TABLE_REQUESTS)
     }
@@ -56,7 +56,6 @@ class Appointment_Handler(context: Context) : SQLiteOpenHelper(
         contentValues.put(KEY_DID, requests.Dr_ID)
         contentValues.put(KEY_OID, requests.Org_ID)
         contentValues.put(KEY_OType, requests.Org_Type)
-
 
         val success = db.insert(TABLE_REQUESTS, null, contentValues)
         db.close()

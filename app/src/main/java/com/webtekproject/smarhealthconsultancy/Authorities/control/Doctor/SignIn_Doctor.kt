@@ -6,12 +6,12 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import com.webtekproject.smarhealthconsultancy.Authorities.control.Clinic.Check_Appointment
 import com.webtekproject.smarhealthconsultancy.Authorities.control.Create_Feed
 import com.webtekproject.smarhealthconsultancy.Authorities.control.Profile_Page_Authority
 import com.webtekproject.smarhealthconsultancy.Common.SignIn_Activity
 import com.webtekproject.smarhealthconsultancy.Common.View_Feed
 import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Base_Activity
+import com.webtekproject.smarhealthconsultancy.Patient.Check_Appointment
 import com.webtekproject.smarhealthconsultancy.R
 
 class SignIn_Doctor : Base_Activity() {

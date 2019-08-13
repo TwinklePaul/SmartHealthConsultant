@@ -15,7 +15,8 @@ class Schedule_Adapter(
     private val patname: ArrayList<String>,
     private val orgname: ArrayList<String>,
     private val orgloc: ArrayList<String>,
-    private val orgtype: ArrayList<String>
+    private val orgtype: ArrayList<String>,
+    private val startat: ArrayList<String>
 ) :
     ArrayAdapter<String>(context, R.layout.layout_confirmed, docname) {
 
@@ -31,6 +32,7 @@ class Schedule_Adapter(
         val otype = rowView.findViewById<TextView>(R.id.text_orgCat)
         val oname = rowView.findViewById<TextView>(R.id.text_orgName)
         val olocate = rowView.findViewById<TextView>(R.id.text_orgLoc)
+        val start = rowView.findViewById<TextView>(R.id.editText_date)
 
 
         id.text = app_id[position]
@@ -40,6 +42,7 @@ class Schedule_Adapter(
         otype.text = orgtype[position]
         oname.text = orgname[position]
         olocate.text = orgloc[position]
+        start.text = startat[position]
 
         return rowView
     }
