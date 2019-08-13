@@ -78,107 +78,107 @@
             android:onClick="viewFeed">
 
         <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content">
-        <TableLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/button_editImg"
-        >
-            <TableRow
+            <TableLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/slim_padding"
+                    android:layout_below="@+id/button_editImg"
             >
-                <TextView
-                        android:text="Name:"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:layout_marginEnd="16dp"
-                        android:layout_width="120dp"
-                        android:padding="@dimen/slim_padding"
-                        android:background="@drawable/text_astitle"
-                />
+                <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/slim_padding"
+                >
+                    <TextView
+                            android:text="Name:"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:layout_marginEnd="16dp"
+                            android:layout_width="120dp"
+                            android:padding="@dimen/slim_padding"
+                            android:background="@drawable/text_astitle"
+                    />
 
-                <TextView
-                        android:id="@+id/showName"
-                        android:text="Name"
-                        android:textSize="14sp"
-                        android:padding="@dimen/slim_padding"
-                        android:layout_width="222dp"/>
-            </TableRow>
+                    <TextView
+                            android:id="@+id/showName"
+                            android:text="Name"
+                            android:textSize="14sp"
+                            android:padding="@dimen/slim_padding"
+                            android:layout_width="222dp"/>
+                </TableRow>
 
-            <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/slim_padding"
-                    android:layout_marginTop="@dimen/button_gap"
-            >
-                <TextView
-                        android:text="ID:"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:layout_marginEnd="16dp"
-                        android:layout_width="120dp"
-                        android:padding="@dimen/slim_padding"
-                        android:background="@drawable/text_astitle"
-                />
+                <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/slim_padding"
+                        android:layout_marginTop="@dimen/button_gap"
+                >
+                    <TextView
+                            android:text="ID:"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:layout_marginEnd="16dp"
+                            android:layout_width="120dp"
+                            android:padding="@dimen/slim_padding"
+                            android:background="@drawable/text_astitle"
+                    />
 
-                <TextView
-                        android:id="@+id/showID"
-                        android:text="ID:"
-                        android:textSize="14sp"
-                        android:padding="@dimen/slim_padding"
-                        android:layout_width="match_parent"/>
-            </TableRow>
+                    <TextView
+                            android:id="@+id/showID"
+                            android:text="ID:"
+                            android:textSize="14sp"
+                            android:padding="@dimen/slim_padding"
+                            android:layout_width="match_parent"/>
+                </TableRow>
 
-            <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/slim_padding"
-                    android:layout_marginTop="@dimen/button_gap"
-            >
-                <TextView
-                        android:text="Contact:"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:layout_marginEnd="16dp"
-                        android:layout_width="120dp"
-                        android:padding="@dimen/slim_padding"
-                        android:background="@drawable/text_astitle"
-                />
+                <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/slim_padding"
+                        android:layout_marginTop="@dimen/button_gap"
+                >
+                    <TextView
+                            android:text="Contact:"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:layout_marginEnd="16dp"
+                            android:layout_width="120dp"
+                            android:padding="@dimen/slim_padding"
+                            android:background="@drawable/text_astitle"
+                    />
 
-                <TextView
-                        android:id="@+id/showcont"
-                        android:text="Contact:"
-                        android:textSize="14sp"
-                        android:padding="@dimen/slim_padding"
-                        android:layout_width="match_parent"/>
-            </TableRow>
+                    <TextView
+                            android:id="@+id/showcont"
+                            android:text="Contact:"
+                            android:textSize="14sp"
+                            android:padding="@dimen/slim_padding"
+                            android:layout_width="match_parent"/>
+                </TableRow>
 
-            <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/slim_padding"
-                    android:layout_marginTop="@dimen/button_gap"
-            >
-                <TextView
-                        android:text="Other Info:"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:layout_marginEnd="16dp"
-                        android:layout_width="120dp"
-                        android:padding="@dimen/slim_padding"
-                        android:background="@drawable/text_astitle"
-                />
+                <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/slim_padding"
+                        android:layout_marginTop="@dimen/button_gap"
+                >
+                    <TextView
+                            android:text="Other Info:"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:layout_marginEnd="16dp"
+                            android:layout_width="120dp"
+                            android:padding="@dimen/slim_padding"
+                            android:background="@drawable/text_astitle"
+                    />
 
-                <TextView
-                        android:id="@+id/showinfo"
-                        android:text="info:"
-                        android:textSize="14sp"
-                        android:padding="@dimen/slim_padding"
-                        android:layout_width="match_parent"/>
-            </TableRow>
+                    <TextView
+                            android:id="@+id/showinfo"
+                            android:text="info:"
+                            android:textSize="14sp"
+                            android:padding="@dimen/slim_padding"
+                            android:layout_width="match_parent"/>
+                </TableRow>
 
-        </TableLayout>
+            </TableLayout>
         </ScrollView>
     </androidx.cardview.widget.CardView>
 

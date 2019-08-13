@@ -1,6 +1,7 @@
 package com.webtekproject.smarhealthconsultancy.Common
 
 import android.os.Bundle
+import android.view.View
 import android.widget.RatingBar
 import android.widget.Toast
 import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Base_Activity
@@ -18,7 +19,6 @@ class Feedback : Base_Activity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         val actionBar = supportActionBar
         actionBar!!.elevation = 4.0F
-        actionBar.title = "Feedback!!"
 
         val rated = findViewById<RatingBar>(R.id.rate)
 
@@ -30,5 +30,10 @@ class Feedback : Base_Activity() {
                 Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
             }
         }
+    }
+
+    fun submit(view: View) {
+        Toast.makeText(this, "Thank You For Your Valuable Feedback!", Toast.LENGTH_SHORT).show()
+        this@Feedback.finish()
     }
 }

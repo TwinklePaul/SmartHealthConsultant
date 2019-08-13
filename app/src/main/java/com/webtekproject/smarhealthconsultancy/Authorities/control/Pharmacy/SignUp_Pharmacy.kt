@@ -8,7 +8,6 @@ import android.widget.Toast
 import com.webtekproject.smarhealthconsultancy.Authorities.control.Hospital.SignIn_Hospital
 import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Base_Activity
 import com.webtekproject.smarhealthconsultancy.DeveloperFiles.DatabaseHandler
-import com.webtekproject.smarhealthconsultancy.Model_Classes.Clinic_Model
 import com.webtekproject.smarhealthconsultancy.Model_Classes.Pharmacy_Model
 import com.webtekproject.smarhealthconsultancy.R
 import kotlinx.android.synthetic.main.activity_signup_pharmacy.*

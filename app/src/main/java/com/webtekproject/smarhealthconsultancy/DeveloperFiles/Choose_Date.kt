@@ -10,14 +10,14 @@ import androidx.fragment.app.DialogFragment
 import com.webtekproject.smarhealthconsultancy.Common.ActOn_Appointment
 import com.webtekproject.smarhealthconsultancy.R
 
-class Choose_Date: DialogFragment() {
+class Choose_Date : DialogFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.activity_date_time, container,false)
+        val view = inflater.inflate(R.layout.activity_date_time, container, false)
         val buDate = view.findViewById<Button>(R.id.button_date)
-        val chooseDate:DatePicker = view.findViewById(R.id.Choosedate)
+        val chooseDate: DatePicker = view.findViewById(R.id.Choosedate)
         buDate.setOnClickListener {
             this@Choose_Date.dismiss()
-            val date:Int = chooseDate.dayOfMonth
+            val date: Int = chooseDate.dayOfMonth
             val actonAppointment = activity as ActOn_Appointment
             actonAppointment.toastDate(date)
         }

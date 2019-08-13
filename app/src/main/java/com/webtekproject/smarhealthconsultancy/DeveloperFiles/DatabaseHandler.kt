@@ -224,7 +224,7 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(
         //creating Table Patient
 
         val CREATE_TABLE_PATIENT = ("CREATE TABLE " + TABLE_PATIENT + " ("
-                + KEY_Patient_ID + " TEXT PRIMARY KEY, " + KEY_Patient_Name + " TEXT," + KEY_Patient_Address + " TEXT, "  + KEY_Patient_Contact + " INTEGER UNIQUE, " + KEY_Patient_Pass+ " TEXT " + ")" )
+                + KEY_Patient_ID + " TEXT PRIMARY KEY, " + KEY_Patient_Name + " TEXT," + KEY_Patient_Address + " TEXT, " + KEY_Patient_Contact + " INTEGER UNIQUE, " + KEY_Patient_Pass + " TEXT " + ")")
 
         db?.execSQL(CREATE_TABLE_PATIENT)
 
@@ -232,11 +232,11 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(
         //creating Table Dr_Appointment
 
         val CREATE_TABLE_DOC_APPOINT = ("CREATE TABLE " + TABLE_DOC_APPOINT + " ("
-                + KEY_App_Id + " TEXT PRIMARY KEY, " + KEY_Patient_ID + " TEXT,"  + KEY_Dr_ID + " TEXT," + KEY_Start_at + " TEXT, " + KEY_Clinic_ID + " TEXT,"  + KEY_Hosp_ID + " TEXT,"  +
-                "FOREIGN KEY ("+ KEY_Patient_ID + ") REFERENCES " + TABLE_PATIENT +"(" + KEY_Patient_ID + "),"+
-                "FOREIGN KEY ("+ KEY_Clinic_ID + ") REFERENCES " + TABLE_CLINIC +"(" + KEY_Clinic_ID + ")," +
-                "FOREIGN KEY ("+ KEY_Dr_ID + ") REFERENCES " + TABLE_DOCTOR +"(" + KEY_Dr_ID + ")," +
-                "FOREIGN KEY ("+ KEY_Hosp_ID + ") REFERENCES " + TABLE_HOSPITAL +"(" + KEY_Hosp_ID + ")" +  ")" )
+                + KEY_App_Id + " TEXT PRIMARY KEY, " + KEY_Patient_ID + " TEXT," + KEY_Dr_ID + " TEXT," + KEY_Start_at + " TEXT, " + KEY_Clinic_ID + " TEXT," + KEY_Hosp_ID + " TEXT," +
+                "FOREIGN KEY (" + KEY_Patient_ID + ") REFERENCES " + TABLE_PATIENT + "(" + KEY_Patient_ID + ")," +
+                "FOREIGN KEY (" + KEY_Clinic_ID + ") REFERENCES " + TABLE_CLINIC + "(" + KEY_Clinic_ID + ")," +
+                "FOREIGN KEY (" + KEY_Dr_ID + ") REFERENCES " + TABLE_DOCTOR + "(" + KEY_Dr_ID + ")," +
+                "FOREIGN KEY (" + KEY_Hosp_ID + ") REFERENCES " + TABLE_HOSPITAL + "(" + KEY_Hosp_ID + ")" + ")")
 
         db?.execSQL(CREATE_TABLE_DOC_APPOINT)
 
@@ -429,8 +429,10 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(
         contentValues.put(KEY_Dr_ID, dc.Dr_ID)
         contentValues.put(KEY_Clinic_ID, dc.Clinic_ID)
 
-        val success = db.insert(TABLE_DOC_CLINIC,
-            null, contentValues)
+        val success = db.insert(
+            TABLE_DOC_CLINIC,
+            null, contentValues
+        )
         db.close()
         return success
     }
@@ -509,7 +511,7 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(
 
     //Working on Patient's Table
 
-    fun addPatient (pat: Patient_Model) : Long {
+    fun addPatient(pat: Patient_Model): Long {
 
         val db = this.writableDatabase
         val contentValues = ContentValues()
@@ -518,7 +520,7 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(
         contentValues.put(KEY_Patient_Name, pat.Patient_Name)
         contentValues.put(KEY_Patient_Address, pat.Patient_Address)
         contentValues.put(KEY_Patient_Contact, pat.Patient_Contact)
-        contentValues.put(KEY_Patient_Pass,  pat.Patient_Pass)
+        contentValues.put(KEY_Patient_Pass, pat.Patient_Pass)
 
         val success = db.insert(TABLE_PATIENT, null, contentValues)
         db.close()
@@ -528,7 +530,7 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(
 
     //Working on Doc_Appointment's Table
 
-    fun addDoc_App (doc_app: Dr_App_Model) : Long {
+    fun addDoc_App(doc_app: Dr_App_Model): Long {
 
         val db = this.writableDatabase
         val contentValues = ContentValues()
@@ -1052,26 +1054,25 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(
 
     //Reading Patient's Table Data
 
-    fun viewPatient () : List <Patient_Model> {
+    fun viewPatient(): List<Patient_Model> {
 
-        val Patient_List : ArrayList <Patient_Model> = ArrayList < Patient_Model > ()
+        val Patient_List: ArrayList<Patient_Model> = ArrayList<Patient_Model>()
         val selectQuery = "SELECT * FROM $TABLE_PATIENT"
         val db = this.readableDatabase
-        var cursor : Cursor? = null
+        var cursor: Cursor? = null
 
         try {
-            cursor = db.rawQuery (selectQuery, null)
-        }
-        catch (e: SQLException){
-            db. execSQL (selectQuery)
+            cursor = db.rawQuery(selectQuery, null)
+        } catch (e: SQLException) {
+            db.execSQL(selectQuery)
             return ArrayList()
         }
 
-        var Patient_ID : String
-        var Patient_Name : String
-        var Patient_Address : String
-        var Patient_Contact : Int
-        var Patient_Pass : String
+        var Patient_ID: String
+        var Patient_Name: String
+        var Patient_Address: String
+        var Patient_Contact: Int
+        var Patient_Pass: String
 
         if (cursor.moveToFirst()) {
             do {
@@ -1081,10 +1082,9 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(
                 Patient_Contact = cursor.getInt(cursor.getColumnIndex("Patient_Contact"))
                 Patient_Pass = cursor.getString(cursor.getColumnIndex("Patient_Pass"))
 
-                val patients = Patient_Model (Patient_ID, Patient_Name, Patient_Address, Patient_Contact, Patient_Pass)
+                val patients = Patient_Model(Patient_ID, Patient_Name, Patient_Address, Patient_Contact, Patient_Pass)
                 Patient_List.add(patients)
-            }
-            while (cursor.moveToNext())
+            } while (cursor.moveToNext())
         }
 
         return Patient_List
@@ -1093,27 +1093,26 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(
 
     //Reading Doc_Appointment's Table Data
 
-    fun viewDoc_App  () : List <Dr_App_Model> {
+    fun viewDoc_App(): List<Dr_App_Model> {
 
-        val dr_app_List : ArrayList <Dr_App_Model> = ArrayList < Dr_App_Model > ()
+        val dr_app_List: ArrayList<Dr_App_Model> = ArrayList<Dr_App_Model>()
         val selectQuery = "SELECT * FROM $TABLE_DOC_APPOINT"
         val db = this.readableDatabase
-        var cursor : Cursor? = null
+        var cursor: Cursor? = null
 
         try {
-            cursor = db.rawQuery (selectQuery, null)
-        }
-        catch (e: SQLException){
-            db. execSQL (selectQuery)
+            cursor = db.rawQuery(selectQuery, null)
+        } catch (e: SQLException) {
+            db.execSQL(selectQuery)
             return ArrayList()
         }
 
-        var App_Id : String
-        var Patient_ID : String
-        var Dr_ID : String
-        var Start_at : String
-        var Clinic_ID : String
-        var Hosp_ID : String
+        var App_Id: String
+        var Patient_ID: String
+        var Dr_ID: String
+        var Start_at: String
+        var Clinic_ID: String
+        var Hosp_ID: String
 
         if (cursor.moveToFirst()) {
             do {
@@ -1124,10 +1123,9 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(
                 Clinic_ID = cursor.getString(cursor.getColumnIndex("Clinic_ID"))
                 Hosp_ID = cursor.getString(cursor.getColumnIndex("Hosp_ID"))
 
-                val dr_app = Dr_App_Model (App_Id, Patient_ID, Dr_ID, Start_at, Clinic_ID, Hosp_ID)
+                val dr_app = Dr_App_Model(App_Id, Patient_ID, Dr_ID, Start_at, Clinic_ID, Hosp_ID)
                 dr_app_List.add(dr_app)
-            }
-            while (cursor.moveToNext())
+            } while (cursor.moveToNext())
         }
 
         return dr_app_List

@@ -10,15 +10,15 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import com.webtekproject.smarhealthconsultancy.Authorities.control.Profile_Page_Authority
-import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Base_Activity
-import com.webtekproject.smarhealthconsultancy.R
 import com.webtekproject.smarhealthconsultancy.Common.SignIn_Activity
+import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Base_Activity
 import com.webtekproject.smarhealthconsultancy.DeveloperFiles.DatabaseHandler
 import com.webtekproject.smarhealthconsultancy.Model_Classes.Doc_Clinic_Model
+import com.webtekproject.smarhealthconsultancy.R
 import kotlinx.android.synthetic.main.activity_clinic_settings.*
 import org.jetbrains.anko.toast
 
-class Clinic_Settings : Base_Activity() , AdapterView.OnItemSelectedListener {
+class Clinic_Settings : Base_Activity(), AdapterView.OnItemSelectedListener {
 
     val docName: ArrayList<String> = ArrayList<String>()
     val docspecial: ArrayList<String> = ArrayList<String>()
@@ -56,25 +56,25 @@ class Clinic_Settings : Base_Activity() , AdapterView.OnItemSelectedListener {
         }
 
         spinnerselect = this.Speciality
-        spinnerselect!!.setOnItemSelectedListener(this)
+        spinnerselect!!.onItemSelectedListener = this
 
         val aa = ArrayAdapter(this, android.R.layout.simple_spinner_item, docspecial)
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinnerselect!!.setAdapter(aa)
+        spinnerselect!!.adapter = aa
 
         spinnerselect1 = this.Qualification
-        spinnerselect1!!.setOnItemSelectedListener(this)
+        spinnerselect1!!.onItemSelectedListener = this
 
         val ab = ArrayAdapter(this, android.R.layout.simple_spinner_item, docqualif)
         ab.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinnerselect1!!.setAdapter(ab)
+        spinnerselect1!!.adapter = ab
 
         spinnerselect2 = this.Name
-        spinnerselect2!!.setOnItemSelectedListener(this)
+        spinnerselect2!!.onItemSelectedListener = this
 
         val ac = ArrayAdapter(this, android.R.layout.simple_spinner_item, docName)
         ac.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinnerselect2!!.setAdapter(ac)
+        spinnerselect2!!.adapter = ac
     }
 
 
@@ -113,7 +113,7 @@ class Clinic_Settings : Base_Activity() , AdapterView.OnItemSelectedListener {
         val db: DatabaseHandler = DatabaseHandler(this)
         val doc_list = db.viewDoctors()
 
-        when (parent?.id) {
+        when (parent.id) {
             R.id.Speciality -> {
                 option_sp = docspecial[position]
                 toast("Showing By:${option_sp}")
@@ -166,13 +166,13 @@ class Clinic_Settings : Base_Activity() , AdapterView.OnItemSelectedListener {
             if (i.Dr_Speciality.equals(option_sp) && i.Dr_Qualification.equals(option_qu) && i.Dr_Name.equals(option_nm)) {
                 val status = db.addDoc_Clinic(Doc_Clinic_Model(i.Dr_ID, user!!))
                 if (status > -1) {
-                    toast (" Record Saved")
+                    toast(" Record Saved")
                     intent = Intent(this, Profile_Page_Authority::class.java)
                     startActivity(intent)
                 }
                 break
-            }else
-                toast ("Record Not Found !!")
+            } else
+                toast("Record Not Found !!")
         }
 
     }

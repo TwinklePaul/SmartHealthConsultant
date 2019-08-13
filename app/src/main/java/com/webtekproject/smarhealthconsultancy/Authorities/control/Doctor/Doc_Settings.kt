@@ -11,9 +11,9 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
 import com.webtekproject.smarhealthconsultancy.Authorities.control.Profile_Page_Authority
+import com.webtekproject.smarhealthconsultancy.Common.SignIn_Activity
 import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Base_Activity
 import com.webtekproject.smarhealthconsultancy.DeveloperFiles.DatabaseHandler
-import com.webtekproject.smarhealthconsultancy.Common.SignIn_Activity
 import com.webtekproject.smarhealthconsultancy.Model_Classes.Doc_Clinic_Model
 import com.webtekproject.smarhealthconsultancy.Model_Classes.Doc_Hosp_Model
 import com.webtekproject.smarhealthconsultancy.R
@@ -64,25 +64,25 @@ class Doc_Settings : Base_Activity(), AdapterView.OnItemSelectedListener {
         hosploc.add("Select Location")
 
         spinnerselect = this.SelectBy
-        spinnerselect!!.setOnItemSelectedListener(this)
+        spinnerselect!!.onItemSelectedListener = this
 
         val aa = ArrayAdapter(this, android.R.layout.simple_spinner_item, selectval)
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinnerselect!!.setAdapter(aa)
+        spinnerselect!!.adapter = aa
 
         spinnerselect1 = this.SelectH1
-        spinnerselect1!!.setOnItemSelectedListener(this)
+        spinnerselect1!!.onItemSelectedListener = this
 
         val ab = ArrayAdapter(this, android.R.layout.simple_spinner_item, hospName)
         ab.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinnerselect1!!.setAdapter(ab)
+        spinnerselect1!!.adapter = ab
 
         spinnerselect2 = this.SelectH2
-        spinnerselect2!!.setOnItemSelectedListener(this)
+        spinnerselect2!!.onItemSelectedListener = this
 
         val ac = ArrayAdapter(this, android.R.layout.simple_spinner_item, hosploc)
         ac.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinnerselect2!!.setAdapter(ac)
+        spinnerselect2!!.adapter = ac
 
 
 
@@ -90,25 +90,25 @@ class Doc_Settings : Base_Activity(), AdapterView.OnItemSelectedListener {
         clinicloc.add("Select Location")
 
         spinneroption = this.Option
-        spinneroption!!.setOnItemSelectedListener(this)
+        spinneroption!!.onItemSelectedListener = this
 
         val ba = ArrayAdapter(this, android.R.layout.simple_spinner_item, selectval)
         ba.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinneroption!!.setAdapter(ba)
+        spinneroption!!.adapter = ba
 
         spinneroption1 = this.Option1
-        spinneroption1!!.setOnItemSelectedListener(this)
+        spinneroption1!!.onItemSelectedListener = this
 
         val bb = ArrayAdapter(this, android.R.layout.simple_spinner_item, clinicName)
         bb.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinneroption1!!.setAdapter(bb)
+        spinneroption1!!.adapter = bb
 
         spinneroption2 = this.Option2
-        spinneroption2!!.setOnItemSelectedListener(this)
+        spinneroption2!!.onItemSelectedListener = this
 
         val bc = ArrayAdapter(this, android.R.layout.simple_spinner_item, clinicloc)
         bc.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinneroption2!!.setAdapter(bc)
+        spinneroption2!!.adapter = bc
 
     }
 
@@ -168,7 +168,7 @@ class Doc_Settings : Base_Activity(), AdapterView.OnItemSelectedListener {
         val hosp_list = db.viewHospital()
         val clinic_list = db.viewClinic()
 
-        when (parent?.id) {
+        when (parent.id) {
             R.id.SelectBy -> {
                 option = selectval[position]
                 toast("Showing By:${option}")
@@ -185,12 +185,12 @@ class Doc_Settings : Base_Activity(), AdapterView.OnItemSelectedListener {
                     }
 
                     spinnerselect = this.SelectH1
-                    spinnerselect!!.setOnItemSelectedListener(this)
+                    spinnerselect!!.onItemSelectedListener = this
 
                     val aa = ArrayAdapter(this, android.R.layout.simple_spinner_item, hospName)
                     aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
-                    spinnerselect!!.setAdapter(aa)
+                    spinnerselect!!.adapter = aa
 
                 } else
 
@@ -207,12 +207,12 @@ class Doc_Settings : Base_Activity(), AdapterView.OnItemSelectedListener {
                         }
 
                         spinnerselect = this.SelectH1
-                        spinnerselect!!.setOnItemSelectedListener(this)
+                        spinnerselect!!.onItemSelectedListener = this
 
                         val aa = ArrayAdapter(this, android.R.layout.simple_spinner_item, hosploc)
                         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
-                        spinnerselect!!.setAdapter(aa)
+                        spinnerselect!!.adapter = aa
 
                     } else {
                         hospName.clear()
@@ -240,12 +240,12 @@ class Doc_Settings : Base_Activity(), AdapterView.OnItemSelectedListener {
                     }
 
                     spinnerselect = this.SelectH2
-                    spinnerselect!!.setOnItemSelectedListener(this)
+                    spinnerselect!!.onItemSelectedListener = this
 
                     val ab = ArrayAdapter(this, android.R.layout.simple_spinner_item, hosploc)
                     ab.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
-                    spinnerselect!!.setAdapter(ab)
+                    spinnerselect!!.adapter = ab
 
                 } else {
                     if (option.equals("Location")) {
@@ -262,12 +262,12 @@ class Doc_Settings : Base_Activity(), AdapterView.OnItemSelectedListener {
                         }
 
                         spinnerselect = this.SelectH2
-                        spinnerselect!!.setOnItemSelectedListener(this)
+                        spinnerselect!!.onItemSelectedListener = this
 
                         val ab = ArrayAdapter(this, android.R.layout.simple_spinner_item, hospName)
                         ab.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
-                        spinnerselect!!.setAdapter(ab)
+                        spinnerselect!!.adapter = ab
 
                     }
                 }
@@ -310,12 +310,12 @@ class Doc_Settings : Base_Activity(), AdapterView.OnItemSelectedListener {
                     }
 
                     spinneroption1 = this.Option1
-                    spinneroption1!!.setOnItemSelectedListener(this)
+                    spinneroption1!!.onItemSelectedListener = this
 
                     val aa = ArrayAdapter(this, android.R.layout.simple_spinner_item, clinicName)
                     aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
-                    spinneroption1!!.setAdapter(aa)
+                    spinneroption1!!.adapter = aa
 
                 } else
 
@@ -331,12 +331,12 @@ class Doc_Settings : Base_Activity(), AdapterView.OnItemSelectedListener {
                         }
 
                         spinneroption1 = this.Option1
-                        spinneroption1!!.setOnItemSelectedListener(this)
+                        spinneroption1!!.onItemSelectedListener = this
 
                         val aa = ArrayAdapter(this, android.R.layout.simple_spinner_item, clinicloc)
                         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
-                        spinneroption1!!.setAdapter(aa)
+                        spinneroption1!!.adapter = aa
 
                     } else {
                         clinicName.clear()
@@ -363,12 +363,12 @@ class Doc_Settings : Base_Activity(), AdapterView.OnItemSelectedListener {
                     }
 
                     spinneroption2 = this.Option2
-                    spinneroption2!!.setOnItemSelectedListener(this)
+                    spinneroption2!!.onItemSelectedListener = this
 
                     val ab = ArrayAdapter(this, android.R.layout.simple_spinner_item, clinicloc)
                     ab.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
-                    spinneroption2!!.setAdapter(ab)
+                    spinneroption2!!.adapter = ab
 
                 } else {
                     if (coption.equals("Location")) {
@@ -385,12 +385,12 @@ class Doc_Settings : Base_Activity(), AdapterView.OnItemSelectedListener {
                         }
 
                         spinneroption2 = this.Option2
-                        spinneroption2!!.setOnItemSelectedListener(this)
+                        spinneroption2!!.onItemSelectedListener = this
 
                         val ab = ArrayAdapter(this, android.R.layout.simple_spinner_item, clinicName)
                         ab.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
-                        spinneroption2!!.setAdapter(ab)
+                        spinneroption2!!.adapter = ab
 
                     }
                 }

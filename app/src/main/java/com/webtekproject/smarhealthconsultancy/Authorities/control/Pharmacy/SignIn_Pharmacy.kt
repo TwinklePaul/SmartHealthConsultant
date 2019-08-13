@@ -9,8 +9,8 @@ import android.view.View
 import com.webtekproject.smarhealthconsultancy.Authorities.control.Clinic.Clinic_Settings
 import com.webtekproject.smarhealthconsultancy.Authorities.control.Create_Feed
 import com.webtekproject.smarhealthconsultancy.Authorities.control.Profile_Page_Authority
-import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Base_Activity
 import com.webtekproject.smarhealthconsultancy.Common.SignIn_Activity
+import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Base_Activity
 import com.webtekproject.smarhealthconsultancy.R
 
 class SignIn_Pharmacy : Base_Activity() {

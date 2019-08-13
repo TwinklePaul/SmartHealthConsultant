@@ -108,7 +108,7 @@ class Profile_Page_Authority : Base_Activity() {
 
                     for (j in room_list) {
                         if ((j.Hosp_ID).equals(userID)) {
-                            str = str + j.Room_ID + " \t " + "Beds: " +  j.Beds_Available + "\n"
+                            str = str + j.Room_ID + " \t " + "Beds: " + j.Beds_Available + "\n"
                         }
                     }
 

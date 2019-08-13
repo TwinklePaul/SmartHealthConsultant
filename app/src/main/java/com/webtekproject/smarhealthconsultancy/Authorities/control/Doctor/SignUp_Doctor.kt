@@ -4,9 +4,8 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
-import com.webtekproject.smarhealthconsultancy.DeveloperFiles.DatabaseHandler
 import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Base_Activity
+import com.webtekproject.smarhealthconsultancy.DeveloperFiles.DatabaseHandler
 import com.webtekproject.smarhealthconsultancy.Model_Classes.Doctor_Model
 import com.webtekproject.smarhealthconsultancy.R
 import kotlinx.android.synthetic.main.activity_signup_doctor.*
@@ -58,7 +57,7 @@ class SignUp_Doctor : Base_Activity() {
                 }
 
             } else {
-                toast (" Fields can't be blank ")
+                toast(" Fields can't be blank ")
 
                 edit_ID.text.clear()
                 edit_Name.text.clear()

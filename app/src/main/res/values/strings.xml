@@ -28,4 +28,13 @@
         Senior Technical - \n Consultant\n
         Webtek Labs
     </string>
+    <string name="help_dialog">Register as a Medical Authority or as a Patient. \n\n\nAs Medical Authority, you can post
+        updates, advertise, or send health alerts on the News Feed for other users to see.\n\nMediacal Authorities can
+        inter-link with each other through the Settings Option once they have logged in. Hospitals and Clinics have the
+        permission to Accept/ Reject/ Modify Appointment requests.\n\nDoctors can only view the Scheduled
+        Appointments.\n\n\nAs Patient, one can request for an appointment as per his choice of location speciality,
+        etc.\n\nIf Confirmed, Appointments will be visible under the Schedule Option\n\n\n Non-Medical Authorities are
+        not allowed to post on the forum but they can view it anytime.\n\n\n\n\n\nNote: Sharing Option is inactive for
+        the moment.
+    </string>
 </resources>

@@ -1,5 +1,6 @@
 package com.webtekproject.smarhealthconsultancy.DeveloperFiles
 
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.Gravity
@@ -7,6 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.PopupMenu
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.webtekproject.smarhealthconsultancy.R
 import kotlinx.android.synthetic.main.activity_base.*
@@ -81,6 +83,27 @@ open class Base_Activity : AppCompatActivity() {
 
             R.id.help -> {
                 Toast.makeText(this, "Help:", Toast.LENGTH_SHORT).show()
+                val dialogBuilder = AlertDialog.Builder(this)
+                val inflater = this.layoutInflater
+
+                val dialogView = inflater.inflate(R.layout.dialog_help, null)
+                dialogBuilder.setView(dialogView)
+
+
+                dialogBuilder.setTitle("Help")
+                dialogBuilder.setMessage("How to Use the App: ")
+                dialogBuilder.setPositiveButton("OK", DialogInterface.OnClickListener { dialog, which ->
+                    finish()
+                })
+
+                dialogBuilder.setNegativeButton("", DialogInterface.OnClickListener({ dialog, which ->
+                    finish()
+                }))
+
+                val b = dialogBuilder.create()
+                b.show()
+
+
                 return true
             }
 

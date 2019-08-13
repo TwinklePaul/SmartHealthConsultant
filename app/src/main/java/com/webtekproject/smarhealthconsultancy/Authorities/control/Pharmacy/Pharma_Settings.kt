@@ -6,8 +6,8 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import com.webtekproject.smarhealthconsultancy.Authorities.control.Profile_Page_Authority
-import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Base_Activity
 import com.webtekproject.smarhealthconsultancy.Common.SignIn_Activity
+import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Base_Activity
 import com.webtekproject.smarhealthconsultancy.R
 
 class Pharma_Settings : Base_Activity() {

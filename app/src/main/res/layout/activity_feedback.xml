@@ -114,7 +114,18 @@
                     android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
                     android:hint="Provide Your Valuable Feedback Over Here:"
             />
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
+            android:background="@drawable/buttonoutline"
+            android:text="Submit"
+            android:onClick="submit"
+    />
 
 </LinearLayout>
