@@ -13,9 +13,11 @@ class Schedule_Adapter(
     private val docname: ArrayList<String>,
     private val doccont: ArrayList<Int>,
     private val patname: ArrayList<String>,
-    private val patcont: ArrayList<Int>
+    private val orgname: ArrayList<String>,
+    private val orgloc: ArrayList<String>,
+    private val orgtype: ArrayList<String>
 ) :
-    ArrayAdapter<String>(context, R.layout.layout_appointment, docname) {
+    ArrayAdapter<String>(context, R.layout.layout_confirmed, docname) {
 
     override fun getView(position: Int, view: View?, parent: ViewGroup): View {
 
@@ -26,13 +28,18 @@ class Schedule_Adapter(
         val dname = rowView.findViewById<TextView>(R.id.dr_name)
         val dcont = rowView.findViewById<TextView>(R.id.dr_cont)
         val pname = rowView.findViewById<TextView>(R.id.pat_name)
-        val pcont = rowView.findViewById<TextView>(R.id.pat_cont)
+        val otype = rowView.findViewById<TextView>(R.id.text_orgCat)
+        val oname = rowView.findViewById<TextView>(R.id.text_orgName)
+        val olocate = rowView.findViewById<TextView>(R.id.text_orgLoc)
+
 
         id.text = app_id[position]
         dname.text = docname[position]
         dcont.text = doccont[position].toString()
         pname.text = patname[position]
-        pcont.text = patcont[position].toString()
+        otype.text = orgtype[position]
+        oname.text = orgname[position]
+        olocate.text = orgloc[position]
 
         return rowView
     }
