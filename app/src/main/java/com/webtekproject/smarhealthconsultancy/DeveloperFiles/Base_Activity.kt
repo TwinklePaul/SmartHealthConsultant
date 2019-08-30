@@ -118,6 +118,7 @@ open class Base_Activity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
 
-
     }
+
+
 }

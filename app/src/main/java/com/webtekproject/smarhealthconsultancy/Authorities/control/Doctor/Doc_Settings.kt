@@ -165,7 +165,7 @@ class Doc_Settings : Base_Activity(), AdapterView.OnItemSelectedListener {
 
     override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
 
-        val db: DatabaseHandler = DatabaseHandler(this)
+        val db = DatabaseHandler(this)
         val hosp_list = db.viewHospital()
         val clinic_list = db.viewClinic()
 

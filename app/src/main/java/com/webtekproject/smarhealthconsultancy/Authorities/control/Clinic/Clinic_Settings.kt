@@ -51,8 +51,18 @@ class Clinic_Settings : Base_Activity(), AdapterView.OnItemSelectedListener {
         val db: DatabaseHandler = DatabaseHandler(this)
         val doc_list = db.viewDoctors()
 
+        var flag = 0
         for (i in doc_list) {
-            docspecial.add(i.Dr_Speciality)
+            for (j in docspecial)
+                if (i.Dr_Speciality.equals(j)) {
+                    flag = 1
+                    break
+                }
+
+            if (flag == 0)
+                docspecial.add(i.Dr_Speciality)
+            else
+                flag = 0
         }
 
         spinnerselect = this.Speciality

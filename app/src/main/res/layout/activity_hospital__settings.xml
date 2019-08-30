@@ -13,7 +13,9 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
             android:textAlignment="center"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"></androidx.appcompat.widget.Toolbar>
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark">
+
+    </androidx.appcompat.widget.Toolbar>
 
     <androidx.cardview.widget.CardView
             android:id="@+id/profile_photo"
@@ -129,6 +131,7 @@
             android:layout_below="@+id/hospital_container"
             android:layout_alignParentBottom="false"
             android:layout_marginBottom="@dimen/button_gap"
+            android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
             android:background="@drawable/buttonbg"
             android:onClick="saveDoctorRecord"
             android:text="Save Doctor Record"
@@ -136,6 +139,7 @@
             android:textStyle="bold" />
 
     <androidx.cardview.widget.CardView
+            android:id="@+id/roomContainer"
             android:layout_width="match_parent"
             android:layout_height="210dp"
             android:layout_below="@+id/button_saveHosp"
@@ -218,8 +222,9 @@
             android:id="@+id/button_editTexts"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="@dimen/button_gap"
+            android:layout_below="@+id/roomContainer"
+            android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
+            android:layout_marginTop="@dimen/button_gap"
             android:background="@drawable/buttonbg"
             android:onClick="saveRoomRecord"
             android:text="Add Room"

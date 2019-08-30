@@ -3,6 +3,7 @@
         package="com.webtekproject.smarhealthconsultancy">
 
     <supports-screens
+            android:resizeable="true"
             android:anyDensity="true"
             android:largeScreens="true"
             android:normalScreens="true"
@@ -14,54 +15,63 @@
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme">
 
 
         <activity
                 android:name=".Common.ActOn_Appointment"
                 android:label="Act On Appointment:"
+                android:screenOrientation="portrait"
                 android:parentActivityName=".Common.SignIn_Activity"></activity>
 
-
-        <activity android:name=".Patient.Patient_Settings"></activity>
         <activity
                 android:name=".Patient.Check_Appointment"
                 android:label="Confirmed Appointments"
+                android:screenOrientation="portrait"
                 android:parentActivityName=".Common.SignIn_Activity"></activity>
         <activity
                 android:name=".Patient.SignUp_Patient"
                 android:label="SignUp as Patient:"
+                android:screenOrientation="portrait"
                 android:parentActivityName=".Common.SignIn_Activity"></activity>
         <activity
                 android:name=".Patient.SignIn_Patient"
                 android:label="My DashBoard:"
+                android:screenOrientation="portrait"
                 android:parentActivityName=".Common.SignIn_Activity"></activity>
         <activity
                 android:name=".Patient.Get_Appointment"
                 android:label="Choose Your Appointment:"
+                android:screenOrientation="portrait"
                 android:parentActivityName=".Patient.SignIn_Patient"></activity>
 
         <activity
                 android:name=".Patient.Profile_Page_Patient"
                 android:label="Profile Page:"
+                android:screenOrientation="portrait"
                 android:parentActivityName=".Patient.SignIn_Patient"></activity>
 
 
         <activity
                 android:name=".Authorities.control.Clinic.Clinic_Settings"
                 android:label="Settings"
+                android:screenOrientation="portrait"
                 android:parentActivityName=".Common.SignIn_Activity"></activity>
         <activity
                 android:name=".Authorities.control.Clinic.SignIn_Clinic"
                 android:label="Clinic"
+                android:screenOrientation="portrait"
                 android:parentActivityName=".Common.SignIn_Activity"></activity>
         <activity
                 android:name=".Authorities.control.Clinic.SignUp_Clinic"
                 android:label="SignUp as Clinic:"
+                android:screenOrientation="portrait"
                 android:parentActivityName=".Common.SignIn_Activity"></activity>
         <activity
                 android:name=".Authorities.control.Clinic.CheckAppointment_Clinic"
                 android:label="Search Page:"
+                android:screenOrientation="portrait"
                 android:parentActivityName=".Patient.SignIn_Patient"></activity>
 
         <!--<activity
@@ -83,41 +93,50 @@
         <activity
                 android:name=".Authorities.control.Doctor.SignIn_Doctor"
                 android:label="Doctor"
+                android:screenOrientation="portrait"
                 android:parentActivityName=".Common.SignIn_Activity"></activity>
         <activity
                 android:name=".Authorities.control.Doctor.Doc_Settings"
                 android:label="Settings"
+                android:screenOrientation="portrait"
                 android:parentActivityName=".Common.SignIn_Activity"></activity>
         <activity
                 android:name=".Authorities.control.Doctor.CheckAppointment_Doctor"
                 android:label="Confirmed Appointments"
+                android:screenOrientation="portrait"
                 android:parentActivityName=".Common.SignIn_Activity"></activity>
         <activity
                 android:name=".Authorities.control.Doctor.SignUp_Doctor"
                 android:label="SignUp as Doctor:"
+                android:screenOrientation="portrait"
                 android:parentActivityName=".Common.SignIn_Activity"></activity>
 
 
         <activity
                 android:name=".Authorities.control.Hospital.SignUp_Hospital"
                 android:label="SignUp as Hospital Management:"
+                android:screenOrientation="portrait"
                 android:parentActivityName=".Common.SignIn_Activity"></activity>
         <activity
                 android:name=".Authorities.control.Hospital.Hospital_Settings"
                 android:label="Settings"
+                android:screenOrientation="portrait"
                 android:parentActivityName=".Common.SignIn_Activity"></activity>
         <activity
                 android:name=".Authorities.control.Hospital.CheckAppointment_Hospital"
                 android:label="View Appointment: "
+                android:screenOrientation="portrait"
                 android:parentActivityName=".Common.SignIn_Activity"></activity>
         <activity
                 android:name=".Authorities.control.Hospital.SignIn_Hospital"
                 android:label="Hospital"
+                android:screenOrientation="portrait"
                 android:parentActivityName=".Common.SignIn_Activity"></activity>
 
         <activity
                 android:name=".Authorities.control.Create_Feed"
                 android:label="Create Feed."
+                android:screenOrientation="portrait"
                 android:parentActivityName=".Common.SignIn_Activity"></activity>
         <activity
                 android:name=".Authorities.control.Profile_Page_Authority"
@@ -126,6 +145,7 @@
 
         <activity
                 android:name=".DeveloperFiles.MainActivity"
+                android:screenOrientation="portrait"
                 android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -137,21 +157,25 @@
         <activity
                 android:name=".Common.SignIn_Activity"
                 android:label="LogIn Page:"
+                android:screenOrientation="portrait"
                 android:parentActivityName=".Common.SignIn_Activity"></activity>
 
 
         <activity
                 android:name=".DeveloperFiles.About_Us"
                 android:label="Credits:"
+                android:screenOrientation="portrait"
                 android:parentActivityName=".Common.SignIn_Activity"></activity>
 
         <activity
                 android:name=".Common.Feedback"
                 android:label="Feedback:"
+                android:screenOrientation="portrait"
                 android:parentActivityName=".Common.SignIn_Activity"></activity>
         <activity
                 android:name=".Common.View_Feed"
                 android:label="News Feed:"
+                android:screenOrientation="portrait"
                 android:parentActivityName=".Common.SignIn_Activity"></activity>
 
 
