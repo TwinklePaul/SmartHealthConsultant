@@ -20,7 +20,6 @@ class CheckAppointment_Clinic : Base_Activity() {
     var doc_cont: ArrayList<Int> = ArrayList()
     var pat_name: ArrayList<String> = ArrayList()
     var pat_cont: ArrayList<Int> = ArrayList()
-    var app_id: ArrayList<String> = ArrayList()
 
     var doc_id: String = ""
     var pat_id: String = ""
@@ -57,7 +56,6 @@ class CheckAppointment_Clinic : Base_Activity() {
 
                 doc_id = i.Dr_ID
                 pat_id = i.Patient_ID
-                app_id.add(i.App_Id)
 
                 for (j in doc_list)
                     if (j.Dr_ID.equals(doc_id)) {
@@ -76,7 +74,7 @@ class CheckAppointment_Clinic : Base_Activity() {
         }
 
 
-        val myListAdapter = AppointmentAdapter(this, app_id, doc_name, doc_cont, pat_name, pat_cont)
+        val myListAdapter = AppointmentAdapter(this, doc_name, doc_cont, pat_name, pat_cont)
 
         listapp.adapter = myListAdapter
 
@@ -88,7 +86,9 @@ class CheckAppointment_Clinic : Base_Activity() {
             toast("Click on Item at $itemAtPos, its Item ID at $itemIdAtPos")
 
             intent = Intent(this, ActOn_Appointment::class.java)
-            intent.putExtra("app_id", app_id)
+            intent.putExtra("pat_id", pat_id)
+            intent.putExtra("doc_id", doc_id)
+            startActivity(intent)
         }
 
     }

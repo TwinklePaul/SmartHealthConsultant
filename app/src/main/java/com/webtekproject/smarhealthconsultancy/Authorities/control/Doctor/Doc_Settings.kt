@@ -174,6 +174,8 @@ class Doc_Settings : Base_Activity(), AdapterView.OnItemSelectedListener {
                 option = selectval[position]
                 toast("Showing By:${option}")
 
+                var flag = 0
+
                 if (option.equals("Name")) {
 
                     hospName.clear()
@@ -182,7 +184,17 @@ class Doc_Settings : Base_Activity(), AdapterView.OnItemSelectedListener {
                     hosploc.add("Select Location")
 
                     for (i in hosp_list) {
-                        hospName.add(i.Hosp_Name)
+
+                        for (j in hospName)
+                            if (i.Hosp_Name.equals(j)) {
+                                flag = 1
+                                break
+                            }
+
+                        if (flag == 0)
+                            hospName.add(i.Hosp_Name)
+                        else
+                            flag = 0
                     }
 
                     spinnerselect = this.SelectH1
@@ -197,6 +209,7 @@ class Doc_Settings : Base_Activity(), AdapterView.OnItemSelectedListener {
 
                     if (option.equals("Location")) {
 
+                        flag = 0
                         hospName.clear()
                         hospName.add("Select Name")
                         hosploc.clear()
@@ -204,7 +217,16 @@ class Doc_Settings : Base_Activity(), AdapterView.OnItemSelectedListener {
 
                         for (i in hosp_list) {
 
-                            hosploc.add(i.Hosp_Location)
+                            for (j in hosploc)
+                                if (i.Hosp_Location.equals(j)) {
+                                    flag = 1
+                                    break
+                                }
+
+                            if (flag == 0)
+                                hosploc.add(i.Hosp_Location)
+                            else
+                                flag = 0
                         }
 
                         spinnerselect = this.SelectH1
@@ -231,12 +253,22 @@ class Doc_Settings : Base_Activity(), AdapterView.OnItemSelectedListener {
                     hname = hospName[position]
                     toast("Showing By:${hname}")
 
+                    var flag = 0
                     hosploc.clear()
                     hosploc.add("Select Location")
 
                     for (i in hosp_list) {
                         if ((i.Hosp_Name).equals(hname)) {
-                            hosploc.add(i.Hosp_Location)
+                            for (j in hosploc)
+                                if (i.Hosp_Location.equals(j)) {
+                                    flag = 1
+                                    break
+                                }
+
+                            if (flag == 0)
+                                hosploc.add(i.Hosp_Location)
+                            else
+                                flag = 0
                         }
                     }
 
@@ -253,12 +285,22 @@ class Doc_Settings : Base_Activity(), AdapterView.OnItemSelectedListener {
                         hloc = hosploc[position]
                         toast("Showing By:${hloc}")
 
+                        var flag = 0
                         hospName.clear()
                         hospName.add("Select Name")
 
                         for (i in hosp_list) {
                             if ((i.Hosp_Location).equals(hloc)) {
-                                hospName.add(i.Hosp_Name)
+                                for (j in hospName)
+                                    if (i.Hosp_Name.equals(j)) {
+                                        flag = 1
+                                        break
+                                    }
+
+                                if (flag == 0)
+                                    hospName.add(i.Hosp_Name)
+                                else
+                                    flag = 0
                             }
                         }
 
@@ -301,13 +343,23 @@ class Doc_Settings : Base_Activity(), AdapterView.OnItemSelectedListener {
 
                 if (coption.equals("Name")) {
 
+                    var flag = 0
                     clinicName.clear()
                     clinicName.add("Select Name")
                     clinicloc.clear()
                     clinicloc.add("Select Location")
 
                     for (i in clinic_list) {
-                        clinicName.add(i.Clinic_Name)
+                        for (j in clinicName)
+                            if (i.Clinic_Name.equals(j)) {
+                                flag = 1
+                                break
+                            }
+
+                        if (flag == 0)
+                            clinicName.add(i.Clinic_Name)
+                        else
+                            flag = 0
                     }
 
                     spinneroption1 = this.Option1
@@ -322,13 +374,24 @@ class Doc_Settings : Base_Activity(), AdapterView.OnItemSelectedListener {
 
                     if (coption.equals("Location")) {
 
+                        var flag = 0
+
                         clinicName.clear()
                         clinicName.add("Select Name")
                         clinicloc.clear()
                         clinicloc.add("Select Location")
 
                         for (i in clinic_list) {
-                            clinicloc.add(i.Clinic_Location)
+                            for (j in clinicloc)
+                                if (i.Clinic_Location.equals(j)) {
+                                    flag = 1
+                                    break
+                                }
+
+                            if (flag == 0)
+                                clinicloc.add(i.Clinic_Location)
+                            else
+                                flag = 0
                         }
 
                         spinneroption1 = this.Option1
@@ -356,10 +419,20 @@ class Doc_Settings : Base_Activity(), AdapterView.OnItemSelectedListener {
 
                     clinicloc.clear()
                     clinicloc.add("Select Location")
+                    var flag = 0
 
                     for (i in clinic_list) {
                         if ((i.Clinic_Name).equals(cname)) {
-                            clinicloc.add(i.Clinic_Location)
+                            for (j in clinicloc)
+                                if (i.Clinic_Location.equals(j)) {
+                                    flag = 1
+                                    break
+                                }
+
+                            if (flag == 0)
+                                clinicloc.add(i.Clinic_Location)
+                            else
+                                flag = 0
                         }
                     }
 
@@ -376,12 +449,22 @@ class Doc_Settings : Base_Activity(), AdapterView.OnItemSelectedListener {
                         cloc = clinicloc[position]
                         toast("Showing By:${cloc}")
 
+                        var flag = 0
                         clinicName.clear()
                         clinicName.add("Select Name")
 
                         for (i in clinic_list) {
                             if ((i.Clinic_Location).equals(cloc)) {
-                                clinicName.add(i.Clinic_Name)
+                                for (j in clinicName)
+                                    if (i.Clinic_Name.equals(j)) {
+                                        flag = 1
+                                        break
+                                    }
+
+                                if (flag == 0)
+                                    clinicName.add(i.Clinic_Name)
+                                else
+                                    flag = 0
                             }
                         }
 

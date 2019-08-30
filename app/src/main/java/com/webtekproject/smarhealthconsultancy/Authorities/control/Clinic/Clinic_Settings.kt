@@ -118,14 +118,26 @@ class Clinic_Settings : Base_Activity(), AdapterView.OnItemSelectedListener {
                 option_sp = docspecial[position]
                 toast("Showing By:${option_sp}")
 
+                var flag = 0
+
                 docqualif.clear()
                 docqualif.add("Select Qualification")
                 docName.clear()
                 docName.add("Select Name")
 
                 for (i in doc_list) {
-                    if (i.Dr_Speciality.equals(option_sp))
-                        docqualif.add(i.Dr_Qualification)
+                    if (i.Dr_Speciality.equals(option_sp)) {
+                        for (j in docqualif)
+                            if (i.Dr_Qualification.equals(j)) {
+                                flag = 1
+                                break
+                            }
+
+                        if (flag == 0)
+                            docqualif.add(i.Dr_Qualification)
+                        else
+                            flag = 0
+                    }
                 }
             }
 
@@ -133,12 +145,25 @@ class Clinic_Settings : Base_Activity(), AdapterView.OnItemSelectedListener {
                 option_qu = docqualif[position]
                 toast("Showing By:${option_qu}")
 
+                var flag = 0
                 docName.clear()
                 docName.add("Select Name")
 
                 for (i in doc_list) {
-                    if (i.Dr_Speciality.equals(option_sp) && i.Dr_Qualification.equals(option_qu))
-                        docName.add(i.Dr_Name)
+                    if (i.Dr_Speciality.equals(option_sp) && i.Dr_Qualification.equals(option_qu)) {
+
+                        for (j in docName)
+                            if (i.Dr_Name.equals(j)) {
+                                flag = 1
+                                break
+                            }
+
+                        if (flag == 0)
+                            docName.add(i.Dr_Name)
+                        else
+                            flag = 0
+
+                    }
                 }
             }
 
@@ -161,19 +186,33 @@ class Clinic_Settings : Base_Activity(), AdapterView.OnItemSelectedListener {
         val user = pref.getString("userid", null)
 
         val doc_list = db.viewDoctors()
+        val doc_clinic = db.viewDoc_Clinic()
+
+        var flag = 0
 
         for (i in doc_list) {
             if (i.Dr_Speciality.equals(option_sp) && i.Dr_Qualification.equals(option_qu) && i.Dr_Name.equals(
                     option_nm
                 )
             ) {
-                val status = db.addDoc_Clinic(Doc_Clinic_Model(i.Dr_ID, user!!))
-                if (status > -1) {
-                    toast(" Record Saved")
-                    intent = Intent(this, Profile_Page_Authority::class.java)
-                    startActivity(intent)
-                }
-                break
+
+                for (j in doc_clinic)
+                    if (i.Dr_ID.equals(j.Dr_ID) && j.Clinic_ID.equals(user)) {
+                        flag = 1
+                        toast("Record Already Exists!!")
+                        break
+                    }
+
+                if (flag == 0) {
+                    val status = db.addDoc_Clinic(Doc_Clinic_Model(i.Dr_ID, user!!))
+                    if (status > -1) {
+                        toast(" Record Saved")
+                        intent = Intent(this, Profile_Page_Authority::class.java)
+                        startActivity(intent)
+                    }
+                    break
+                } else
+                    break
             } else
                 toast("Record Not Found !!")
         }

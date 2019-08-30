@@ -56,7 +56,6 @@ class CheckAppointment_Hospital : Base_Activity() {
 
                 doc_id = i.Dr_ID
                 pat_id = i.Patient_ID
-                app_id.add(i.App_Id)
 
                 for (j in doc_list)
                     if (j.Dr_ID.equals(doc_id)) {
@@ -75,7 +74,7 @@ class CheckAppointment_Hospital : Base_Activity() {
         }
 
 
-        val myListAdapter = AppointmentAdapter(this, app_id, doc_name, doc_cont, pat_name, pat_cont)
+        val myListAdapter = AppointmentAdapter(this, doc_name, doc_cont, pat_name, pat_cont)
 
         listapp.adapter = myListAdapter
 
@@ -84,10 +83,12 @@ class CheckAppointment_Hospital : Base_Activity() {
             val itemAtPos = adapterView.getItemAtPosition(position)
             val itemIdAtPos = adapterView.getItemIdAtPosition(position)
 
-            toast("Click on Item at $itemAtPos, its Item ID at $itemIdAtPos")
+            toast("Click on Item at $itemAtPos, its patient ID at $pat_id, its doctor Id is: $doc_id")
 
             intent = Intent(this, ActOn_Appointment::class.java)
-            intent.putExtra("app_id", app_id)
+            intent.putExtra("pat_id", pat_id)
+            intent.putExtra("doc_id", doc_id)
+            startActivity(intent)
         }
 
     }

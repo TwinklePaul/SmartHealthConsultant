@@ -2,12 +2,13 @@ package com.webtekproject.smarhealthconsultancy.Patient
 
 import android.app.Activity
 import android.os.Bundle
-import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Appointment_Handler
+import android.view.View
 import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Base_Activity
 import com.webtekproject.smarhealthconsultancy.DeveloperFiles.DatabaseHandler
 import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Schedule_Adapter
 import com.webtekproject.smarhealthconsultancy.R
 import kotlinx.android.synthetic.main.activity_check_appointment.*
+import org.jetbrains.anko.longToast
 import org.jetbrains.anko.toast
 
 class Check_Appointment : Base_Activity() {
@@ -21,10 +22,6 @@ class Check_Appointment : Base_Activity() {
     var app_id: ArrayList<String> = ArrayList()
     var start_at: ArrayList<String> = ArrayList()
 
-    var doc_id: String = ""
-    var pat_id: String = ""
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_check_appointment)
@@ -34,46 +31,44 @@ class Check_Appointment : Base_Activity() {
         val actionBar = supportActionBar
         actionBar!!.elevation = 4.0F
 
-        val db = Appointment_Handler(this)
-        val app_list = db.viewrequest()
-
         val dh = DatabaseHandler(this)
         val doc_list = dh.viewDoctors()
         val clinic_list = dh.viewClinic()
         val hospital_list = dh.viewHospital()
-        val doc_app = dh.viewDoc_App()
+        val appList = dh.viewDoc_App()
 
         val pref = getSharedPreferences("user_details", Activity.MODE_PRIVATE)
         val user = pref.getString("userid", null)
 
-        for (i in app_list) {
-            if (i.Patient_ID.equals(user)) {
+        if (appList.isEmpty()) {
+            listconfirmed.visibility = View.GONE
+            longToast("No Appointments Yet!!")
+        } else {
+            doc_confirm_app!!.visibility = View.GONE
+        }
 
-                doc_id = i.Dr_ID
+        for (i in appList) {
+            if (i.Patient_ID.equals(user)) {
                 app_id.add(i.App_Id)
                 pat_name.add(user)
-
-                for (j in doc_app)
-                    if (j.Patient_ID.equals(user) && j.App_Id.equals(i.App_Id))
-                        start_at.add(j.Start_at)
-
+                start_at.add(i.Start_at)
 
                 for (j in doc_list)
-                    if (j.Dr_ID.equals(doc_id)) {
+                    if (j.Dr_ID.equals(i.Dr_ID)) {
                         doc_name.add(j.Dr_Name)
                         doc_cont.add(j.Dr_Contact)
                     }
 
-                if (i.Org_Type.equals("Clinic")) {
+                if (i.Hosp_ID.equals("")) {
                     for (j in clinic_list)
-                        if (j.Clinic_ID.equals(user)) {
+                        if (j.Clinic_ID.equals(i.Clinic_ID)) {
                             org_name.add(j.Clinic_Name)
                             org_loc.add(j.Clinic_Location)
                             org_type.add("Clinic")
                         }
                 } else {
                     for (j in hospital_list)
-                        if (j.Hosp_ID.equals(user)) {
+                        if (j.Hosp_ID.equals(i.Hosp_ID)) {
                             org_name.add(j.Hosp_Name)
                             org_loc.add(j.Hosp_Location)
                             org_type.add("Hospital")

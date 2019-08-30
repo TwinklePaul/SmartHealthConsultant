@@ -19,8 +19,6 @@ class Appointment_Handler(context: Context) : SQLiteOpenHelper(
 
         private val TABLE_REQUESTS = "Table_Appointment"
 
-
-        private val KEY_App_Id = "App_Id"
         private val KEY_PID = "Patient_ID"
         private val KEY_DID = "Dr_ID"
         private val KEY_OID = "Org_ID"
@@ -33,7 +31,7 @@ class Appointment_Handler(context: Context) : SQLiteOpenHelper(
 
         //creating Table Requests
         val CREATE_TABLE_REQUESTS = ("CREATE TABLE " + TABLE_REQUESTS + " ("
-                + KEY_App_Id + "TEXT PRIMARY KEY," + KEY_PID + " TEXT, " + KEY_DID + " TEXT," + KEY_OID + " TEXT, " + KEY_OType + " TEXT " + ")")
+                + KEY_PID + " TEXT, " + KEY_DID + " TEXT," + KEY_OID + " TEXT, " + KEY_OType + " TEXT " + ")")
 
         db?.execSQL(CREATE_TABLE_REQUESTS)
     }
@@ -52,7 +50,7 @@ class Appointment_Handler(context: Context) : SQLiteOpenHelper(
         val db = this.writableDatabase
         val contentValues = ContentValues()
 
-        contentValues.put(KEY_App_Id, requests.App_Id)
+        //contentValues.put(KEY_App_Id, requests.App_Id)
         contentValues.put(KEY_PID, requests.Patient_ID)
         contentValues.put(KEY_DID, requests.Dr_ID)
         contentValues.put(KEY_OID, requests.Org_ID)
@@ -77,7 +75,7 @@ class Appointment_Handler(context: Context) : SQLiteOpenHelper(
             return ArrayList()
         }
 
-        var App_ID: String
+        // var App_ID: String
         var Patient_ID: String
         var Dr_ID: String
         var Org_ID: String
@@ -85,17 +83,17 @@ class Appointment_Handler(context: Context) : SQLiteOpenHelper(
 
         if (cursor.moveToFirst()) {
             do {
-                App_ID = cursor.getString(cursor.getColumnIndex("App_Id"))
+                //App_ID = cursor.getString(cursor.getColumnIndex("App_Id"))
                 Patient_ID = cursor.getString(cursor.getColumnIndex("Patient_ID"))
                 Dr_ID = cursor.getString(cursor.getColumnIndex("Dr_ID"))
                 Org_ID = cursor.getString(cursor.getColumnIndex("Org_ID"))
                 Org_Type = cursor.getString(cursor.getColumnIndex("Org_Type"))
 
-                val feed = App_Request_Model(App_ID, Patient_ID, Dr_ID, Org_ID, Org_Type)
+                val feed = App_Request_Model(Patient_ID, Dr_ID, Org_ID, Org_Type)
                 Req_List.add(feed)
             } while (cursor.moveToNext())
         }
-
+        db.close()
         return Req_List
     }
 
@@ -104,14 +102,19 @@ class Appointment_Handler(context: Context) : SQLiteOpenHelper(
         val db = this.writableDatabase
         val contentValues = ContentValues()
 
-        contentValues.put(KEY_App_Id, requests.App_Id)
+        //contentValues.put(KEY_App_Id, requests.App_Id)
         contentValues.put(KEY_PID, requests.Patient_ID)
         contentValues.put(KEY_DID, requests.Dr_ID)
         contentValues.put(KEY_OID, requests.Org_ID)
         contentValues.put(KEY_OType, requests.Org_Type)
 
         //updating row
-        val success = db.update(TABLE_REQUESTS, contentValues, "id = " + requests.App_Id, null)
+        val success = db.update(
+            TABLE_REQUESTS,
+            contentValues,
+            (("Patient_ID = " + requests.Patient_ID) + "and" + ("Dr_ID = " + requests.Dr_ID)),
+            null
+        )
         db.close()
 
         return success
@@ -122,9 +125,13 @@ class Appointment_Handler(context: Context) : SQLiteOpenHelper(
         val db = this.writableDatabase
         val contentValues = ContentValues()
 
-        contentValues.put(KEY_App_Id, requests.App_Id)
+        // contentValues.put(KEY_App_Id, requests.App_Id)
 
-        val success = db.delete(TABLE_REQUESTS, "id = " + requests.App_Id, null)
+        val success = db.delete(
+            TABLE_REQUESTS,
+            (("Patient_ID = " + requests.Patient_ID) + "and" + ("Dr_ID = " + requests.Dr_ID) + "and" + ("Org_ID = " + requests.Org_ID)),
+            null
+        )
         db.close()
         return success
 

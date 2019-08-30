@@ -19,13 +19,15 @@
             android:id="@+id/doc_confirm_app"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center"
+            android:layout_gravity="center_vertical"
             android:src="@drawable/doctor_logo" />
 
     <ListView
             android:id="@+id/listconfirmed"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:scrollbars="vertical" />
 
 
 </LinearLayout>

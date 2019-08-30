@@ -21,7 +21,9 @@ class Choose_Time : DialogFragment() {
         val chooseTime: TimePicker = view.findViewById(R.id.ChooseTime)
         buTime.setOnClickListener {
             this@Choose_Time.dismiss()
-            val time: Int = chooseTime.minute
+            val min = chooseTime.minute
+            val hour = chooseTime.hour
+            val time = "$hour:$min"
             val actonAppointment = activity as ActOn_Appointment
             actonAppointment.toastTime(time)
         }

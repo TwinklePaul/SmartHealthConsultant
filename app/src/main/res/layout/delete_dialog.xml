@@ -5,11 +5,19 @@
         android:orientation="vertical">
 
     <TextView
-            android:id="@+id/deleteid"
+            android:id="@+id/Delpatient"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
             android:padding="3dp"
-            android:text="Delete ID" />
+            android:text="patient" />
+
+    <TextView
+            android:id="@+id/Deldoctor"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
+            android:padding="3dp"
+            android:text="doctor" />
 
 </LinearLayout>

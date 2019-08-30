@@ -1,6 +1,7 @@
 package com.webtekproject.smarhealthconsultancy.Patient
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
@@ -314,15 +315,18 @@ class Get_Appointment : Base_Activity(), AdapterView.OnItemSelectedListener {
         val db = Appointment_Handler(this)
         val pref = getSharedPreferences("user_details", Activity.MODE_PRIVATE)
         val user = pref.getString("userid", null)
-        val visitnum = visit.text.toString()
-        val app_id = "${user}_${doc}_${org}_${visitnum}"
-        toast(app_id)
+        //val visitnum = visit.text.toString()
+        //val app_id = "${user}_${doc}_${org}_${visitnum}"
+        //toast(app_id)
 
-        val status = db.addRequest(App_Request_Model(app_id, user!!, doc, org, option_cat))
+        val status = db.addRequest(App_Request_Model(user!!, doc, org, option_cat))
+        //toast(user +" " +doc +" "+ org)
 
-        if (status > -1)
-        //toast("Request For Your Appointment Has Been Sent To: $option_org")
-        else
+        if (status > -1) {
+            toast("Request For Your Appointment Has Been Sent To: $option_org, $option_cat")
+            intent = Intent(this, SignIn_Patient::class.java)
+            startActivity(intent)
+        } else
             toast("Sorry!! Some Error Occured. Please Retry!")
     }
 

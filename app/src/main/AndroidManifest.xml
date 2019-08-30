@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
         package="com.webtekproject.smarhealthconsultancy">
 
+    <supports-screens
+            android:anyDensity="true"
+            android:largeScreens="true"
+            android:normalScreens="true"
+            android:smallScreens="true" />
+
     <application
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
@@ -11,7 +17,10 @@
             android:theme="@style/AppTheme">
 
 
-        <activity android:name=".Common.ActOn_Appointment"></activity>
+        <activity
+                android:name=".Common.ActOn_Appointment"
+                android:label="Act On Appointment:"
+                android:parentActivityName=".Common.SignIn_Activity"></activity>
 
 
         <activity android:name=".Patient.Patient_Settings"></activity>
@@ -41,7 +50,7 @@
         <activity
                 android:name=".Authorities.control.Clinic.Clinic_Settings"
                 android:label="Settings"
-                android:parentActivityName=".Authorities.control.Profile_Page_Authority"></activity>
+                android:parentActivityName=".Common.SignIn_Activity"></activity>
         <activity
                 android:name=".Authorities.control.Clinic.SignIn_Clinic"
                 android:label="Clinic"
@@ -78,7 +87,7 @@
         <activity
                 android:name=".Authorities.control.Doctor.Doc_Settings"
                 android:label="Settings"
-                android:parentActivityName=".Authorities.control.Profile_Page_Authority"></activity>
+                android:parentActivityName=".Common.SignIn_Activity"></activity>
         <activity
                 android:name=".Authorities.control.Doctor.CheckAppointment_Doctor"
                 android:label="Confirmed Appointments"
@@ -96,7 +105,7 @@
         <activity
                 android:name=".Authorities.control.Hospital.Hospital_Settings"
                 android:label="Settings"
-                android:parentActivityName=".Authorities.control.Profile_Page_Authority"></activity>
+                android:parentActivityName=".Common.SignIn_Activity"></activity>
         <activity
                 android:name=".Authorities.control.Hospital.CheckAppointment_Hospital"
                 android:label="View Appointment: "

@@ -139,7 +139,7 @@
                     android:textStyle="bold"
                     android:theme="@style/mySpinnerItemStyle" />
 
-            <EditText
+            <!--<EditText
                     android:id="@+id/visit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -148,7 +148,7 @@
                     android:padding="2dp"
                     android:textSize="14sp"
                     android:textStyle="bold"
-                    android:theme="@style/mySpinnerItemStyle" />
+                    android:theme="@style/mySpinnerItemStyle" />-->
             <!--<Spinner
                     android:id="@+id/Choose4"
                     android:layout_width="match_parent"

@@ -12,7 +12,6 @@ import com.webtekproject.smarhealthconsultancy.Common.Feedback
 import com.webtekproject.smarhealthconsultancy.Common.SignIn_Activity
 import com.webtekproject.smarhealthconsultancy.Common.View_Feed
 import com.webtekproject.smarhealthconsultancy.DeveloperFiles.Base_Activity
-import com.webtekproject.smarhealthconsultancy.Patient.Check_Appointment
 import com.webtekproject.smarhealthconsultancy.R
 
 class SignIn_Doctor : Base_Activity() {
@@ -79,7 +78,7 @@ class SignIn_Doctor : Base_Activity() {
     }
 
     fun schedule(view: View) {
-        intent = Intent(this, Check_Appointment::class.java)
+        intent = Intent(this, CheckAppointment_Doctor::class.java)
         startActivity(intent)
     }
 
