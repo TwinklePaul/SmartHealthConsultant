@@ -258,7 +258,9 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentBottom="false"
+                android:layout_alignParentEnd="true"
                 android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginTop="0dp"
                 android:background="@drawable/confirmbuttonbg"
                 android:onClick="Confirm"
@@ -267,26 +269,26 @@
                 android:textColor="#01063C"
                 android:textSize="12sp" />
 
-        <Button
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentBottom="false"
-                android:layout_marginStart="51dp"
-                android:layout_marginEnd="35dp"
-                android:layout_marginRight="48dp"
-                android:layout_toLeftOf="@+id/button_reject"
-                android:layout_toEndOf="@+id/button_save"
-                android:layout_toRightOf="@+id/button_save"
-                android:background="@drawable/buttonbg"
-                android:onClick="updateRecord"
-                android:padding="1dp"
-                android:text="Change"
-                android:textColor="#F0EEF4"
-                android:textSize="12sp"
-                android:textStyle="bold" />
+        <!-- <Button
+                 android:layout_width="wrap_content"
+                 android:layout_height="40dp"
+                 android:layout_alignParentTop="true"
+                 android:layout_alignParentBottom="false"
+                 android:layout_marginStart="51dp"
+                 android:layout_marginEnd="35dp"
+                 android:layout_marginRight="48dp"
+                 android:layout_toLeftOf="@+id/button_reject"
+                 android:layout_toEndOf="@+id/button_save"
+                 android:layout_toRightOf="@+id/button_save"
+                 android:background="@drawable/buttonbg"
+                 android:onClick="updateRecord"
+                 android:padding="1dp"
+                 android:text="Change"
+                 android:textColor="#F0EEF4"
+                 android:textSize="12sp"
+                 android:textStyle="bold" />-->
 
-        <Button
+        <!--<Button
                 android:id="@+id/button_reject"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
@@ -300,7 +302,7 @@
                 android:padding="1dp"
                 android:text="Reject"
                 android:textColor="#01063C"
-                android:textSize="12sp" />
+                android:textSize="12sp" />-->
     </RelativeLayout>
 
 </LinearLayout>

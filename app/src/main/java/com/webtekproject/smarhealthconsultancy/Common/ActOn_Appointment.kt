@@ -2,22 +2,15 @@ package com.webtekproject.smarhealthconsultancy.Common
 
 
 import android.app.Activity
-import android.app.AlertDialog
-import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import android.widget.Spinner
-import android.widget.Toast
 import com.webtekproject.smarhealthconsultancy.DeveloperFiles.*
-import com.webtekproject.smarhealthconsultancy.Model_Classes.App_Request_Model
 import com.webtekproject.smarhealthconsultancy.Model_Classes.Dr_App_Model
 import com.webtekproject.smarhealthconsultancy.R
 import kotlinx.android.synthetic.main.activity_acton_appointment.*
-import kotlinx.android.synthetic.main.delete_dialog.*
-import kotlinx.android.synthetic.main.update_dialog.*
 import org.jetbrains.anko.toast
 
 class ActOn_Appointment : Base_Activity(), AdapterView.OnItemSelectedListener {
@@ -116,7 +109,7 @@ class ActOn_Appointment : Base_Activity(), AdapterView.OnItemSelectedListener {
                 }
             }
     }
-
+/*
     //method for updating records based on user-id
     fun updateRecord(view: View) {
         val dialogBuilder = AlertDialog.Builder(this)
@@ -270,7 +263,7 @@ class ActOn_Appointment : Base_Activity(), AdapterView.OnItemSelectedListener {
 
         val b = dialogBuilder.create()
         b.show()
-    }
+    }*/
 
 
     fun toastDate(date: String) {
