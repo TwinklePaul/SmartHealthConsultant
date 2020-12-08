@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -13,20 +13,31 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
             android:textAlignment="center"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"></androidx.appcompat.widget.Toolbar>
+            app:layout_constraintBottom_toTopOf="@+id/linear1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark">
+
+    </androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
+            android:id="@+id/linear1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/gapComponents"
             android:layout_marginBottom="@dimen/gapComponents"
             android:clipToPadding="false"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/linear2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/my_toolbar">
 
         <androidx.cardview.widget.CardView
                 android:layout_width="160dp"
-                android:layout_height="190dp"
+                android:layout_height="170dp"
                 android:layout_margin="10dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
@@ -39,8 +50,8 @@
                     android:orientation="vertical">
 
                 <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
                         android:background="@drawable/circlebackgroundpurple"
                         android:padding="10dp"
                         android:src="@drawable/ic_action_feed" />
@@ -71,7 +82,7 @@
 
         <androidx.cardview.widget.CardView
                 android:layout_width="160dp"
-                android:layout_height="190dp"
+                android:layout_height="170dp"
                 android:layout_margin="10dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
@@ -84,8 +95,8 @@
                     android:orientation="vertical">
 
                 <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
                         android:background="@drawable/circlebackgroundpink"
                         android:padding="10dp"
                         android:src="@drawable/ic_action_schedule" />
@@ -117,15 +128,20 @@
     </LinearLayout>
 
     <LinearLayout
+            android:id="@+id/linear2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clipToPadding="false"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/linear3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linear1">
 
         <androidx.cardview.widget.CardView
                 android:layout_width="160dp"
-                android:layout_height="190dp"
+                android:layout_height="170dp"
                 android:layout_margin="10dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
@@ -138,8 +154,8 @@
                     android:orientation="vertical">
 
                 <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
                         android:background="@drawable/circlebackgroundgreen"
                         android:padding="10dp"
                         android:src="@drawable/ic_action_appointment" />
@@ -170,7 +186,7 @@
 
         <androidx.cardview.widget.CardView
                 android:layout_width="160dp"
-                android:layout_height="190dp"
+                android:layout_height="170dp"
                 android:layout_margin="10dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
@@ -183,8 +199,8 @@
                     android:orientation="vertical">
 
                 <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
                         android:background="@drawable/circlebackgroundyellow"
                         android:padding="10dp"
                         android:src="@drawable/ic_action_profile" />
@@ -217,23 +233,21 @@
     </LinearLayout>
 
     <LinearLayout
+            android:id="@+id/linear3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/gapComponents"
             android:clipToPadding="false"
             android:gravity="center"
-            android:orientation="horizontal"></LinearLayout>
-
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/gapComponents"
-            android:clipToPadding="false"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linear2">
 
         <androidx.cardview.widget.CardView
                 android:layout_width="160dp"
-                android:layout_height="190dp"
+                android:layout_height="170dp"
                 android:layout_margin="10dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
@@ -246,8 +260,8 @@
                     android:orientation="vertical">
 
                 <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
                         android:background="@drawable/circlebackgroundpurple"
                         android:padding="10dp"
                         android:src="@drawable/ic_action_feedback" />
@@ -277,4 +291,4 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

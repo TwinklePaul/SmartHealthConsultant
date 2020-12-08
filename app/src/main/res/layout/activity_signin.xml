@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -16,21 +16,39 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@android:color/transparent"
             android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@id/homeImg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"></androidx.appcompat.widget.Toolbar>
 
 
     <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:id="@+id/homeImg"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toTopOf="@id/HomeCard1"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
             app:srcCompat="@drawable/icon_large" />
 
     <androidx.cardview.widget.CardView
+            android:id="@+id/HomeCard1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="@dimen/gapComponents"
             app:cardBackgroundColor="#D4E157"
-            app:cardElevation="3dp">
+            app:cardElevation="3dp"
+            app:layout_constraintBottom_toTopOf="@id/edittxt_ID"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/homeImg">
 
         <LinearLayout
                 android:layout_width="wrap_content"
@@ -59,7 +77,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
-            android:hint="Enter Your User_ID" />
+            android:hint="Enter Your User_ID"
+            app:layout_constraintBottom_toTopOf="@id/edittxt_pass"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/HomeCard1" />
 
     <EditText
             android:id="@+id/edittxt_pass"
@@ -68,7 +90,11 @@
             android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
             android:layout_marginVertical="@dimen/button_gap"
             android:hint="Enter Your Password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            app:layout_constraintBottom_toTopOf="@id/button_signIn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edittxt_ID" />
 
     <Button
             android:id="@+id/button_signIn"
@@ -81,7 +107,11 @@
             android:padding="@dimen/slim_padding"
             android:text="Sign In"
             android:textColor="#000"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/button_signUp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edittxt_pass" />
 
     <Button
             android:id="@+id/button_signUp"
@@ -89,12 +119,17 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
             android:layout_marginTop="@dimen/gapComponents"
+            android:layout_marginBottom="@dimen/gapComponents"
             android:background="@drawable/buttonbg"
 
             android:padding="10dp"
             android:text="Sign Up:"
             android:textColor="#fff"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_signIn" />
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

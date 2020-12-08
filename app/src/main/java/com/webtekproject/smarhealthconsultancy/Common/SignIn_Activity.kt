@@ -3,6 +3,7 @@ package com.webtekproject.smarhealthconsultancy.Common
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
 import android.widget.Button
 import android.widget.PopupMenu
@@ -62,13 +63,16 @@ class SignIn_Activity : Base_Activity() {
                     R.id.action_patient -> {
                         val patient_list = db.viewPatient()
 
+                        Log.d("PATIENT", patient_list.toString())
                         for (i in patient_list) {
+                            Log.d("PATIENT", "HELLO DOC ${i.Patient_ID}")
                             if ((i.Patient_ID).equals(userID) && (i.Patient_Pass).equals(
                                     password
                                 )
                             ) {
 
                                 //found it!
+
                                 val editor = mySharedPreferences.edit()
                                 editor.putString("userid", i.Patient_ID)
                                 editor.putString("category", "Patient")

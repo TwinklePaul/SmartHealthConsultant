@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,18 +14,29 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorPrimary"
             android:textAlignment="center"
-            app:popupTheme="@style/ThemeOverlay.AppCompat"></androidx.appcompat.widget.Toolbar>
+            app:layout_constraintBottom_toTopOf="@+id/AboutCard1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat">
+
+    </androidx.appcompat.widget.Toolbar>
 
     <androidx.cardview.widget.CardView
+            android:id="@+id/AboutCard1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/my_toolbar"
             android:background="#00D17171"
             app:cardBackgroundColor="#030940"
             app:cardCornerRadius="7dp"
-            app:cardElevation="12dp">
+            app:cardElevation="12dp"
+            app:layout_constraintBottom_toTopOf="@+id/AboutCard2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/my_toolbar">
 
         <ImageView
+                android:id="@+id/aboutImg"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginTop="10dp"
@@ -35,6 +46,7 @@
 
 
     <androidx.cardview.widget.CardView
+            android:id="@+id/AboutCard2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
@@ -43,157 +55,163 @@
 
             app:cardBackgroundColor="@color/cardbg"
             app:cardCornerRadius="10dp"
-            app:cardElevation="12dp">
+            app:cardElevation="12dp"
+            app:layout_constraintBottom_toTopOf="@+id/AboutCard3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/AboutCard1">
 
         <TextView
+                android:id="@+id/aboutTitletext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-
                 android:padding="16dp"
-
                 android:text="About Us:  "
                 android:textColor="@color/colorAnalogous1"
                 android:textSize="14dp"
                 android:textStyle="bold" />
     </androidx.cardview.widget.CardView>
 
-    <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbars="vertical">
 
-        <androidx.cardview.widget.CardView
+    <androidx.cardview.widget.CardView
+            android:id="@+id/AboutCard3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
+            android:orientation="vertical"
+
+            app:cardBackgroundColor="@color/cardbg"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/AboutCard2"
+
+            >
+
+        <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
-                android:orientation="vertical"
+                android:layout_marginTop="@dimen/gapComponents">
 
-                app:cardBackgroundColor="@color/cardbg"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="12dp">
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-            <TableLayout
+                <TextView
+                        android:layout_width="136dp"
+                        android:layout_marginEnd="16dp"
+                        android:padding="@dimen/slim_padding"
+                        android:text="Developed By:"
+                        android:textColor="@color/colorTriadic"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:padding="@dimen/slim_padding"
+                        android:text="Twinkle Paul"
+                        android:textColor="@color/colorComplimentary"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/medium_marginHorizontal"
-                    android:layout_marginTop="@dimen/gapComponents">
+                    android:layout_marginTop="@dimen/button_gap">
 
-                <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                <TextView
+                        android:layout_width="136dp"
+                        android:layout_marginEnd="16dp"
+                        android:padding="@dimen/slim_padding"
+                        android:text="Designed By:"
+                        android:textColor="@color/colorTriadic"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
 
-                    <TextView
-                            android:layout_width="136dp"
-                            android:layout_marginEnd="16dp"
-                            android:padding="@dimen/slim_padding"
-                            android:text="Developed By:"
-                            android:textColor="@color/colorTriadic"
-                            android:textSize="14dp"
-                            android:textStyle="bold" />
-
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:padding="@dimen/slim_padding"
-                            android:text="Twinkle Paul"
-                            android:textColor="@color/colorComplimentary"
-                            android:textSize="14dp"
-                            android:textStyle="bold" />
-                </TableRow>
-
-                <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/button_gap">
-
-                    <TextView
-                            android:layout_width="136dp"
-                            android:layout_marginEnd="16dp"
-                            android:padding="@dimen/slim_padding"
-                            android:text="Designed By:"
-                            android:textColor="@color/colorTriadic"
-                            android:textSize="14dp"
-                            android:textStyle="bold" />
-
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:padding="@dimen/slim_padding"
-                            android:text="Twinkle Paul"
-                            android:textColor="@color/colorComplimentary"
-                            android:textSize="14dp"
-                            android:textStyle="bold" />
-                </TableRow>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:padding="@dimen/slim_padding"
+                        android:text="Twinkle Paul"
+                        android:textColor="@color/colorComplimentary"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+            </TableRow>
 
 
-                <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/button_gap">
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/button_gap">
 
-                    <TextView
-                            android:layout_width="120dp"
-                            android:layout_marginEnd="16dp"
-                            android:padding="@dimen/slim_padding"
-                            android:text="Info:"
-                            android:textColor="@color/colorTriadic"
-                            android:textSize="14dp"
-                            android:textStyle="bold" />
+                <TextView
+                        android:layout_width="120dp"
+                        android:layout_marginEnd="16dp"
+                        android:padding="@dimen/slim_padding"
+                        android:text="Info:"
+                        android:textColor="@color/colorTriadic"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
 
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:padding="@dimen/slim_padding"
-                            android:text="@string/string_about_info"
-                            android:textColor="@color/colorComplimentary"
-                            android:textSize="14dp"
-                            android:textStyle="bold" />
-                </TableRow>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:padding="@dimen/slim_padding"
+                        android:text="@string/string_about_info"
+                        android:textColor="@color/colorComplimentary"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+            </TableRow>
 
-                <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/button_gap">
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/button_gap">
 
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_marginEnd="16dp"
-                            android:padding="@dimen/slim_padding"
-                            android:text="Institute:"
-                            android:textColor="@color/colorTriadic"
-                            android:textSize="14dp"
-                            android:textStyle="bold" />
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:padding="@dimen/slim_padding"
+                        android:text="Institute:"
+                        android:textColor="@color/colorTriadic"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
 
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:padding="7dp"
-                            android:text="@string/string_about_institt"
-                            android:textColor="@color/colorComplimentary"
-                            android:textSize="14dp"
-                            android:textStyle="bold" />
-                </TableRow>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:padding="7dp"
+                        android:text="@string/string_about_institt"
+                        android:textColor="@color/colorComplimentary"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+            </TableRow>
 
-                <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/button_gap">
+            <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/button_gap">
 
-                    <TextView
-                            android:layout_width="120dp"
-                            android:layout_marginEnd="16dp"
-                            android:padding="@dimen/slim_padding"
-                            android:text="Mentor:"
-                            android:textColor="@color/colorTriadic"
-                            android:textSize="14dp"
-                            android:textStyle="bold" />
+                <TextView
+                        android:layout_width="120dp"
+                        android:layout_marginEnd="16dp"
+                        android:padding="@dimen/slim_padding"
+                        android:text="Mentor:"
+                        android:textColor="@color/colorTriadic"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
 
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:padding="@dimen/slim_padding"
-                            android:text="@string/string_about_mentor"
-                            android:textColor="@color/colorComplimentary"
-                            android:textSize="14dp"
-                            android:textStyle="bold" />
-                </TableRow>
-            </TableLayout>
-        </androidx.cardview.widget.CardView>
-    </ScrollView>
-</LinearLayout>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:padding="@dimen/slim_padding"
+                        android:text="@string/string_about_mentor"
+                        android:textColor="@color/colorComplimentary"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+            </TableRow>
+        </TableLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

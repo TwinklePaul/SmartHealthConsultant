@@ -1,281 +1,300 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="#fcfcfc"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#fcfcfc"
-        android:orientation="vertical"
         android:theme="@android:style/Theme.Material.Light.NoActionBar.Fullscreen">
 
-    <androidx.appcompat.widget.Toolbar
-            android:id="@+id/my_toolbar"
+    <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimary"
-            android:textAlignment="center"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"></androidx.appcompat.widget.Toolbar>
+            android:layout_height="wrap_content">
 
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/gapComponents"
-            android:layout_marginBottom="@dimen/gapComponents"
-            android:clipToPadding="false"
-            android:gravity="center"
-            android:orientation="horizontal">
+        <androidx.appcompat.widget.Toolbar
+                android:id="@+id/my_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorPrimary"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"></androidx.appcompat.widget.Toolbar>
 
-        <androidx.cardview.widget.CardView
-                android:layout_width="160dp"
-                android:layout_height="190dp"
-                android:layout_margin="10dp"
-                android:clickable="true"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:onClick="viewFeed">
+        <LinearLayout
+                android:id="@+id/linear1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:clipToPadding="false"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/linear2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/my_toolbar"
 
-            <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                >
 
-                <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:background="@drawable/circlebackgroundpurple"
-                        android:padding="10dp"
-                        android:src="@drawable/ic_action_feed" />
+            <androidx.cardview.widget.CardView
+                    android:layout_width="160dp"
+                    android:layout_height="170dp"
+                    android:layout_margin="5dp"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:onClick="viewFeed">
 
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="News Feed"
-                        android:textStyle="bold" />
-
-                <View
+                <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_margin="10dp"
-                        android:background="@color/lightgray" />
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:gravity="center"
-                        android:padding="5dp"
-                        android:text="Check Latest Updates by Proffessionals."
-                        android:textColor="@android:color/darker_gray" />
+                        android:orientation="vertical">
 
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                    <ImageView
+                            android:layout_width="54dp"
+                            android:layout_height="54dp"
+                            android:background="@drawable/circlebackgroundpurple"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_action_feed" />
 
-        <androidx.cardview.widget.CardView
-                android:layout_width="160dp"
-                android:layout_height="190dp"
-                android:layout_margin="10dp"
-                android:clickable="true"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:onClick="generateFeed">
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="7dp"
+                            android:text="News Feed"
+                            android:textStyle="bold" />
 
-            <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                    <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="10dp"
+                            android:background="@color/lightgray" />
 
-                <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:background="@drawable/circlebackgroundpink"
-                        android:padding="10dp"
-                        android:src="@drawable/ic_action_addfeed" />
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Check Latest Updates by Proffessionals."
+                            android:textColor="@android:color/darker_gray" />
 
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="Post Feed"
-                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-                <View
+            <androidx.cardview.widget.CardView
+                    android:layout_width="160dp"
+                    android:layout_height="170dp"
+                    android:layout_margin="5dp"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:onClick="generateFeed">
+
+                <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_margin="10dp"
-                        android:background="@color/lightgray" />
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:gravity="center"
-                        android:padding="5dp"
-                        android:text="Generate Your Own Feed"
-                        android:textColor="@android:color/darker_gray" />
+                        android:orientation="vertical">
 
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                    <ImageView
+                            android:layout_width="54dp"
+                            android:layout_height="54dp"
+                            android:background="@drawable/circlebackgroundpink"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_action_addfeed" />
 
-    </LinearLayout>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="7dp"
+                            android:text="Post Feed"
+                            android:textStyle="bold" />
 
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clipToPadding="false"
-            android:gravity="center"
-            android:orientation="horizontal">
+                    <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="10dp"
+                            android:background="@color/lightgray" />
 
-        <androidx.cardview.widget.CardView
-                android:layout_width="160dp"
-                android:layout_height="190dp"
-                android:layout_margin="10dp"
-                android:clickable="true"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:onClick="schedule">
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Generate Your Own Feed"
+                            android:textColor="@android:color/darker_gray" />
 
-            <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-                <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:background="@drawable/circlebackgroundgreen"
-                        android:padding="10dp"
-                        android:src="@drawable/ic_action_appointment" />
+        </LinearLayout>
 
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="Appointment"
-                        android:textStyle="bold" />
+        <LinearLayout
+                android:id="@+id/linear2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/linear3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linear1">
 
-                <View
+            <androidx.cardview.widget.CardView
+                    android:layout_width="160dp"
+                    android:layout_height="170dp"
+                    android:layout_margin="7dp"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:onClick="schedule">
+
+                <LinearLayout
+                        android:layout_width="161dp"
+                        android:layout_height="167dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                    <ImageView
+                            android:layout_width="54dp"
+                            android:layout_height="54dp"
+                            android:background="@drawable/circlebackgroundgreen"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_action_appointment" />
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Appointment"
+                            android:textStyle="bold" />
+
+                    <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="5dp"
+                            android:background="@color/lightgray" />
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="Check Your Appointments"
+                            android:textColor="@android:color/darker_gray" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="160dp"
+                    android:layout_height="170dp"
+                    android:layout_margin="5dp"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:onClick="viewProfile">
+
+                <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_margin="10dp"
-                        android:background="@color/lightgray" />
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:gravity="center"
-                        android:padding="5dp"
-                        android:text="Check Your Appointments"
-                        android:textColor="@android:color/darker_gray" />
+                        android:orientation="vertical">
 
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                    <ImageView
+                            android:layout_width="54dp"
+                            android:layout_height="54dp"
+                            android:background="@drawable/circlebackgroundyellow"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_action_profile" />
 
-        <androidx.cardview.widget.CardView
-                android:layout_width="160dp"
-                android:layout_height="190dp"
-                android:layout_margin="10dp"
-                android:clickable="true"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:onClick="viewProfile">
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="7dp"
+                            android:text="Profile"
+                            android:textStyle="bold" />
 
-            <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                    <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="10dp"
+                            android:background="@color/lightgray" />
 
-                <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:background="@drawable/circlebackgroundyellow"
-                        android:padding="10dp"
-                        android:src="@drawable/ic_action_profile" />
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:onClick="viewProfile"
+                            android:padding="5dp"
+                            android:text="Check / Edit your Profile"
+                            android:textColor="@android:color/darker_gray" />
 
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="Profile"
-                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-                <View
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/linear3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/button_gap"
+                android:clipToPadding="false"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linear2">
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="160dp"
+                    android:layout_height="170dp"
+                    android:layout_margin="5dp"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:onClick="giveFeedback">
+
+                <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_margin="10dp"
-                        android:background="@color/lightgray" />
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:gravity="center"
-                        android:onClick="viewProfile"
-                        android:padding="5dp"
-                        android:text="Check / Edit your Profile"
-                        android:textColor="@android:color/darker_gray" />
+                        android:orientation="vertical">
 
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                    <ImageView
+                            android:layout_width="54dp"
+                            android:layout_height="54dp"
+                            android:background="@drawable/circlebackgroundpurple"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_action_feedback" />
 
-    </LinearLayout>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="7dp"
+                            android:text="FeedBack"
+                            android:textStyle="bold" />
 
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clipToPadding="false"
-            android:gravity="center"
-            android:orientation="horizontal"></LinearLayout>
+                    <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="10dp"
+                            android:background="@color/lightgray" />
 
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/gapComponents"
-            android:clipToPadding="false"
-            android:gravity="center"
-            android:orientation="horizontal">
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:onClick="generateFeed"
+                            android:padding="5dp"
+                            android:text="Your Feedback is Valuable to Us."
+                            android:textColor="@android:color/darker_gray" />
 
-        <androidx.cardview.widget.CardView
-                android:layout_width="160dp"
-                android:layout_height="190dp"
-                android:layout_margin="10dp"
-                android:clickable="true"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:onClick="giveFeedback">
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
 
-            <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:background="@drawable/circlebackgroundpurple"
-                        android:padding="10dp"
-                        android:src="@drawable/ic_action_feedback" />
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="FeedBack"
-                        android:textStyle="bold" />
-
-                <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_margin="10dp"
-                        android:background="@color/lightgray" />
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:onClick="generateFeed"
-                        android:padding="5dp"
-                        android:text="Your Feedback is Valuable to Us."
-                        android:textColor="@android:color/darker_gray" />
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
-</LinearLayout>
